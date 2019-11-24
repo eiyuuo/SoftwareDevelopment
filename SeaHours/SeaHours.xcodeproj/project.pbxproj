@@ -17,7 +17,6 @@
 		EEEC620B238630E200C6819B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6209238630E200C6819B /* LaunchScreen.storyboard */; };
 		EEEC6216238630E200C6819B /* SeaHoursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6215238630E200C6819B /* SeaHoursTests.swift */; };
 		EEEC6221238630E200C6819B /* SeaHoursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6220238630E200C6819B /* SeaHoursUITests.swift */; };
-		EEEC622F2386312200C6819B /* SeaHours in Resources */ = {isa = PBXBuildFile; fileRef = EEEC622E2386312200C6819B /* SeaHours */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		EEEC621C238630E200C6819B /* SeaHoursUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeaHoursUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC6220238630E200C6819B /* SeaHoursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaHoursUITests.swift; sourceTree = "<group>"; };
 		EEEC6222238630E200C6819B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEEC622E2386312200C6819B /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SeaHours; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				EEEC61F9238630E000C6819B /* SeaHours */,
-				EEEC622E2386312200C6819B /* SeaHours */,
 				EEEC6214238630E200C6819B /* SeaHoursTests */,
 				EEEC621F238630E200C6819B /* SeaHoursUITests */,
 				EEEC61F8238630E000C6819B /* Products */,
@@ -245,7 +242,6 @@
 				EEEC61FD238630E000C6819B /* GameScene.sks in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
 				EEEC620B238630E200C6819B /* LaunchScreen.storyboard in Resources */,
-				EEEC622F2386312200C6819B /* SeaHours in Resources */,
 				EEEC61FF238630E000C6819B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
