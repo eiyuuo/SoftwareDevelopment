@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
 		EEEC61FD238630E000C6819B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FC238630E000C6819B /* GameScene.sks */; };
 		EEEC61FF238630E000C6819B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FE238630E000C6819B /* Actions.sks */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC61FA238630E000C6819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEEC61FC238630E000C6819B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		EEEC61F9238630E000C6819B /* SeaHours */ = {
 			isa = PBXGroup;
 			children = (
+				E4716F5C239275CA00F09053 /* Character.swift */,
 				EEEC61FA238630E000C6819B /* AppDelegate.swift */,
 				EEEC61FC238630E000C6819B /* GameScene.sks */,
 				EEEC61FE238630E000C6819B /* Actions.sks */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4716F5D239275CA00F09053 /* Character.swift in Sources */,
 				EEEC6201238630E000C6819B /* GameScene.swift in Sources */,
 				EEEC6203238630E000C6819B /* GameViewController.swift in Sources */,
 				EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */,
