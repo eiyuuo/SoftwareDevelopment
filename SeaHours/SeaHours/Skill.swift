@@ -9,11 +9,7 @@
 import Foundation
 
 class Skill {
-    var hitPercentageList: [Int]
-    
-    init(hitPercentageList: [Int]) { //コンストラクタ
-        self.hitPercentageList = hitPercentageList
-    }
+    var hitPercentageList: [Int] = []
     
     func nomalAttack(attack : Int) -> Int {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
