@@ -12,6 +12,7 @@ import XCTest
 class SeaHoursTests: XCTestCase {
 
     override func setUp() {
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -19,16 +20,19 @@ class SeaHoursTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSkill() { //スキルクラスのテスト。下のターミナル？コンソール？にprint文で文字が出ます
+        let p = Skill()
+        
+        let MAT = 200
+        let ATK = 100
+        
+        print(p.nomalAttack(attack: ATK))
+        print(p.nomalMagickAttack(magickAttack: MAT))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testEnemySkill() {
+        let enemy = Enemy(maxHitPoint: 20, defense: 20, attack: 100, magickAttack: 200)
+        enemy.selectSkill()
     }
-
+    
 }

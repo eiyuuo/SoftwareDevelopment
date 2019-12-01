@@ -9,28 +9,28 @@
 import Foundation
 
 class Skill {
-    var hitPercentageList: [Int] = [95,80]
+    let hitPercentageList: [Int] = [90,80] //仮仕様です。一番上のメソッドから順に命中率を入れていきます
     
     func nomalAttack(attack : Int) -> Int {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
-        let a = Int.random(in: 0 ... 100)
-        if (hitPercentageList[0] - a < 0){
-            print(attack)
+        let randomNumber = Int.random(in: 0 ... 100)
+        if (hitPercentageList[0] - randomNumber > 0){
+            print("attack hit")
             return attack
         }else {
-            print(0)
+            print("attack not hit")
             return 0
         }
     }
 
     func nomalMagickAttack(magickAttack : Int) -> Int {
         //命中率のパーセントをif文で書き，当たったら魔法アタックの何倍？など適当に計算。外したら0を返す。
-        let a = Int.random(in: 0 ... 100)
-        if (hitPercentageList[0] - a < 0){
-            print(magickAttack)
+        let randomNumber = Int.random(in: 0 ... 100)
+        if (hitPercentageList[1] - randomNumber > 0){
+            print("magick hit")
             return magickAttack
         }else {
-            print(0)
+            print("magick not hit")
             return 0
         }
     }
