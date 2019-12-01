@@ -15,8 +15,10 @@ class Skill {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
         let a = Int.random(in: 0 ... 100)
         if (hitPercentageList[0] - a < 0){
+            print(attack)
             return attack
         }else {
+            print(0)
             return 0
         }
     }
@@ -25,8 +27,10 @@ class Skill {
         //命中率のパーセントをif文で書き，当たったら魔法アタックの何倍？など適当に計算。外したら0を返す。
         let a = Int.random(in: 0 ... 100)
         if (hitPercentageList[0] - a < 0){
+            print(magickAttack)
             return magickAttack
         }else {
+            print(0)
             return 0
         }
     }
