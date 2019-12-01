@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Character.swift
 //  SeaHours
 //
 //  Created by 東谷　歩夢 on 2019/11/30.
