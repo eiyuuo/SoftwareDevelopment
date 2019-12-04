@@ -10,22 +10,27 @@ import Foundation
 
 class Enemy : Character {
     private var skill = Skill()
-    
-    init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int) {
         
-        super.init(name: "エネミー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack)
-    }
-    
-    func selectSkill() {
-        //スキルを自動で選ぶ。例）50％をい切ったら別のスキルなど？
+    func selectSkill() -> Int {
+        //スキルを自動で選ぶ。例）HP50％を切ったら別のスキルなど？
         //今は仮の実装なので，2分の1で選ぶ
+        
+        var damege :Int
         
         let randomBool = Bool.random()
         if (randomBool){
-            print(skill.nomalAttack(attack: self.attack))
+            damege = skill.nomalAttack(attack: self.attack)
+            print(damege)
+            return damege
         }else{
-            print(skill.nomalMagickAttack(magickAttack: self.magickAttack))
+            damege = skill.nomalMagickAttack(magickAttack: self.magickAttack)
+            print(damege)
+            return damege
         }
+    }
+    
+    func getName() -> String {
+        return name
     }
 
 }

@@ -7,44 +7,28 @@
 //
 
 import UIKit
-import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    private let battle = Battle(enemyName: "slime")
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var log: UILabel!
+
+    @IBAction func button1(_ sender: Any) {
+        battle.battle(tuchBottunName: "attack")
+
+        let a = "aaa"
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+        
+        log.text = battle.getLogList()
+        label1.text = a
+        label2.text = "hellow1"
     }
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    @IBAction func button2(_ sender: Any) {
+        label1.text = "hello, world2"
+        label2.text = "aa"
     }
 }

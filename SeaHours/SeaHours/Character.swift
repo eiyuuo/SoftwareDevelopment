@@ -27,25 +27,36 @@ class Character {
         self.isDead = false
     }
     
-    func hitPointOpelate() -> Int {
+    func hitPointOpelate(changePoint : Int) {
         //現在のHPを増減させる管理
-        return 0
+        nowHitPoint = nowHitPoint + changePoint
+        if (nowHitPoint >= maxHitPoint){
+            nowHitPoint = maxHitPoint
+        }
     }
     
     func deadJudgment() {
         //やられたかどう確認する
+        if (nowHitPoint < 1){
+            isDead = true
+        }
     }
-    
-    func damageCalculate() -> Int {
+
+    func damageCalculate(skillDamage : Int , enemyDefence : Int) -> Int {
         //最終的なダメージ　- 敵の防御力
-        return 0
+        let damege = skillDamage - enemyDefence
+        return damege
     }
     
-    func getDefense() -> Int {
+    func getIsDead() -> Bool { //死亡フラグのゲッター
+        return isDead
+    }
+    
+    func getDefense() -> Int { //ダメージ計算のメソッドで必要
         return defense
     }
     
-    func getHitPoint() -> Int {
+    func getHitPoint() -> Int { //戦闘クラスでログとか表示に仕様
         return nowHitPoint
     }
 }
