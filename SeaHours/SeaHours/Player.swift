@@ -13,9 +13,9 @@ class Player : Character {
     private var nowMagicPoint: Int
     private var item: [String] = [String]()
     
-    init(name: String, maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxMagicPoint: Int, nowMagicPoint: Int) {
+    init(maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxMagicPoint: Int, nowMagicPoint: Int) {
         self.maxMagicPoint = maxMagicPoint
-        self.nowMagicPoint = nowMagicPoint
+        self.nowMagicPoint = self.maxMagicPoint
         
         super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack)
     }
