@@ -10,11 +10,10 @@ import Foundation
 
 class Battle { //戦闘を管理するクラス
     
-    private var player : Player
-    private var enemy : Enemy
-    let skill = Skill()
+    var player : Player
+    var enemy : Enemy
     
-    private var logList : String = "" //ログのリスト
+    private var logList : String = ""  //ログのリスト
     
     init(enemyName : String ) {
         
@@ -22,7 +21,7 @@ class Battle { //戦闘を管理するクラス
         self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxMagicPoint: playerStatas[4])
         
         switch enemyName {
-        case "doragon" :
+        case "dragon" :
             self.enemy = Doragon()
             break
             
@@ -44,18 +43,38 @@ class Battle { //戦闘を管理するクラス
         switch tuchBottunName {
         case "attack":
             //プレイヤー
-            damege = skill.nomalAttack(attack: player.attack)
+            damege = player.skill.nomalAttack(attack: player.attack)
             damege = player.damageCalculate(skillDamage: damege, enemyDefence: enemy.getDefense())
+            enemy.hitPointOpelate(changePoint: -damege)
             
-            logList = logList + "\nプレイヤーは" + String(damege) + "のダメージを与えた"
+            logList = "\nプレイヤーは" + enemy.getName() + "に" + String(damege) + "のダメージを与えた" + logList
             
             //エネミー
             damege = enemy.selectSkill()
             damege = enemy.damageCalculate(skillDamage: damege, enemyDefence: player.defense)
+            player.hitPointOpelate(changePoint: -damege)
             
-            logList = logList + "\n" + enemy.getName() + "は" + String(damege) + "のダメージを与えた"
+            logList = "\n" + enemy.getName() + "はプレイヤーに" + String(damege) + "のダメージを与えた" + logList
             
-            print(logList)
+            //print(logList)
+            break
+            
+        case "magick":
+            //プレイヤー
+            damege = player.skill.nomalMagickAttack(magickAttack: player.magickAttack)
+            damege = player.damageCalculate(skillDamage: damege, enemyDefence: enemy.getDefense())
+            enemy.hitPointOpelate(changePoint: -damege)
+            
+            logList = "\nプレイヤーは" + enemy.getName() + "に" + String(damege) + "のダメージを与えた" + logList
+            
+            //エネミー
+            damege = enemy.selectSkill()
+            damege = enemy.damageCalculate(skillDamage: damege, enemyDefence: player.defense)
+            player.hitPointOpelate(changePoint: -damege)
+            
+            logList = "\n" + enemy.getName() + "はプレイヤーに" + String(damege) + "のダメージを与えた" + logList
+            
+            //print(logList)
             break
             
         default:

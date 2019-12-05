@@ -10,6 +10,6 @@ import Foundation
 
 class Doragon : Enemy {
     init() {
-        super.init(name : "ドラゴン", maxHitPoint: 3000, defense: 100, attack: 300, magickAttack: 500)
+        super.init(name : "ドラゴン", maxHitPoint: 30000, defense: 1500, attack: 3000, magickAttack: 5000)
     }
 }

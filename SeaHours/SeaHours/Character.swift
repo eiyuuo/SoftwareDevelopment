@@ -9,6 +9,8 @@
 import Foundation
 
 class Character {
+    let skill = Skill()
+    
     var name: String
     var maxHitPoint: Int
     var nowHitPoint: Int
@@ -16,6 +18,7 @@ class Character {
     var attack : Int
     var magickAttack: Int
     var isDead: Bool
+    
     
     init(name : String, maxHitPoint : Int, defense : Int, attack : Int, magickAttack : Int) {
         self.name = name
@@ -44,7 +47,12 @@ class Character {
 
     func damageCalculate(skillDamage : Int , enemyDefence : Int) -> Int {
         //最終的なダメージ　- 敵の防御力
-        let damege = skillDamage - enemyDefence
+        var damege : Int
+        
+        damege = skillDamage - enemyDefence
+        if (damege < 0){
+            damege = 0
+        }
         return damege
     }
     

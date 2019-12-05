@@ -9,7 +9,6 @@
 import Foundation
 
 class Enemy : Character {
-    private var skill = Skill()
         
     func selectSkill() -> Int {
         //スキルを自動で選ぶ。例）HP50％を切ったら別のスキルなど？
@@ -19,12 +18,10 @@ class Enemy : Character {
         
         let randomBool = Bool.random()
         if (randomBool){
-            damege = skill.nomalAttack(attack: self.attack)
-            print(damege)
+            damege = self.skill.nomalAttack(attack: self.attack)
             return damege
         }else{
-            damege = skill.nomalMagickAttack(magickAttack: self.magickAttack)
-            print(damege)
+            damege = self.skill.nomalMagickAttack(magickAttack: self.magickAttack)
             return damege
         }
     }

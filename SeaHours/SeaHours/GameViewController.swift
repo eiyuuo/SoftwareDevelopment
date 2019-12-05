@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 class GameViewController: UIViewController {
     
-    private let battle = Battle(enemyName: "slime")
+    private let battle = Battle(enemyName: "dragon1")
 
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -18,17 +20,56 @@ class GameViewController: UIViewController {
 
     @IBAction func button1(_ sender: Any) {
         battle.battle(tuchBottunName: "attack")
-
-        let a = "aaa"
-        
         
         log.text = battle.getLogList()
-        label1.text = a
-        label2.text = "hellow1"
+        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())
+        
     }
 
     @IBAction func button2(_ sender: Any) {
-        label1.text = "hello, world2"
-        label2.text = "aa"
+        battle.battle(tuchBottunName: "magick")
+        
+        log.text = battle.getLogList()
+        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())
+        
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /*
+        if let view = self.view as! SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "GameScene") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+        }
+ */
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }
