@@ -17,10 +17,11 @@ class Battle { //戦闘を管理するクラス
     
     init(enemyName : String ) {
         
-        let playerStatas : [Int] = [200 , 10 , 100 , 200 , 50]//仮のステータス　後々ステータスクラスから引っ張る予定
+        let playerStatas : [Int] = [200 , 10 , 100 , 20000 , 50]//仮のステータス　後々ステータスクラスから引っ張る予定
         self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxMagicPoint: playerStatas[4])
         
         switch enemyName {
+            
         case "dragon" :
             self.enemy = Doragon()
             break
@@ -33,52 +34,35 @@ class Battle { //戦闘を管理するクラス
             self.enemy = Slime()
             break
         }
-        
+
     }
     
-    func battle(tuchBottunName : String ) {
+    func battle(tuchButtonName : String ) {
         
-        var damege : Int
+        var log : String
         
-        switch tuchBottunName {
+        switch tuchButtonName {
         case "attack":
             //プレイヤー
-            damege = player.skill.nomalAttack(attack: player.attack)
-            damege = player.damageCalculate(skillDamage: damege, enemyDefence: enemy.getDefense())
-            enemy.hitPointOpelate(changePoint: -damege)
-            
-            logList = "\nプレイヤーは" + enemy.getName() + "に" + String(damege) + "のダメージを与えた" + logList
+            log = player.attack(enemy: enemy)
+            logList = log  + logList
             
             //エネミー
-            damege = enemy.selectSkill()
-            damege = enemy.damageCalculate(skillDamage: damege, enemyDefence: player.defense)
-            player.hitPointOpelate(changePoint: -damege)
-            
-            logList = "\n" + enemy.getName() + "はプレイヤーに" + String(damege) + "のダメージを与えた" + logList
-            
-            //print(logList)
+            log = enemy.skill(player: player)
+            logList = log + logList
             break
             
         case "magick":
             //プレイヤー
-            damege = player.skill.nomalMagickAttack(magickAttack: player.magickAttack)
-            damege = player.damageCalculate(skillDamage: damege, enemyDefence: enemy.getDefense())
-            enemy.hitPointOpelate(changePoint: -damege)
-            
-            logList = "\nプレイヤーは" + enemy.getName() + "に" + String(damege) + "のダメージを与えた" + logList
+            log = player.magick(enemy: enemy)
+            logList = log  + logList
             
             //エネミー
-            damege = enemy.selectSkill()
-            damege = enemy.damageCalculate(skillDamage: damege, enemyDefence: player.defense)
-            player.hitPointOpelate(changePoint: -damege)
-            
-            logList = "\n" + enemy.getName() + "はプレイヤーに" + String(damege) + "のダメージを与えた" + logList
-            
-            //print(logList)
+            log = enemy.skill(player: player)
+            logList = log + logList
             break
             
         default:
-            logList = logList + "\nerror"
             break
         }
         

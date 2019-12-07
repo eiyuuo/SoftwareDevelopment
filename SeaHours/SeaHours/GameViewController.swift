@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var log: UILabel!
 
     @IBAction func button1(_ sender: Any) {
-        battle.battle(tuchBottunName: "attack")
+        battle.battle(tuchButtonName: "attack")
         
         log.text = battle.getLogList()
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())
@@ -27,7 +27,7 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func button2(_ sender: Any) {
-        battle.battle(tuchBottunName: "magick")
+        battle.battle(tuchButtonName: "magick")
         
         log.text = battle.getLogList()
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())

@@ -16,6 +16,7 @@ class Character {
     var nowHitPoint: Int
     var defense: Int
     var attack : Int
+    //↓ステータスではintになってる
     var magickAttack: Int
     var isDead: Bool
     

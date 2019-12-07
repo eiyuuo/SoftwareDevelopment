@@ -26,6 +26,16 @@ class Enemy : Character {
         }
     }
     
+    func skill(player : Player) -> String {
+        var damage : Int
+        
+        damage = selectSkill()
+        damage = damageCalculate(skillDamage: damage, enemyDefence: player.defense)
+        player.hitPointOpelate(changePoint: -damage)
+        
+        return "\n" + getName() + "はプレイヤーに" + String(damage) + "のダメージを与えた"
+    }
+    
     func getName() -> String {
         return name
     }
