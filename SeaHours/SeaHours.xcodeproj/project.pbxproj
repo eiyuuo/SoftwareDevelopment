@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D66512398F51800C7733C /* SceneManagement.swift */; };
+		EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB508FA238F4C69000DFEB4 /* TimerController.swift */; };
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
 		EEEC61FD238630E000C6819B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FC238630E000C6819B /* GameScene.sks */; };
 		EEEC61FF238630E000C6819B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FE238630E000C6819B /* Actions.sks */; };
@@ -17,7 +19,6 @@
 		EEEC620B238630E200C6819B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6209238630E200C6819B /* LaunchScreen.storyboard */; };
 		EEEC6216238630E200C6819B /* SeaHoursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6215238630E200C6819B /* SeaHoursTests.swift */; };
 		EEEC6221238630E200C6819B /* SeaHoursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6220238630E200C6819B /* SeaHoursUITests.swift */; };
-		EEEC622F2386312200C6819B /* SeaHours in Resources */ = {isa = PBXBuildFile; fileRef = EEEC622E2386312200C6819B /* SeaHours */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE8D66512398F51800C7733C /* SceneManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagement.swift; sourceTree = "<group>"; };
+		EEA18EAD239DE15600693F94 /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SeaHours; sourceTree = "<group>"; };
+		EEB508FA238F4C69000DFEB4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC61FA238630E000C6819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEEC61FC238630E000C6819B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		EEEC621C238630E200C6819B /* SeaHoursUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeaHoursUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC6220238630E200C6819B /* SeaHoursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaHoursUITests.swift; sourceTree = "<group>"; };
 		EEEC6222238630E200C6819B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEEC622E2386312200C6819B /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SeaHours; sourceTree = "<group>"; };
+		EEEC622E2386312200C6819B /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SeaHours; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,9 @@
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
 				EEEC6209238630E200C6819B /* LaunchScreen.storyboard */,
 				EEEC620C238630E200C6819B /* Info.plist */,
+				EEB508FA238F4C69000DFEB4 /* TimerController.swift */,
+				EE8D66512398F51800C7733C /* SceneManagement.swift */,
+				EEA18EAD239DE15600693F94 /* SeaHours */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
@@ -245,7 +252,6 @@
 				EEEC61FD238630E000C6819B /* GameScene.sks in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
 				EEEC620B238630E200C6819B /* LaunchScreen.storyboard in Resources */,
-				EEEC622F2386312200C6819B /* SeaHours in Resources */,
 				EEEC61FF238630E000C6819B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEC6201238630E000C6819B /* GameScene.swift in Sources */,
+				EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */,
+				EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */,
 				EEEC6203238630E000C6819B /* GameViewController.swift in Sources */,
 				EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */,
 			);

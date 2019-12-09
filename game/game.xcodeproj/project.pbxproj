@@ -17,7 +17,6 @@
 		EE0269E7238A72380018DFBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0269E5238A72380018DFBB /* LaunchScreen.storyboard */; };
 		EE0269F2238A72380018DFBB /* gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0269F1238A72380018DFBB /* gameTests.swift */; };
 		EE0269FD238A72380018DFBB /* gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0269FC238A72380018DFBB /* gameUITests.swift */; };
-		EE026A0B238A72670018DFBB /* game in Resources */ = {isa = PBXBuildFile; fileRef = EE026A0A238A72670018DFBB /* game */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,7 @@
 		EE0269F8238A72380018DFBB /* gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0269FC238A72380018DFBB /* gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameUITests.swift; sourceTree = "<group>"; };
 		EE0269FE238A72380018DFBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE026A0A238A72670018DFBB /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = game; sourceTree = "<group>"; };
+		EE026A0A238A72670018DFBB /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; path = game; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +242,6 @@
 			files = (
 				EE0269E2238A72370018DFBB /* Main.storyboard in Resources */,
 				EE0269D9238A72370018DFBB /* GameScene.sks in Resources */,
-				EE026A0B238A72670018DFBB /* game in Resources */,
 				EE0269E4238A72380018DFBB /* Assets.xcassets in Resources */,
 				EE0269E7238A72380018DFBB /* LaunchScreen.storyboard in Resources */,
 				EE0269DB238A72370018DFBB /* Actions.sks in Resources */,
