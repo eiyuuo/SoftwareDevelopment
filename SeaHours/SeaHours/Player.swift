@@ -9,13 +9,13 @@
 import Foundation
 
 class Player : Character {
-    private var maxMagicPoint: Int
-    private var nowMagicPoint: Int
+    private var maxSkillPoint: Int
+    private var nowSkillPoint: Int
     private var item: [String] = [String]()
     
-    init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxMagicPoint: Int ) {
-        self.maxMagicPoint = maxMagicPoint
-        self.nowMagicPoint = self.maxMagicPoint
+    init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxSkillPoint: Int ) {
+        self.maxSkillPoint = maxSkillPoint
+        self.nowSkillPoint = self.maxSkillPoint
         
         super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack)
     }
@@ -31,14 +31,14 @@ class Player : Character {
        }
 
     
-    func getMagicPoint() -> Int {
-        return nowMagicPoint
+    func getSkillPoint() -> Int {
+        return nowSkillPoint
     }
     
-    func magicPointOplate(changePoint : Int){
-        nowMagicPoint = nowMagicPoint + changePoint
-        if (nowMagicPoint >= maxMagicPoint){
-            nowMagicPoint = maxMagicPoint
+    func skillPointOplate(changePoint : Int){
+        nowSkillPoint = nowSkillPoint + changePoint
+        if (nowSkillPoint >= maxSkillPoint){
+            nowSkillPoint = maxSkillPoint
         }
     }
     

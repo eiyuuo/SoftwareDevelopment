@@ -50,38 +50,32 @@ class BattleViewController: UIViewController {
         } else{
             playAudio(audioName: audioMagick)
         }
-        buttonIsHide(skillName: "" , boolType: true)
-        UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 50.0, options: .autoreverse, animations: {
-            self.teki.center.y += 100.0
-            self.teki.bounds.size.height += 30.0
-            self.teki.bounds.size.width += 30.0
-        }) { _ in
-            self.teki.center.y -= 100.0
-            self.teki.bounds.size.height -= 30.0
-            self.teki.bounds.size.width -= 30.0
-        }
+        buttonIsHide(skillName: "" , boolType: true , skillPoint: 0)
+        
+        playerAnimation()
+        enemyAnimation()
 
     }
     
     @IBAction func no(_ sender: Any) {
-        buttonIsHide(skillName: "" , boolType: true)
+        buttonIsHide(skillName: "" , boolType: true, skillPoint: 0)
     }
     
     //スキルのボタンについて
     @IBAction func strongAttack(_ sender: Any) {
-        buttonIsHide(skillName: "strongAttack",boolType: false)
+        buttonIsHide(skillName: "strongAttack",boolType: false , skillPoint: 10)
     }
     
     @IBAction func strongMagick(_ sender: Any) {
-        buttonIsHide(skillName: "strongMagickAttack",boolType: false)
+        buttonIsHide(skillName: "strongMagickAttack",boolType: false , skillPoint: 50)
     }
     
     @IBAction func nomalAttack(_ sender: Any) {
-        buttonIsHide(skillName: "nomalAttack",boolType: false)
+        buttonIsHide(skillName: "nomalAttack",boolType: false , skillPoint: 0)
     }
     
     @IBAction func nomalMagick(_ sender: Any) {
-        buttonIsHide(skillName: "nomalMagickAttack",boolType: false)
+        buttonIsHide(skillName: "nomalMagickAttack",boolType: false , skillPoint: 100)
     }
     
     
@@ -92,7 +86,7 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "game_explosion7", audioName: audioMagick)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
         audioBGM.play()
-        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())
+        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
         makeLabelLine(label: log)
         makeLabelLine(label: label2)
@@ -123,7 +117,32 @@ class BattleViewController: UIViewController {
     
     func makeLog() {
         log.text = battle.getLogList()
-        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "MP：" + String(battle.player.getMagicPoint())
+        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
+    }
+    
+    func playerAnimation() {
+        UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
+            self.teki.alpha = 0.0
+        }) { _ in
+            self.teki.alpha = 1.0
+            UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
+                self.teki.alpha = 0.0
+            }) { _ in
+                self.teki.alpha = 1.0
+            }
+        }
+    }
+    
+    func enemyAnimation() {
+        UIView.animate(withDuration: 0.2, delay: 1.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 50.0, options: .autoreverse, animations: {
+            self.teki.center.y += 100.0
+            self.teki.bounds.size.height += 30.0
+            self.teki.bounds.size.width += 30.0
+        }) { _ in
+            self.teki.center.y -= 100.0
+            self.teki.bounds.size.height -= 30.0
+            self.teki.bounds.size.width -= 30.0
+        }
     }
     
     func makeLabelLine(label : UILabel!) {
@@ -137,13 +156,20 @@ class BattleViewController: UIViewController {
         label.layer.cornerRadius = 10
     }
     
-    func buttonIsHide(skillName : String , boolType : Bool){
+    //ボタンを消すなど
+    func buttonIsHide(skillName : String , boolType : Bool, skillPoint : Int){
         strongAttack.isEnabled = boolType
         nomalAttack.isEnabled = boolType
         strongMagick.isEnabled = boolType
         nomalMagick.isEnabled = boolType
         
         yes.isHidden = boolType
+        if (skillPoint < battle.player.getSkillPoint() ){
+            yes.isEnabled = true
+        } else {
+            yes.isEnabled = false
+        }
+        
         no.isHidden = boolType
         skillBackGround.isHidden = boolType
         skillCaption.isHidden = boolType
