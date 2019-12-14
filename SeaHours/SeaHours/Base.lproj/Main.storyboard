@@ -7,60 +7,134 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Battle View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                <viewController id="BV1-FR-VrT" customClass="BattleViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="黒.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="GnA-Mk-siu" userLabel="背景">
+                                <rect key="frame" x="-48" y="-31" width="1172" height="868"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teki1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Do-jP-0us">
+                                <rect key="frame" x="53" y="40" width="587" height="559"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="戦闘ログ：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUy-rX-wHi">
+                                <rect key="frame" x="648" y="47" width="399" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-IX-k5B">
-                                <rect key="frame" x="53" y="574" width="248" height="127"/>
+                                <rect key="frame" x="111" y="617" width="150" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="攻撃"/>
                                 <connections>
-                                    <action selector="button1:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gXc-9q-dlO"/>
+                                    <action selector="nomalAttack:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rE9-iO-tGJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01a-7a-Yf7">
-                                <rect key="frame" x="370" y="560" width="184" height="141"/>
+                                <rect key="frame" x="369" y="617" width="184" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="魔法"/>
                                 <connections>
-                                    <action selector="button2:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Zkl-jm-feP"/>
+                                    <action selector="nomalMagick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Rf5-H8-YRc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="headTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpZ-Gc-cic">
-                                <rect key="frame" x="586" y="73" width="474" height="438"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-bc-ykG">
+                                <rect key="frame" x="101" y="702" width="196" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA1-dU-gA9">
-                                <rect key="frame" x="467" y="168" width="147" height="65"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="攻撃（強）"/>
+                                <connections>
+                                    <action selector="strongAttack:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fJn-E4-g14"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-So-T3C">
+                                <rect key="frame" x="365" y="702" width="196" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="魔法（強）"/>
+                                <connections>
+                                    <action selector="strongMagick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fbH-hl-c7b"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-D0-X1G" userLabel="スキル枠の">
+                                <rect key="frame" x="40" y="617" width="575" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJk-ey-bjh">
-                                <rect key="frame" x="671" y="519" width="353" height="258"/>
+                                <rect key="frame" x="671" y="592" width="353" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sae-Ab-mBN" userLabel="log">
+                                <rect key="frame" x="671" y="100" width="353" height="439"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="黒.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7an-Hr-o6t" userLabel="スキルの不透明背景">
+                                <rect key="frame" x="0.0" y="320" width="1080" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bt-mj-8Rw">
+                                <rect key="frame" x="586" y="375" width="140" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <state key="normal" title="いいえ"/>
+                                <connections>
+                                    <action selector="no:" destination="BV1-FR-VrT" eventType="touchUpInside" id="pjD-Ww-TiT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTj-vl-YmM">
+                                <rect key="frame" x="313" y="375" width="140" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
+                                <state key="normal" title="はい"/>
+                                <connections>
+                                    <action selector="yes:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CXG-di-2L0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="このスキルを使用しますか？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-0W-0DT">
+                                <rect key="frame" x="390" y="320" width="300" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <viewLayoutGuide key="safeArea" id="9le-O0-M6P"/>
                     </view>
                     <connections>
                         <outlet property="label1" destination="CJk-ey-bjh" id="1DD-GI-gz7"/>
-                        <outlet property="label2" destination="iA1-dU-gA9" id="hTM-91-vBN"/>
-                        <outlet property="log" destination="UpZ-Gc-cic" id="obU-b3-iFr"/>
+                        <outlet property="label2" destination="s8f-D0-X1G" id="peE-IP-nVK"/>
+                        <outlet property="log" destination="sae-Ab-mBN" id="X5S-wX-ntI"/>
+                        <outlet property="logFlame" destination="WUy-rX-wHi" id="OHH-Rg-1Cp"/>
+                        <outlet property="no" destination="6bt-mj-8Rw" id="Dcv-PX-X6Y"/>
+                        <outlet property="nomalAttack" destination="Cyw-IX-k5B" id="Rjm-Xg-w37"/>
+                        <outlet property="nomalMagick" destination="01a-7a-Yf7" id="ryd-7r-Wi6"/>
+                        <outlet property="skillBackGround" destination="7an-Hr-o6t" id="HLz-zp-Ub7"/>
+                        <outlet property="skillCaption" destination="iAC-0W-0DT" id="35X-iy-Fbp"/>
+                        <outlet property="strongAttack" destination="Gkr-bc-ykG" id="Kxc-lD-MjD"/>
+                        <outlet property="strongMagick" destination="JBd-So-T3C" id="rRi-DI-S5r"/>
+                        <outlet property="teki" destination="5Do-jP-0us" id="78F-Bv-BfR"/>
+                        <outlet property="yes" destination="kTj-vl-YmM" id="QCB-Fr-bYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -68,4 +142,9 @@
             <point key="canvasLocation" x="131.66666666666666" y="73.333333333333329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="teki1.png" width="131.65715026855469" height="131.65715026855469"/>
+        <image name="黒.jpg" width="400" height="400"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

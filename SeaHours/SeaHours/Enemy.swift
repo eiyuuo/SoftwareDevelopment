@@ -17,11 +17,12 @@ class Enemy : Character {
         var damege :Int
         
         let randomBool = Bool.random()
+        let randomNumber = Int.random(in: 1 ... 100)
         if (randomBool){
-            damege = self.skill.nomalAttack(attack: self.attack)
+            damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
             return damege
         }else{
-            damege = self.skill.nomalMagickAttack(magickAttack: self.magickAttack)
+            damege = self.skill.nomalMagickAttack(magickAttack: magickAttack, randomNumber: randomNumber)
             return damege
         }
     }
@@ -31,7 +32,9 @@ class Enemy : Character {
         
         damage = selectSkill()
         damage = damageCalculate(skillDamage: damage, enemyDefence: player.defense)
+        
         player.hitPointOpelate(changePoint: -damage)
+        player.deadJudgment()
         
         return "\n" + getName() + "はプレイヤーに" + String(damage) + "のダメージを与えた"
     }

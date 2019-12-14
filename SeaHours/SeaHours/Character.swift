@@ -49,8 +49,15 @@ class Character {
     func damageCalculate(skillDamage : Int , enemyDefence : Int) -> Int {
         //最終的なダメージ　- 敵の防御力
         var damege : Int
+        var randomNumber1 : Double
+        var randomNumber2 : Double
         
-        damege = skillDamage - enemyDefence
+        randomNumber1 = Double.random(in: -0.5 ... 0.5) / 10
+        randomNumber2 = Double.random(in: -0.5 ... 0.5) / 10
+        randomNumber1 = 1 + randomNumber1
+        randomNumber2 = 1 + randomNumber2
+        
+        damege = Int(Double(skillDamage) * randomNumber1 - Double(enemyDefence) * randomNumber2)
         if (damege < 0){
             damege = 0
         }

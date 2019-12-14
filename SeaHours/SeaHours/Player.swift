@@ -20,32 +20,26 @@ class Player : Character {
         super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack)
     }
     
-    func attack(enemy:Enemy) -> String {
-        var damage : Int
-        damage = skill.nomalAttack(attack: attack)
-        damage = damageCalculate(skillDamage: damage, enemyDefence: enemy.getDefense())
+    func skill_(enemy:Enemy ,skillName :String) -> String {
+           var damage : Int
+        damage = damageCalculate(skillDamage: skill.choseSkill(skillName: skillName, attack: attack, magickAttack: magickAttack), enemyDefence: enemy.getDefense())
         
         enemy.hitPointOpelate(changePoint: -damage)
-        
-        return "\nプレイヤーは" + enemy.getName() + "に" + String(damage) + "のダメージを与えた\n"
-    }
-    
-    func magick(enemy:Enemy) -> String {
-        var damage : Int
-        damage = skill.nomalMagickAttack(magickAttack: magickAttack)
-        damage = damageCalculate(skillDamage: damage, enemyDefence: enemy.getDefense())
-        
-        enemy.hitPointOpelate(changePoint: -damage)
-        return "\nプレイヤーは" + enemy.getName() + "に" + String(damage) + "のダメージを与えた\n"
-    }
+        enemy.deadJudgment()
+           
+           return "\nプレイヤーは" +  skillName + "で" + enemy.getName() + "に" + String(damage) + "のダメージを与えた\n"
+       }
 
     
     func getMagicPoint() -> Int {
         return nowMagicPoint
     }
     
-    func magicPointOplate() -> Int {
-        //MPの増減
-        return 0
+    func magicPointOplate(changePoint : Int){
+        nowMagicPoint = nowMagicPoint + changePoint
+        if (nowMagicPoint >= maxMagicPoint){
+            nowMagicPoint = maxMagicPoint
+        }
     }
+    
 }
