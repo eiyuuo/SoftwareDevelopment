@@ -117,6 +117,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTJ-RA-Ifa" userLabel="赤">
+                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9le-O0-M6P"/>
@@ -129,6 +137,7 @@
                         <outlet property="no" destination="6bt-mj-8Rw" id="Dcv-PX-X6Y"/>
                         <outlet property="nomalAttack" destination="Cyw-IX-k5B" id="Rjm-Xg-w37"/>
                         <outlet property="nomalMagick" destination="01a-7a-Yf7" id="ryd-7r-Wi6"/>
+                        <outlet property="red" destination="kTJ-RA-Ifa" id="8Kt-21-Msu"/>
                         <outlet property="skillBackGround" destination="7an-Hr-o6t" id="HLz-zp-Ub7"/>
                         <outlet property="skillCaption" destination="iAC-0W-0DT" id="35X-iy-Fbp"/>
                         <outlet property="strongAttack" destination="Gkr-bc-ykG" id="Kxc-lD-MjD"/>

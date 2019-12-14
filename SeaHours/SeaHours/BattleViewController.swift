@@ -23,6 +23,7 @@ class BattleViewController: UIViewController {
     //背景系
     @IBOutlet weak var skillBackGround: UIImageView!
     @IBOutlet weak var teki: UIImageView!
+    @IBOutlet weak var red: UILabel!
     
     //ラベル系
     @IBOutlet weak var label1: UILabel!
@@ -143,6 +144,23 @@ class BattleViewController: UIViewController {
             self.teki.bounds.size.height -= 30.0
             self.teki.bounds.size.width -= 30.0
         }
+        
+        UIView.animate(withDuration: 0.2, delay: 1.2, animations: {
+            self.red.alpha = 0.8
+        }) { _ in
+            self.red.alpha = 0.0
+            UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
+                self.red.alpha = 0.8
+            }) { _ in
+                self.red.alpha = 0.0
+            }
+            if (self.nowChoseSkillName == "strongAttack" || self.nowChoseSkillName == "nomalAttack" ) {
+                self.playAudio(audioName: self.audioAttack)
+            } else{
+                self.playAudio(audioName: self.audioMagick)
+            }
+
+        }
     }
     
     func makeLabelLine(label : UILabel!) {
@@ -164,7 +182,7 @@ class BattleViewController: UIViewController {
         nomalMagick.isEnabled = boolType
         
         yes.isHidden = boolType
-        if (skillPoint < battle.player.getSkillPoint() ){
+        if (skillPoint - battle.player.getSkillPoint() < 0){
             yes.isEnabled = true
         } else {
             yes.isEnabled = false
