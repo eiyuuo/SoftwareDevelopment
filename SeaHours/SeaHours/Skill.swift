@@ -10,7 +10,7 @@ import Foundation
 
 class Skill {
     let magickSkillHitPercentageList : [Int] = [95,95,90,90,90]
-    let attackSkillHitPercentageList : [Int] = [100,95,95,95,95,95,100,80,80,80,80,80,70,65,70,70,70] //仮仕様です。一番上のメソッドから順に命中率を入れていきます
+    let attackSkillHitPercentageList : [Int] = [100,95,95,95,95,95,100] //仮仕様です。一番上のメソッドから順に命中率を入れていきます
     
     
     let skillLis : [String] = ["nomalAttack" , "nomalMagickAttack", "strongAttack", "strongMagickAttack"]
@@ -20,6 +20,7 @@ class Skill {
         let randomNumber = Int.random(in: 0 ... 100)
         
         switch skillName {
+//ここからアタック系スキル
         case "通常攻撃":
             return nomalAttack(attack: attack ,randomNumber: randomNumber)
             
@@ -41,6 +42,7 @@ class Skill {
         case "体当たり":
             return bodyBlow(attack: attack, randomNumber: randomNumber)
             
+//ここから魔法系スキル
         case "ファイア":
             return fire(magickAttack: magickAttack,randomNumber : randomNumber)
             
@@ -56,12 +58,22 @@ class Skill {
         case "ショット":
             return shot(magickAttack: magickAttack,randomNumber : randomNumber)
             
+//ここから回復スキル
+        case "ヒール":
+            return heel()
+            
+        case "ハイヒール":
+            return highHeel()
+            
+        case "グレイヒール":
+            return greatHeel()
+            
         default:
             return 0
         }
     }
     
-    //攻撃依存スキル
+//攻撃依存スキル
     func nomalAttack(attack : Int,randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
         if (attackSkillHitPercentageList[0] - randomNumber > 0){
@@ -120,7 +132,7 @@ class Skill {
     }
     
     
-    //魔法依存スキル
+//魔法依存スキル
     func fire(magickAttack : Int, randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったら魔法アタックの何倍？など適当に計算。外したら0を返す。
         if (magickSkillHitPercentageList[0] - randomNumber > 0){
@@ -161,6 +173,18 @@ class Skill {
             return 0
         }
     }
-
+    
+//回復系スキル
+    func heel() -> Double {
+        return 10
+    }
+    
+    func highHeel() -> Double {
+        return 100
+    }
+    
+    func greatHeel() -> Double {
+        return 300
+    }
 
 }
