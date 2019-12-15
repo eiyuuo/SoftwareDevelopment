@@ -10,28 +10,27 @@ import Foundation
 
 class Enemy : Character {
         
-    func selectSkill() -> Int {
+    func selectSkill() -> Double {
         //スキルを自動で選ぶ。例）HP50％を切ったら別のスキルなど？
         //今は仮の実装なので，2分の1で選ぶ
         
-        var damege :Int
+        var damege :Double
         
         let randomBool = Bool.random()
         let randomNumber = Int.random(in: 1 ... 100)
         if (randomBool){
             damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
-            return damege
+            return Double(damege)
         }else{
-            damege = self.skill.nomalMagickAttack(magickAttack: magickAttack, randomNumber: randomNumber)
-            return damege
+            damege = self.skill.fire(magickAttack: magickAttack, randomNumber: randomNumber)
+            return Double(damege)
         }
     }
     
     func skill(player : Player) -> String {
         var damage : Int
         
-        damage = selectSkill()
-        damage = damageCalculate(skillDamage: damage, enemyDefence: player.defense)
+        damage = damageCalculate(skillDamage: selectSkill(), enemyDefence: player.defense)
         
         player.hitPointOpelate(changePoint: -damage)
         player.deadJudgment()

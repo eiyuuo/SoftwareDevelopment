@@ -33,10 +33,10 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var skillCaption: UILabel!
     
     //ボタン系
-    @IBOutlet weak var strongAttack : UIButton!
     @IBOutlet weak var nomalAttack : UIButton!
-    @IBOutlet weak var strongMagick : UIButton!
-    @IBOutlet weak var nomalMagick : UIButton!
+    @IBOutlet weak var strongAttack : UIButton!
+    @IBOutlet weak var fire : UIButton!
+    @IBOutlet weak var heel : UIButton!
     @IBOutlet weak var yes : UIButton!
     @IBOutlet weak var no : UIButton!
     
@@ -63,20 +63,21 @@ class BattleViewController: UIViewController {
     }
     
     //スキルのボタンについて
-    @IBAction func strongAttack(_ sender: Any) {
-        buttonIsHide(skillName: "strongAttack",boolType: false , skillPoint: 10)
-    }
-    
-    @IBAction func strongMagick(_ sender: Any) {
-        buttonIsHide(skillName: "strongMagickAttack",boolType: false , skillPoint: 50)
-    }
     
     @IBAction func nomalAttack(_ sender: Any) {
-        buttonIsHide(skillName: "nomalAttack",boolType: false , skillPoint: 0)
+        buttonIsHide(skillName: "通常攻撃",boolType: false , skillPoint: 0)
     }
     
-    @IBAction func nomalMagick(_ sender: Any) {
-        buttonIsHide(skillName: "nomalMagickAttack",boolType: false , skillPoint: 100)
+    @IBAction func fire(_ sender: Any) {
+        buttonIsHide(skillName: "ファイア",boolType: false , skillPoint: 5)
+    }
+    
+    @IBAction func strongAttack(_ sender: Any) {
+        buttonIsHide(skillName: "渾身の一撃",boolType: false , skillPoint: 5)
+    }
+    
+    @IBAction func heel(_ sender: Any) {
+        buttonIsHide(skillName: "ヒール",boolType: false , skillPoint: 10)
     }
     
     
@@ -178,11 +179,11 @@ class BattleViewController: UIViewController {
     func buttonIsHide(skillName : String , boolType : Bool, skillPoint : Int){
         strongAttack.isEnabled = boolType
         nomalAttack.isEnabled = boolType
-        strongMagick.isEnabled = boolType
-        nomalMagick.isEnabled = boolType
+        fire.isEnabled = boolType
+        heel.isEnabled = boolType
         
         yes.isHidden = boolType
-        if (skillPoint - battle.player.getSkillPoint() < 0){
+        if (skillPoint <= battle.player.getSkillPoint()){
             yes.isEnabled = true
         } else {
             yes.isEnabled = false

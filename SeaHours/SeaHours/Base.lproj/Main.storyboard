@@ -30,40 +30,40 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-IX-k5B">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-IX-k5B" userLabel="通常攻撃">
                                 <rect key="frame" x="111" y="617" width="150" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <state key="normal" title="攻撃"/>
+                                <state key="normal" title="通常攻撃"/>
                                 <connections>
                                     <action selector="nomalAttack:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rE9-iO-tGJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01a-7a-Yf7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01a-7a-Yf7" userLabel="ファイア">
                                 <rect key="frame" x="369" y="617" width="184" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <state key="normal" title="魔法"/>
+                                <state key="normal" title="ファイア"/>
                                 <connections>
-                                    <action selector="nomalMagick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Rf5-H8-YRc"/>
+                                    <action selector="fire:" destination="BV1-FR-VrT" eventType="touchUpInside" id="OEG-F6-83D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-bc-ykG">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-bc-ykG" userLabel="渾身の一撃">
                                 <rect key="frame" x="101" y="702" width="196" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <state key="normal" title="攻撃（強）"/>
+                                <state key="normal" title="渾身の一撃"/>
                                 <connections>
-                                    <action selector="strongAttack:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fJn-E4-g14"/>
+                                    <action selector="strongAttack:" destination="BV1-FR-VrT" eventType="touchUpInside" id="J5I-rA-8za"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-So-T3C">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-So-T3C" userLabel="ヒール">
                                 <rect key="frame" x="365" y="702" width="196" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <state key="normal" title="魔法（強）"/>
+                                <state key="normal" title="ヒール"/>
                                 <connections>
-                                    <action selector="strongMagick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fbH-hl-c7b"/>
+                                    <action selector="heel:" destination="BV1-FR-VrT" eventType="touchUpInside" id="b9o-JX-hdr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-D0-X1G" userLabel="スキル枠の">
@@ -130,18 +130,18 @@
                         <viewLayoutGuide key="safeArea" id="9le-O0-M6P"/>
                     </view>
                     <connections>
+                        <outlet property="fire" destination="01a-7a-Yf7" id="a5R-GQ-GQL"/>
+                        <outlet property="heel" destination="JBd-So-T3C" id="BQc-YT-4pi"/>
                         <outlet property="label1" destination="CJk-ey-bjh" id="1DD-GI-gz7"/>
                         <outlet property="label2" destination="s8f-D0-X1G" id="peE-IP-nVK"/>
                         <outlet property="log" destination="sae-Ab-mBN" id="X5S-wX-ntI"/>
                         <outlet property="logFlame" destination="WUy-rX-wHi" id="OHH-Rg-1Cp"/>
                         <outlet property="no" destination="6bt-mj-8Rw" id="Dcv-PX-X6Y"/>
                         <outlet property="nomalAttack" destination="Cyw-IX-k5B" id="Rjm-Xg-w37"/>
-                        <outlet property="nomalMagick" destination="01a-7a-Yf7" id="ryd-7r-Wi6"/>
                         <outlet property="red" destination="kTJ-RA-Ifa" id="8Kt-21-Msu"/>
                         <outlet property="skillBackGround" destination="7an-Hr-o6t" id="HLz-zp-Ub7"/>
                         <outlet property="skillCaption" destination="iAC-0W-0DT" id="35X-iy-Fbp"/>
-                        <outlet property="strongAttack" destination="Gkr-bc-ykG" id="Kxc-lD-MjD"/>
-                        <outlet property="strongMagick" destination="JBd-So-T3C" id="rRi-DI-S5r"/>
+                        <outlet property="strongAttack" destination="Gkr-bc-ykG" id="263-a4-QgB"/>
                         <outlet property="teki" destination="5Do-jP-0us" id="78F-Bv-BfR"/>
                         <outlet property="yes" destination="kTj-vl-YmM" id="QCB-Fr-bYn"/>
                     </connections>
