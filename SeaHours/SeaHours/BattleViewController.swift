@@ -81,8 +81,8 @@ class BattleViewController: UIViewController {
         buttonIsHide(skillName: "ハイヒール",boolType: false , skillPoint: 10)
     }
     
-    
-    override func viewDidLoad() { //インスタンスみたいな感じに初めに呼び出されるやつ
+    //ーーーーーーーーーーーーーーーーー↓インスタンスみたいの↓ーーーーーーーーーーーーーーーーーー
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         setSound(MP3Name: "punch-high1" , audioName: audioAttack)
@@ -96,7 +96,8 @@ class BattleViewController: UIViewController {
         makeLabelLine(label: label2)
         
     }
-
+    //ーーーーーーーーーーーーーーーーー↑インスタンスみたいの↑ーーーーーーーーーーーーーーーーーー
+    
     override var shouldAutorotate: Bool {
         return true
     }
@@ -116,12 +117,7 @@ class BattleViewController: UIViewController {
     //↓追加コード
     
     //ログ生成
-    func makeLogPlayer() {
-        log.text = battle.getLogList()
-        label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
-    }
-    
-    func makeLogEnemy() {
+    func makeLog() {
         log.text = battle.getLogList()
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
     }
@@ -140,7 +136,7 @@ class BattleViewController: UIViewController {
                     self.teki.alpha = 1.0
                 }
                 //効果音位置
-                self.makeLogPlayer()
+                self.makeLog()
                 self.soundEffect(skillName: self.nowChoseSkillName)
 
                 //正確な動きになるが，場所はダメゼッタイ！！
@@ -179,7 +175,7 @@ class BattleViewController: UIViewController {
                     self.red.alpha = 0.0
                 }
                 //効果音位置
-                self.makeLogEnemy()
+                self.makeLog()
                 self.soundEffect(skillName: self.battle.enemy.getChooseSkillName())
             }
         }else { //敵がやられた時

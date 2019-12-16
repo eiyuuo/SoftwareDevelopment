@@ -12,7 +12,6 @@ class Skill {
     let magickSkillHitPercentageList : [Int] = [95,95,90,90,90]
     let attackSkillHitPercentageList : [Int] = [100,95,95,95,95,95,100] //仮仕様です。一番上のメソッドから順に命中率を入れていきます
     
-    
     let skillLis : [String] = ["nomalAttack" , "nomalMagickAttack", "strongAttack", "strongMagickAttack"]
     
     
@@ -20,6 +19,7 @@ class Skill {
         let randomNumber = Int.random(in: 0 ... 100)
         
         switch skillName {
+            
 //ここからアタック系スキル
         case "通常攻撃":
             return nomalAttack(attack: attack ,randomNumber: randomNumber)

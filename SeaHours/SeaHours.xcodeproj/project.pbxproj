@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
 		E408058223A536C0007A50B9 /* 黒.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E408058123A536C0007A50B9 /* 黒.jpg */; };
 		E408058423A536CC007A50B9 /* teki1.png in Resources */ = {isa = PBXBuildFile; fileRef = E408058323A536CC007A50B9 /* teki1.png */; };
 		E408058623A53E04007A50B9 /* damage7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408058523A53E04007A50B9 /* damage7.mp3 */; };
@@ -16,7 +17,6 @@
 		E42D318A23A67A1B007B5493 /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E42D318923A67A1B007B5493 /* kaihuku.mp3 */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
-		E4716F612393AF4400F09053 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F602393AF4400F09053 /* Player.swift */; };
 		E4716F6F23941B6600F09053 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F6E23941B6600F09053 /* Enemy.swift */; };
 		E4716F7123976D6100F09053 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F7023976D6100F09053 /* Battle.swift */; };
 		E4716F732397733300F09053 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F722397733300F09053 /* Slime.swift */; };
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E408058123A536C0007A50B9 /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黒.jpg"; path = "../../../oto/黒.jpg"; sourceTree = "<group>"; };
 		E408058323A536CC007A50B9 /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teki1.png; path = ../../../oto/teki1.png; sourceTree = "<group>"; };
 		E408058523A53E04007A50B9 /* damage7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = damage7.mp3; path = ../../../oto/damage7.mp3; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		E42D318923A67A1B007B5493 /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kaihuku.mp3; path = ../../../oto/kaihuku.mp3; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
-		E4716F602393AF4400F09053 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E4716F6E23941B6600F09053 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		E4716F7023976D6100F09053 /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		E4716F722397733300F09053 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
@@ -135,6 +135,7 @@
 		EEEC61F9238630E000C6819B /* SeaHours */ = {
 			isa = PBXGroup;
 			children = (
+				E406A2D323A7B43A00A576AC /* Player.swift */,
 				E4716F5C239275CA00F09053 /* Character.swift */,
 				E4716F7023976D6100F09053 /* Battle.swift */,
 				E4716F772397805A00F09053 /* BattleViewController.swift */,
@@ -142,7 +143,6 @@
 				E4716F6E23941B6600F09053 /* Enemy.swift */,
 				E4716F722397733300F09053 /* Slime.swift */,
 				E4716F74239773AD00F09053 /* Dragon.swift */,
-				E4716F602393AF4400F09053 /* Player.swift */,
 				EEEC61FA238630E000C6819B /* AppDelegate.swift */,
 				EEEC61FC238630E000C6819B /* GameScene.sks */,
 				EEEC61FE238630E000C6819B /* Actions.sks */,
@@ -321,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E406A2D423A7B43A00A576AC /* Player.swift in Sources */,
 				E4716F6F23941B6600F09053 /* Enemy.swift in Sources */,
 				E4716F5D239275CA00F09053 /* Character.swift in Sources */,
 				EEEC6201238630E000C6819B /* GameScene.swift in Sources */,
@@ -328,7 +329,6 @@
 				E4716F7123976D6100F09053 /* Battle.swift in Sources */,
 				E4716F5F2393A45B00F09053 /* Skill.swift in Sources */,
 				EEEC6203238630E000C6819B /* GameViewController.swift in Sources */,
-				E4716F612393AF4400F09053 /* Player.swift in Sources */,
 				EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */,
 				E4716F75239773AD00F09053 /* Dragon.swift in Sources */,
 				E4716F732397733300F09053 /* Slime.swift in Sources */,

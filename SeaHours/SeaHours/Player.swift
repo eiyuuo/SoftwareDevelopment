@@ -2,7 +2,7 @@
 //  Player.swift
 //  SeaHours
 //
-//  Created by Tomoya Gibo on 2019/12/01.
+//  Created by 東谷　歩夢 on 2019/12/16.
 //  Copyright © 2019 島袋太智. All rights reserved.
 //
 

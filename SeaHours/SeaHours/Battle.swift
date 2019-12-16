@@ -64,31 +64,4 @@ class Battle { //戦闘を管理するクラス
     func getLogList() -> String {
         return logList
     }
-    
-    
-    
-    func battle(tuchButtonName : String ) {
-        
-        var log : String = ""
-
-        //プレイヤー
-        if (!player.getIsDead()) {
-            log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
-            logList = log  + logList
-            if (enemy.getIsDead()) {
-              logList = "\n" + enemy.getName() + "は倒れた" + logList
-            }
-        }
-        
-        //エネミー
-        if (!enemy.getIsDead()){
-            log = enemy.skill(player: player)
-            logList = log + logList
-            if (player.getIsDead()) {
-              logList = "\nプレイヤーは力尽きた" + logList
-            }
-        }
-        
-    }
-    
 }
