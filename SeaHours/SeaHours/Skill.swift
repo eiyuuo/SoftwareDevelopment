@@ -10,6 +10,8 @@ import Foundation
 
 class Skill {
     
+    private let skillPointDict:[String:Int] = ["通常攻撃" : 0 , "渾身の一撃" : 5 , "スラント" : 5 , "クロー" : 5 , "テールアタック" : 5 , "噛みつく" : 5 , "体当たり" : 5 , "エアスラッシュ" : 13 , "クロスブレイブ" : 13 , "アッパーブレイド" : 13 , "ドライブフェンサー" : 13 , "アークバイト" : 13 , "アストラルクロス" : 25 , "ツヴァイセイバー" : 25 , "シャインセイバー" : 25 , "ドラグテイル" : 25 , "リヴァイクロー" : 30 , "ファイア" : 5 , "ウィンド" : 5 , "アイス" : 5 , "ストーン" : 5 , "ショット" : 5 , "ファイアアロウ" : 20 , "ウィンドカッター" : 20 , "アイスランス" : 20 , "ストーンエッジ" : 20 , "イフリート" : 50 , "テンペスト" : 50 , "ブリザード" : 50 , "アースクエイク" : 50 , "ナイトメア" : 60 , "ヒール" : 5 , "ハイヒール" : 20 , "グレイヒール" : 50 ]
+    
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
         let randomNumber = Int.random(in: 0 ... 100)
         
@@ -181,5 +183,15 @@ class Skill {
     func greatHeel() -> Double {
         return 300
     }
+    
+    //ゲッター
+    func getSkillPoint(keyName : String) -> Int {
+        print (skillPointDict[keyName]!)
+        return skillPointDict[keyName]!
+    }
 
+    func getSkillPointDict() -> [String:Int] {
+        return skillPointDict
+    }
+    
 }

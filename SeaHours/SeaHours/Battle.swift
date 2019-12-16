@@ -17,7 +17,7 @@ class Battle { //戦闘を管理するクラス
     
     init(enemyName : String ) {
         
-        let playerStatas : [Int] = [100 , 10 , 10 , 5000 , 50]//仮のステータス　後々ステータスクラスから引っ張る予定
+        let playerStatas : [Int] = [1 , 10 , 10 , 5000 , 50]//仮のステータス　後々ステータスクラスから引っ張る予定
         self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxSkillPoint: playerStatas[4])
         
         switch enemyName { //どの敵なのか？

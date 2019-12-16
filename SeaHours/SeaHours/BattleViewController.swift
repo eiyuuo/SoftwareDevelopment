@@ -13,6 +13,7 @@ import AVFoundation
 
 class BattleViewController: UIViewController {
     
+    private let skillDict = Skill().getSkillPointDict()
     private let battle = Battle(enemyName: "dragon1")
     private var nowChoseSkillName : String = ""
     
@@ -35,7 +36,6 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var skillCaption: UILabel!
     @IBOutlet weak var gameOver: UILabel!
     
-    
     //ボタン系
     @IBOutlet weak var nomalAttack : UIButton!
     @IBOutlet weak var strongAttack : UIButton!
@@ -48,7 +48,8 @@ class BattleViewController: UIViewController {
     //スキルの使用ボタンについて
     @IBAction func yes(_ sender: Any) {
         //ボタン消す→プレイヤーのターン→敵のターンの順番で記述
-        buttonIsHide(skillName: nowChoseSkillName , boolType: true , skillPoint: 0)
+        buttonIsHide(skillName: nowChoseSkillName , boolType: true)
+        makeSkillButton(skillName : nowChoseSkillName , boolType : true)
         
         battle.battlePlayerTurn(tuchButtonName: nowChoseSkillName)
         playerAnimation()
@@ -60,25 +61,30 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func no(_ sender: Any) {
-        buttonIsHide(skillName: nowChoseSkillName , boolType: true, skillPoint: 0)
+        buttonIsHide(skillName: nowChoseSkillName , boolType: true)
+        makeSkillButton(skillName : nowChoseSkillName , boolType : true)
     }
     
     //スキルのボタンについて
     
     @IBAction func nomalAttack(_ sender: Any) {
-        buttonIsHide(skillName: "通常攻撃",boolType: false , skillPoint: 0)
+        buttonIsHide(skillName: "通常攻撃",boolType: false )
+        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
     
     @IBAction func fire(_ sender: Any) {
-        buttonIsHide(skillName: "ファイア",boolType: false , skillPoint: 5)
+        buttonIsHide(skillName: "ファイア",boolType: false )
+        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
     
     @IBAction func strongAttack(_ sender: Any) {
-        buttonIsHide(skillName: "渾身の一撃",boolType: false , skillPoint: 5)
+        buttonIsHide(skillName: "渾身の一撃",boolType: false )
+        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
     
     @IBAction func heel(_ sender: Any) {
-        buttonIsHide(skillName: "ハイヒール",boolType: false , skillPoint: 10)
+        buttonIsHide(skillName: "ハイヒール",boolType: false )
+        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
     
     //ーーーーーーーーーーーーーーーーー↓インスタンスみたいの↓ーーーーーーーーーーーーーーーーーー
@@ -177,6 +183,12 @@ class BattleViewController: UIViewController {
                 //効果音位置
                 self.makeLog()
                 self.soundEffect(skillName: self.battle.enemy.getChooseSkillName())
+                if self.battle.player.getIsDead() {
+                    UIView.animate(withDuration: 0.5, delay: 1.5, animations: {
+                        self.gameOver.isHidden = false
+                    })
+                }
+
             }
         }else { //敵がやられた時
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
@@ -198,14 +210,18 @@ class BattleViewController: UIViewController {
     }
     
     //ボタンを消すなど
-    func buttonIsHide(skillName : String , boolType : Bool, skillPoint : Int){
+    func buttonIsHide(skillName : String , boolType : Bool){
         strongAttack.isEnabled = boolType
         nomalAttack.isEnabled = boolType
         fire.isEnabled = boolType
         heel.isEnabled = boolType
         
+        nowChoseSkillName = skillName
+    }
+    
+    func makeSkillButton(skillName : String , boolType : Bool) {
         yes.isHidden = boolType
-        if (skillPoint <= battle.player.getSkillPoint()){
+        if (skillDict[skillName]! <= battle.player.getSkillPoint()){
             yes.isEnabled = true
         } else {
             yes.isEnabled = false
@@ -214,8 +230,7 @@ class BattleViewController: UIViewController {
         no.isHidden = boolType
         skillBackGround.isHidden = boolType
         skillCaption.isHidden = boolType
-        
-        nowChoseSkillName = skillName
+
     }
 
     /*上詰のコードログが見えなくなった...

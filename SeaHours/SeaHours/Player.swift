@@ -26,12 +26,14 @@ class Player : Character {
         if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" ) {//回復系のスキル　3つしか想定してないのでいいよね...
             damage = damageCalculate(skillDamage: skill.choseSkill(skillName: skillName, attack: attack, magickAttack: magickAttack), enemyDefence: 0)
             
-            self.hitPointOpelate(changePoint: damage)
+            skillPointOplate(changePoint: -skill.getSkillPoint(keyName:skillName))
+            hitPointOpelate(changePoint: damage)
             
             return "\nプレイヤーは" +  skillName + "で" + String(damage) + "回復した\n"
         } else { //攻撃系のスキル
             damage = damageCalculate(skillDamage: skill.choseSkill(skillName: skillName, attack: attack, magickAttack: magickAttack), enemyDefence: enemy.getDefense())
             
+            skillPointOplate(changePoint: -skill.getSkillPoint(keyName:skillName))
             enemy.hitPointOpelate(changePoint: -damage)
             enemy.deadJudgment()
                
