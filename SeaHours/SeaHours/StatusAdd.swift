@@ -16,81 +16,146 @@ class StatusAdd {
     
     let status = Status()
     
-    //EXP-1の時のステータス割り振りおよび保存
-    func AddHP(){
-        status.HP += 2
-        print(status.HP)
+    var hp:Int!
+    var sp:Int!
+    var atk:Int!
+    var def:Int!
+    var int:Int!
+    var exp:Int!
+    
+    init(){
+        self.hp = status.getHP()
+        self.sp = status.getSP()
+        self.atk = status.getATK()
+        self.def = status.getDEF()
+        self.int = status.getINT()
+        self.exp = status.getEXP()
     }
     
-    func AddMP(){
-        status.MP += 1
-        status.setMP(point :status.MP)
+    
+    //EXP-1の時のステータス割り振りおよび保存
+    func AddHP(){
+        hp += 2
+    }
+    
+    func AddSP(){
+        sp += 1
     }
     
     func AddATK(){
-        status.ATK += 1
-        status.setATK(point :status.ATK)
+        atk += 1
     }
     
     func AddDEF(){
-        status.DEF += 1
-        status.setDEF(point :status.DEF)
+        def += 1
     }
     
     func AddINT(){
-        status.INT += 1
-        status.setINT(point :status.INT)
+        int += 1
     }
     
     func MinusEXP(){
-        status.EXP -= 1
-        status.setEXP(point :status.EXP)
-        print(status.getEXP())
+        exp -= 1
+    }
+    
+    
+    
+    //EXP+1の時のステータス割り振りおよび保存
+    func MinusHP(){
+        hp -= 2
+    }
+    
+    func MinusSP(){
+        sp -= 1
+    }
+    
+    func MinusATK(){
+        atk -= 1
+    }
+    
+    func MinusDEF(){
+        def -= 1
+    }
+    
+    func MinusINT(){
+        int -= 1
+    }
+    
+    func AddEXP(){
+        exp += 1
     }
     
     
     
     //EXP-10の時のステータス割り振りおよび保存
     func AddTenHP(){
-        status.HP += 20
-        status.setHP(point :status.HP)
+        hp += 20
     }
     
-    func AddTenMP(){
-        status.MP += 10
-        status.setMP(point :status.MP)
+    func AddTenSP(){
+        sp += 10
     }
     
     func AddTenATK(){
-        status.ATK += 10
-        status.setATK(point :status.ATK)
+        atk += 10
     }
     
     func AddTenDEF(){
-        status.DEF += 10
-        status.setDEF(point :status.DEF)
+        def += 10
     }
     
     func AddTenINT(){
-        status.INT += 10
-        status.setINT(point :status.INT)
+        int += 10
     }
     
     func MinusTenEXP(){
-        status.EXP -= 10
-        status.setEXP(point :status.EXP)
+        exp -= 10
+    }
+    
+    
+    
+    //EXP+10の時のステータス割り振りおよび保存
+    func MinusTenHP(){
+        hp -= 20
+    }
+    
+    func MinusTenSP(){
+        sp -= 10
+    }
+    
+    func MinusTenATK(){
+        atk -= 10
+    }
+    
+    func MinusTenDEF(){
+        def -= 10
+    }
+    
+    func MinusTenINT(){
+        int -= 10
+    }
+    
+    func AddTenEXP(){
+        exp += 10
     }
     
     
     
     //変更したステータスの値を保存
     func SaveStatus(){
-        status.setHP(point :status.HP)
-        status.setMP(point :status.MP)
-        status.setATK(point :status.ATK)
-        status.setDEF(point :status.DEF)
-        status.setINT(point :status.INT)
-        status.setEXP(point :status.EXP)
+        status.setHP(point :hp)
+        status.setSP(point :sp)
+        status.setATK(point :atk)
+        status.setDEF(point :def)
+        status.setINT(point :int)
+        status.setEXP(point :exp)
+        
+        print("HP:\(status.getHP())")
+        print("SP:\(status.getSP())")
+        print("ATK:\(status.getATK())")
+        print("DEF:\(status.getDEF())")
+        print("INT:\(status.getINT())")
+        print("EXP:\(status.getEXP())")
     }
     
     

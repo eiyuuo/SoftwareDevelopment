@@ -19,25 +19,42 @@ class GameViewController: UIViewController {
     
     
     var TouchEXP: Bool = true //EXPの消費切り替え用変数
-    var JudgeEXP: Int = 0
-
+    var JudgeEXP: Int!
+    
+    
+    
+    var HPi: Int!
+    var SPi: Int!
+    var ATKi: Int!
+    var DEFi: Int!
+    var INTi: Int!
+    
     
     
     //現在ステの表示label
     @IBOutlet weak var HPpoint: UILabel!
-    @IBOutlet weak var MPpoint: UILabel!
+    @IBOutlet weak var SPpoint: UILabel!
     @IBOutlet weak var ATKpoint: UILabel!
     @IBOutlet weak var DEFpoint: UILabel!
     @IBOutlet weak var INTpoint: UILabel!
     @IBOutlet weak var EXPpoint: UILabel!
     
-    //各ステータスに対応したボタン
+    //各ステータスプラス
     @IBOutlet weak var HPButton: UIButton!
-    @IBOutlet weak var MPButton: UIButton!
+    @IBOutlet weak var SPButton: UIButton!
     @IBOutlet weak var ATKButton: UIButton!
     @IBOutlet weak var DEFButton: UIButton!
     @IBOutlet weak var INTButton: UIButton!
     @IBOutlet weak var ChangeEXP: UIButton!
+    
+    //各ステータスマイナス
+    @IBOutlet weak var HPminus: UIButton!
+    @IBOutlet weak var SPminus: UIButton!
+    @IBOutlet weak var ATKminus: UIButton!
+    @IBOutlet weak var DEFminus: UIButton!
+    @IBOutlet weak var INTminus: UIButton!
+    
+    
     @IBOutlet weak var Save: UIButton!
     
     
@@ -49,9 +66,9 @@ class GameViewController: UIViewController {
     @IBAction func TouchEXPpoint(_ sender: Any) {
         TouchEXP.toggle()
         if TouchEXP == false {
-            ChangeEXP.setTitle("EXP -10", for: .normal)
+            ChangeEXP.setTitle("EXP ±10", for: .normal)
         }else{
-            ChangeEXP.setTitle("EXP -1", for: .normal)
+            ChangeEXP.setTitle("EXP ±1", for: .normal)
         }
     }
     
@@ -60,7 +77,7 @@ class GameViewController: UIViewController {
     @IBAction func AddHP(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費-1の場合
-            if 0 < status.EXP {
+            if 0 < JudgeEXP {
                 statusadd.AddHP()
                 statusadd.MinusEXP()
                 
@@ -77,11 +94,12 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 1
+                JudgeEXP -= 1
+                HPi += 2
             }
         }else{
             //EXP消費-10の場合
-            if 10 <= status.EXP {
+            if 10 <= JudgeEXP {
             statusadd.AddTenHP()
             statusadd.MinusTenEXP()
             
@@ -98,22 +116,24 @@ class GameViewController: UIViewController {
 
             EXPpoint.text = String(sum1!)
             
-            status.EXP -= 10
+            JudgeEXP -= 10
+            HPi += 20
             }
         }
     }
     
-    @IBAction func AddMP(_ sender: Any) {
+    
+    @IBAction func AddSP(_ sender: Any) {
         if TouchEXP == true {
-            if 0 < status.EXP {
-                statusadd.AddMP()
+            if 0 < JudgeEXP {
+                statusadd.AddSP()
                 statusadd.MinusEXP()
                 
-                let mp:Int? = Int(MPpoint.text!)
+                let mp:Int? = Int(SPpoint.text!)
 
                 let sum:Int? = mp! + 1
 
-                MPpoint.text = String(sum!)
+                SPpoint.text = String(sum!)
                 
                 let exp:Int? = Int(EXPpoint.text!)
 
@@ -121,18 +141,18 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 1
+                JudgeEXP -= 1
             }
         }else{
-            if 10 <= status.EXP {
-                statusadd.AddTenMP()
+            if 10 <= JudgeEXP {
+                statusadd.AddTenSP()
                 statusadd.MinusTenEXP()
                 
-                let mp:Int? = Int(MPpoint.text!)
+                let mp:Int? = Int(SPpoint.text!)
 
                 let sum:Int? = mp! + 10
 
-                MPpoint.text = String(sum!)
+                SPpoint.text = String(sum!)
                 
                 let exp:Int? = Int(EXPpoint.text!)
 
@@ -140,15 +160,15 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 10
+                JudgeEXP -= 10
             }
         }
-        
     }
+    
     
     @IBAction func AddATK(_ sender: Any) {
         if TouchEXP == true {
-            if 0 < status.EXP {
+            if 0 < JudgeEXP {
                 statusadd.AddATK()
                 statusadd.MinusEXP()
                 
@@ -164,10 +184,10 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 1
+                JudgeEXP -= 1
             }
         }else{
-            if 10 <= status.EXP {
+            if 10 <= JudgeEXP {
                 statusadd.AddTenATK()
                 statusadd.MinusTenEXP()
                 
@@ -183,7 +203,7 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 10
+                JudgeEXP -= 10
             }
         }
         
@@ -191,7 +211,7 @@ class GameViewController: UIViewController {
     
     @IBAction func AddDEF(_ sender: Any) {
         if TouchEXP == true {
-            if 0 < status.EXP {
+            if 0 < JudgeEXP {
                 statusadd.AddDEF()
                 statusadd.MinusEXP()
                 
@@ -207,10 +227,10 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 1
+                JudgeEXP -= 1
             }
         }else{
-            if 10 <= status.EXP {
+            if 10 <= JudgeEXP {
                 statusadd.AddTenDEF()
                 statusadd.MinusTenEXP()
                 
@@ -226,7 +246,7 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 10
+                JudgeEXP -= 10
             }
         }
         
@@ -234,7 +254,7 @@ class GameViewController: UIViewController {
     
     @IBAction func AddINT(_ sender: Any) {
         if TouchEXP == true {
-            if 0 < status.EXP {
+            if 0 < JudgeEXP {
                 statusadd.AddINT()
                 statusadd.MinusEXP()
                 
@@ -250,10 +270,10 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 1
+                JudgeEXP -= 1
             }
         }else{
-            if 10 <= status.EXP {
+            if 10 <= JudgeEXP {
                 statusadd.AddTenINT()
                 statusadd.MinusTenEXP()
                 
@@ -269,11 +289,63 @@ class GameViewController: UIViewController {
 
                 EXPpoint.text = String(sum1!)
                 
-                status.EXP -= 10
+                JudgeEXP -= 10
             }
         }
         
     }
+    
+    
+    
+    @IBAction func MinusHP(_ sender: Any) {
+        if TouchEXP == true {
+            //EXP消費+1の場合
+            if 2 < HPi {
+                statusadd.MinusHP()
+                statusadd.AddEXP()
+                       
+                let hp:Int? = Int(HPpoint.text!)
+
+                let sum:Int? = hp! - 2
+
+                HPpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 1
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 1
+                HPi -= 2
+                
+                }
+               }else{
+                   //EXP消費-10の場合
+                   if 20 < HPi {
+                   statusadd.MinusTenHP()
+                   statusadd.AddTenEXP()
+                   
+                   let hp:Int? = Int(HPpoint.text!)
+
+                   let sum:Int? = hp! - 20
+
+                   HPpoint.text = String(sum!)
+                   
+                   
+                   let exp:Int? = Int(EXPpoint.text!)
+
+                   let sum1:Int? = exp! + 10
+
+                   EXPpoint.text = String(sum1!)
+                   
+                   JudgeEXP += 10
+                    HPi -= 20
+                   }
+               }
+    }
+    
     
     //-------------------------------------------------------------------------
     
@@ -299,23 +371,31 @@ class GameViewController: UIViewController {
         
         //labelに各ステータスの数字が連携
         HPpoint.text = status.getHPs()
-        MPpoint.text = status.getMPs()
+        SPpoint.text = status.getSPs()
         ATKpoint.text = status.getATKs()
         DEFpoint.text = status.getDEFs()
         INTpoint.text = status.getINTs()
         EXPpoint.text = status.getEXPs()
         
+        
+        
         JudgeEXP = status.getEXP()
+        HPi = status.getHP()
+        SPi = status.getSP()
+        ATKi = status.getATK()
+        DEFi = status.getDEF()
+        INTi = status.getINT()
         
         
-        //各ボタンの装飾
+        
+        //各ボタンの装飾(プラス)
         HPButton.layer.borderWidth = 1
         HPButton.layer.borderColor = UIColor.white.cgColor
         HPButton.layer.cornerRadius = 10.0
         
-        MPButton.layer.borderWidth = 1
-        MPButton.layer.borderColor = UIColor.white.cgColor
-        MPButton.layer.cornerRadius = 10.0
+        SPButton.layer.borderWidth = 1
+        SPButton.layer.borderColor = UIColor.white.cgColor
+        SPButton.layer.cornerRadius = 10.0
         
         ATKButton.layer.borderWidth = 1
         ATKButton.layer.borderColor = UIColor.white.cgColor
@@ -332,6 +412,28 @@ class GameViewController: UIViewController {
         ChangeEXP.layer.borderWidth = 1
         ChangeEXP.layer.borderColor = UIColor.white.cgColor
         ChangeEXP.layer.cornerRadius = 10.0
+        
+        //各ボタンの装飾(マイナス)
+        HPminus.layer.borderWidth = 1
+        HPminus.layer.borderColor = UIColor.white.cgColor
+        HPminus.layer.cornerRadius = 10.0
+        
+        SPminus.layer.borderWidth = 1
+        SPminus.layer.borderColor = UIColor.white.cgColor
+        SPminus.layer.cornerRadius = 10.0
+        
+        ATKminus.layer.borderWidth = 1
+        ATKminus.layer.borderColor = UIColor.white.cgColor
+        ATKminus.layer.cornerRadius = 10.0
+        
+        DEFminus.layer.borderWidth = 1
+        DEFminus.layer.borderColor = UIColor.white.cgColor
+        DEFminus.layer.cornerRadius = 10.0
+        
+        INTminus.layer.borderWidth = 1
+        INTminus.layer.borderColor = UIColor.white.cgColor
+        INTminus.layer.cornerRadius = 10.0
+        
         
         Save.layer.borderWidth = 1
         Save.layer.borderColor = UIColor.white.cgColor

@@ -13,13 +13,17 @@ import GameplayKit
 
 //各ステータスの設定および処理クラス
 class Status {
+    
+    let userDefaults = UserDefaults.standard
+    
     //初期ステータス(可変)
     var HP:Int = 20
-    var MP:Int = 0
+    var SP:Int = 0
     var ATK:Int = 5
     var DEF:Int = 5
     var INT:Int = 0
     var EXP:Int = 13
+    
 
     
     //get String
@@ -27,8 +31,8 @@ class Status {
         return String(HP)
     }
     
-    func getMPs() -> String {
-        return String(MP)
+    func getSPs() -> String {
+        return String(SP)
     }
     
     func getATKs() -> String {
@@ -54,8 +58,8 @@ class Status {
         return Int(HP)
     }
     
-    func getMP() -> Int {
-        return Int(MP)
+    func getSP() -> Int {
+        return Int(SP)
     }
     
     func getATK() -> Int {
@@ -85,8 +89,8 @@ class Status {
         HP = point
     }
     
-    func setMP(point: Int) {
-        MP = point
+    func setSP(point: Int) {
+        SP = point
     }
     
     func setATK(point: Int) {

@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02696A2D23A7571F005E593F /* StatusFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = StatusFile.txt; sourceTree = "<group>"; };
 		02FC128F23A1DE69007688B6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		02FC129123A1DE6E007688B6 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +109,7 @@
 				EEEC620C238630E200C6819B /* Info.plist */,
 				02FC128F23A1DE69007688B6 /* Status.swift */,
 				02FC129123A1DE6E007688B6 /* StatusAdd.swift */,
+				02696A2D23A7571F005E593F /* StatusFile.txt */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
