@@ -9,11 +9,6 @@
 import Foundation
 
 class Skill {
-    let magickSkillHitPercentageList : [Int] = [95,95,90,90,90]
-    let attackSkillHitPercentageList : [Int] = [100,95,95,95,95,95,100] //仮仕様です。一番上のメソッドから順に命中率を入れていきます
-    
-    let skillLis : [String] = ["nomalAttack" , "nomalMagickAttack", "strongAttack", "strongMagickAttack"]
-    
     
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
         let randomNumber = Int.random(in: 0 ... 100)
@@ -76,7 +71,7 @@ class Skill {
 //攻撃依存スキル
     func nomalAttack(attack : Int,randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
-        if (attackSkillHitPercentageList[0] - randomNumber > 0){
+        if (100 - randomNumber > 0){
             return Double(attack) * 1
         }else {
             return 0
@@ -84,7 +79,7 @@ class Skill {
     }
     
     func strongAttack(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[1] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(attack) * 2
         }else {
             return 0
@@ -92,7 +87,7 @@ class Skill {
     }
     
     func slant(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[2] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(attack) * 2.2
         }else {
             return 0
@@ -100,7 +95,7 @@ class Skill {
     }
     
     func claw(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[3] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(attack) * 2
         }else {
             return 0
@@ -108,7 +103,7 @@ class Skill {
     }
     
     func tailAttack(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[4] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(attack) * 2
         }else {
             return 0
@@ -116,7 +111,7 @@ class Skill {
     }
     
     func bite(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[5] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(attack) * 2
         }else {
             return 0
@@ -124,7 +119,7 @@ class Skill {
     }
     
     func bodyBlow(attack : Int,randomNumber : Int) -> Double {
-        if (attackSkillHitPercentageList[6] - randomNumber > 0){
+        if (100 - randomNumber > 0){
             return Double(attack) * 1.8
         }else {
             return 0
@@ -135,7 +130,7 @@ class Skill {
 //魔法依存スキル
     func fire(magickAttack : Int, randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったら魔法アタックの何倍？など適当に計算。外したら0を返す。
-        if (magickSkillHitPercentageList[0] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(magickAttack) * 2
         }else {
             return 0
@@ -143,7 +138,7 @@ class Skill {
     }
     
     func wind(magickAttack : Int, randomNumber : Int) -> Double {
-        if (magickSkillHitPercentageList[1] - randomNumber > 0){
+        if (95 - randomNumber > 0){
             return Double(magickAttack) * 2.2
         }else {
             return 0
@@ -151,7 +146,7 @@ class Skill {
     }
 
     func ice(magickAttack : Int, randomNumber : Int) -> Double {
-        if (magickSkillHitPercentageList[2] - randomNumber > 0){
+        if (90 - randomNumber > 0){
             return Double(magickAttack) * 2.4
         }else {
             return 0
@@ -159,7 +154,7 @@ class Skill {
     }
     
     func stone(magickAttack : Int, randomNumber : Int) -> Double {
-        if (magickSkillHitPercentageList[3] - randomNumber > 0){
+        if (90 - randomNumber > 0){
             return Double(magickAttack) * 2.2
         }else {
             return 0
@@ -167,7 +162,7 @@ class Skill {
     }
     
     func shot(magickAttack : Int, randomNumber : Int) -> Double {
-        if (magickSkillHitPercentageList[0] - randomNumber > 0){
+        if (90 - randomNumber > 0){
             return Double(magickAttack) * 2.5
         }else {
             return 0

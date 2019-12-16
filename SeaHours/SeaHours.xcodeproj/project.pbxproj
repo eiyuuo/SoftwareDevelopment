@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665F28ED23A7B6A40024AA9A /* damage7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 665F28EC23A7B6A30024AA9A /* damage7.mp3 */; };
+		665F28F023A7B6BA0024AA9A /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 665F28EE23A7B6BA0024AA9A /* game_explosion7.mp3 */; };
+		665F28F123A7B6BA0024AA9A /* fruitsparfait.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 665F28EF23A7B6BA0024AA9A /* fruitsparfait.mp3 */; };
+		665F28F323A7B6CB0024AA9A /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 665F28F223A7B6CB0024AA9A /* kaihuku.mp3 */; };
+		665F28F523A7B6D90024AA9A /* punch-high1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 665F28F423A7B6D90024AA9A /* punch-high1.mp3 */; };
+		665F28F823A7B6E70024AA9A /* 黒.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 665F28F623A7B6E70024AA9A /* 黒.jpg */; };
+		665F28F923A7B6E70024AA9A /* teki1.png in Resources */ = {isa = PBXBuildFile; fileRef = 665F28F723A7B6E70024AA9A /* teki1.png */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
-		E408058223A536C0007A50B9 /* 黒.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E408058123A536C0007A50B9 /* 黒.jpg */; };
-		E408058423A536CC007A50B9 /* teki1.png in Resources */ = {isa = PBXBuildFile; fileRef = E408058323A536CC007A50B9 /* teki1.png */; };
-		E408058623A53E04007A50B9 /* damage7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408058523A53E04007A50B9 /* damage7.mp3 */; };
-		E408058823A53E0A007A50B9 /* fruitsparfait.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408058723A53E0A007A50B9 /* fruitsparfait.mp3 */; };
-		E408058A23A53E12007A50B9 /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408058923A53E12007A50B9 /* game_explosion7.mp3 */; };
-		E408058C23A53E1D007A50B9 /* punch-high1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408058B23A53E1D007A50B9 /* punch-high1.mp3 */; };
-		E42D318A23A67A1B007B5493 /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E42D318923A67A1B007B5493 /* kaihuku.mp3 */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
 		E4716F6F23941B6600F09053 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F6E23941B6600F09053 /* Enemy.swift */; };
@@ -22,7 +22,6 @@
 		E4716F732397733300F09053 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F722397733300F09053 /* Slime.swift */; };
 		E4716F75239773AD00F09053 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F74239773AD00F09053 /* Dragon.swift */; };
 		E4716F782397805A00F09053 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F772397805A00F09053 /* BattleViewController.swift */; };
-		E4716F82239BB5F400F09053 /* 余白.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4716F81239BB5F400F09053 /* 余白.jpg */; };
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
 		EEEC61FD238630E000C6819B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FC238630E000C6819B /* GameScene.sks */; };
 		EEEC61FF238630E000C6819B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FE238630E000C6819B /* Actions.sks */; };
@@ -52,14 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		665F28EC23A7B6A30024AA9A /* damage7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = damage7.mp3; sourceTree = "<group>"; };
+		665F28EE23A7B6BA0024AA9A /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_explosion7.mp3; sourceTree = "<group>"; };
+		665F28EF23A7B6BA0024AA9A /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fruitsparfait.mp3; sourceTree = "<group>"; };
+		665F28F223A7B6CB0024AA9A /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kaihuku.mp3; sourceTree = "<group>"; };
+		665F28F423A7B6D90024AA9A /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "punch-high1.mp3"; sourceTree = "<group>"; };
+		665F28F623A7B6E70024AA9A /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "黒.jpg"; sourceTree = "<group>"; };
+		665F28F723A7B6E70024AA9A /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teki1.png; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		E408058123A536C0007A50B9 /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黒.jpg"; path = "../../../oto/黒.jpg"; sourceTree = "<group>"; };
-		E408058323A536CC007A50B9 /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teki1.png; path = ../../../oto/teki1.png; sourceTree = "<group>"; };
-		E408058523A53E04007A50B9 /* damage7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = damage7.mp3; path = ../../../oto/damage7.mp3; sourceTree = "<group>"; };
-		E408058723A53E0A007A50B9 /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fruitsparfait.mp3; path = ../../../oto/fruitsparfait.mp3; sourceTree = "<group>"; };
-		E408058923A53E12007A50B9 /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_explosion7.mp3; path = ../../../oto/game_explosion7.mp3; sourceTree = "<group>"; };
-		E408058B23A53E1D007A50B9 /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "punch-high1.mp3"; path = "../../../oto/punch-high1.mp3"; sourceTree = "<group>"; };
-		E42D318923A67A1B007B5493 /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kaihuku.mp3; path = ../../../oto/kaihuku.mp3; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		E4716F6E23941B6600F09053 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 		E4716F722397733300F09053 /* Slime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slime.swift; sourceTree = "<group>"; };
 		E4716F74239773AD00F09053 /* Dragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		E4716F772397805A00F09053 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
-		E4716F81239BB5F400F09053 /* 余白.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "余白.jpg"; path = "../../../../Pictures/余白.jpg"; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC61FA238630E000C6819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEEC61FC238630E000C6819B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -148,15 +146,14 @@
 				EEEC61FE238630E000C6819B /* Actions.sks */,
 				EEEC6200238630E000C6819B /* GameScene.swift */,
 				EEEC6202238630E000C6819B /* GameViewController.swift */,
-				E408058323A536CC007A50B9 /* teki1.png */,
-				E42D318923A67A1B007B5493 /* kaihuku.mp3 */,
-				E408058523A53E04007A50B9 /* damage7.mp3 */,
-				E408058B23A53E1D007A50B9 /* punch-high1.mp3 */,
-				E408058123A536C0007A50B9 /* 黒.jpg */,
-				E408058923A53E12007A50B9 /* game_explosion7.mp3 */,
 				EEEC6204238630E000C6819B /* Main.storyboard */,
-				E4716F81239BB5F400F09053 /* 余白.jpg */,
-				E408058723A53E0A007A50B9 /* fruitsparfait.mp3 */,
+				665F28F723A7B6E70024AA9A /* teki1.png */,
+				665F28F623A7B6E70024AA9A /* 黒.jpg */,
+				665F28F423A7B6D90024AA9A /* punch-high1.mp3 */,
+				665F28F223A7B6CB0024AA9A /* kaihuku.mp3 */,
+				665F28EC23A7B6A30024AA9A /* damage7.mp3 */,
+				665F28EF23A7B6BA0024AA9A /* fruitsparfait.mp3 */,
+				665F28EE23A7B6BA0024AA9A /* game_explosion7.mp3 */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
 				EEEC620C238630E200C6819B /* Info.plist */,
 			);
@@ -286,17 +283,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
+				665F28F523A7B6D90024AA9A /* punch-high1.mp3 in Resources */,
+				665F28F123A7B6BA0024AA9A /* fruitsparfait.mp3 in Resources */,
 				EEEC61FD238630E000C6819B /* GameScene.sks in Resources */,
-				E408058A23A53E12007A50B9 /* game_explosion7.mp3 in Resources */,
-				E4716F82239BB5F400F09053 /* 余白.jpg in Resources */,
-				E408058423A536CC007A50B9 /* teki1.png in Resources */,
-				E408058223A536C0007A50B9 /* 黒.jpg in Resources */,
+				665F28F323A7B6CB0024AA9A /* kaihuku.mp3 in Resources */,
+				665F28F023A7B6BA0024AA9A /* game_explosion7.mp3 in Resources */,
+				665F28F823A7B6E70024AA9A /* 黒.jpg in Resources */,
+				665F28ED23A7B6A40024AA9A /* damage7.mp3 in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
-				E42D318A23A67A1B007B5493 /* kaihuku.mp3 in Resources */,
-				E408058C23A53E1D007A50B9 /* punch-high1.mp3 in Resources */,
+				665F28F923A7B6E70024AA9A /* teki1.png in Resources */,
 				EEEC61FF238630E000C6819B /* Actions.sks in Resources */,
-				E408058623A53E04007A50B9 /* damage7.mp3 in Resources */,
-				E408058823A53E0A007A50B9 /* fruitsparfait.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
