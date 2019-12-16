@@ -137,6 +137,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="MinusSP:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ooa-bl-xK6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-qR-civ">
                                 <rect key="frame" x="564" y="740" width="54" height="59"/>
@@ -144,6 +147,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="MinusATK:" destination="BV1-FR-VrT" eventType="touchUpInside" id="VeN-az-gMV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gm6-R4-1Rs">
                                 <rect key="frame" x="486" y="536" width="54" height="59"/>
@@ -237,6 +243,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="MinusDEF:" destination="BV1-FR-VrT" eventType="touchUpInside" id="2F5-Ab-HtV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRC-k2-KsT">
                                 <rect key="frame" x="1165" y="630" width="54" height="59"/>
@@ -244,6 +253,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="MinusINT:" destination="BV1-FR-VrT" eventType="touchUpInside" id="scc-dD-Tzn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

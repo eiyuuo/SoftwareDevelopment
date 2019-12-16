@@ -15,15 +15,20 @@ import GameplayKit
 class Status {
     
     let userDefaults = UserDefaults.standard
+
     
     //初期ステータス(可変)
-    var HP:Int = 20
-    var SP:Int = 0
-    var ATK:Int = 5
-    var DEF:Int = 5
-    var INT:Int = 0
-    var EXP:Int = 13
+    var HP:Int = UserDefaults.standard.integer(forKey: "HPs")
+    var SP:Int = UserDefaults.standard.integer(forKey: "SPs")
+    var ATK:Int = UserDefaults.standard.integer(forKey: "ATKs")
+    var DEF:Int = UserDefaults.standard.integer(forKey: "DEFs")
+    var INT:Int = UserDefaults.standard.integer(forKey: "INTs")
+    var EXP:Int = UserDefaults.standard.integer(forKey: "EXPs")
     
+    init(){
+        userDefaults.register(defaults: ["HPs": 20,"SPs": 5,"ATKs": 5,"DEFs": 5,"INTs": 5,"EXPs": 15])
+        
+    }
 
     
     //get String

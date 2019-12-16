@@ -12,9 +12,10 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    //StatusAddClassのインスタンス化
+    //Classのインスタンス化
     let statusadd = StatusAdd()
     let status = Status()
+    let userDefaults = UserDefaults.standard
     
     
     
@@ -142,6 +143,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 1
+                SPi += 1
             }
         }else{
             if 10 <= JudgeEXP {
@@ -161,6 +163,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 10
+                SPi += 10
             }
         }
     }
@@ -185,6 +188,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 1
+                ATKi += 1
             }
         }else{
             if 10 <= JudgeEXP {
@@ -204,6 +208,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 10
+                ATKi += 10
             }
         }
         
@@ -228,6 +233,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 1
+                DEFi += 1
             }
         }else{
             if 10 <= JudgeEXP {
@@ -247,6 +253,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 10
+                DEFi += 10
             }
         }
         
@@ -271,6 +278,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 1
+                INTi += 1
             }
         }else{
             if 10 <= JudgeEXP {
@@ -290,6 +298,7 @@ class GameViewController: UIViewController {
                 EXPpoint.text = String(sum1!)
                 
                 JudgeEXP -= 10
+                INTi += 10
             }
         }
         
@@ -320,31 +329,233 @@ class GameViewController: UIViewController {
                 JudgeEXP += 1
                 HPi -= 2
                 
-                }
-               }else{
-                   //EXP消費-10の場合
-                   if 20 < HPi {
-                   statusadd.MinusTenHP()
-                   statusadd.AddTenEXP()
-                   
-                   let hp:Int? = Int(HPpoint.text!)
+            }
+        }else{
+                //EXP消費-10の場合
+            if 20 < HPi {
+                statusadd.MinusTenHP()
+                statusadd.AddTenEXP()
+                
+                let hp:Int? = Int(HPpoint.text!)
 
-                   let sum:Int? = hp! - 20
+                let sum:Int? = hp! - 20
 
-                   HPpoint.text = String(sum!)
-                   
-                   
-                   let exp:Int? = Int(EXPpoint.text!)
+                HPpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
 
-                   let sum1:Int? = exp! + 10
+                let sum1:Int? = exp! + 10
 
-                   EXPpoint.text = String(sum1!)
-                   
-                   JudgeEXP += 10
-                    HPi -= 20
-                   }
-               }
+                EXPpoint.text = String(sum1!)
+                    
+                JudgeEXP += 10
+                HPi -= 20
+            }
+        }
     }
+    
+    
+    @IBAction func MinusSP(_ sender: Any) {
+        if TouchEXP == true {
+            //EXP消費+1の場合
+            if 0 < SPi {
+                statusadd.MinusSP()
+                statusadd.AddEXP()
+                       
+                let sp:Int? = Int(SPpoint.text!)
+
+                let sum:Int? = sp! - 1
+
+                SPpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 1
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 1
+                SPi -= 1
+                
+            }
+        }else{
+                //EXP消費-10の場合
+            if 10 < SPi {
+                statusadd.MinusTenSP()
+                statusadd.AddTenEXP()
+                
+                let sp:Int? = Int(SPpoint.text!)
+
+                let sum:Int? = sp! - 10
+
+                SPpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 10
+
+                EXPpoint.text = String(sum1!)
+                    
+                JudgeEXP += 10
+                SPi -= 10
+            }
+        }
+    }
+    
+    @IBAction func MinusATK(_ sender: Any) {
+        if TouchEXP == true {
+            //EXP消費+1の場合
+            if 0 < ATKi {
+                statusadd.MinusATK()
+                statusadd.AddEXP()
+                       
+                let atk:Int? = Int(ATKpoint.text!)
+
+                let sum:Int? = atk! - 1
+
+                ATKpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 1
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 1
+                ATKi -= 1
+                
+            }
+        }else{
+                //EXP消費-10の場合
+            if 10 < ATKi {
+                statusadd.MinusTenATK()
+                statusadd.AddTenEXP()
+                       
+                let atk:Int? = Int(ATKpoint.text!)
+
+                let sum:Int? = atk! - 10
+
+                ATKpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 10
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 10
+                ATKi -= 10
+                
+            }
+        }
+    }
+    
+    @IBAction func MinusDEF(_ sender: Any) {
+        if TouchEXP == true {
+            //EXP消費+1の場合
+            if 0 < DEFi {
+                statusadd.MinusDEF()
+                statusadd.AddEXP()
+                       
+                let def:Int? = Int(DEFpoint.text!)
+
+                let sum:Int? = def! - 1
+
+                DEFpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 1
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 1
+                DEFi -= 1
+                
+            }
+        }else{
+                //EXP消費-10の場合
+            if 10 < DEFi {
+                statusadd.MinusTenDEF()
+                statusadd.AddTenEXP()
+                       
+                let def:Int? = Int(DEFpoint.text!)
+
+                let sum:Int? = def! - 10
+
+                DEFpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 10
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 10
+                DEFi -= 10
+                
+            }
+        }
+    }
+    
+    @IBAction func MinusINT(_ sender: Any) {
+        if TouchEXP == true {
+            //EXP消費+1の場合
+            if 0 < INTi {
+                statusadd.MinusINT()
+                statusadd.AddEXP()
+                       
+                let int:Int? = Int(INTpoint.text!)
+
+                let sum:Int? = int! - 1
+
+                INTpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 1
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 1
+                INTi -= 1
+                
+            }
+        }else{
+                //EXP消費-10の場合
+            if 10 < INTi {
+                statusadd.MinusTenINT()
+                statusadd.AddTenEXP()
+                       
+                let int:Int? = Int(INTpoint.text!)
+
+                let sum:Int? = int! - 10
+
+                INTpoint.text = String(sum!)
+                       
+                       
+                let exp:Int? = Int(EXPpoint.text!)
+
+                let sum1:Int? = exp! + 10
+
+                EXPpoint.text = String(sum1!)
+                       
+                JudgeEXP += 10
+                INTi -= 10
+                
+            }
+        }
+    }
+    
+    
     
     
     //-------------------------------------------------------------------------
@@ -379,12 +590,13 @@ class GameViewController: UIViewController {
         
         
         
-        JudgeEXP = status.getEXP()
+        
         HPi = status.getHP()
         SPi = status.getSP()
         ATKi = status.getATK()
         DEFi = status.getDEF()
         INTi = status.getINT()
+        JudgeEXP = status.getEXP()
         
         
         
