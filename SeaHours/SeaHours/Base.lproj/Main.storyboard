@@ -129,7 +129,7 @@
                                 <rect key="frame" x="120" y="50" width="836" height="706"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="200"/>
-                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -137,6 +137,7 @@
                         <viewLayoutGuide key="safeArea" id="9le-O0-M6P"/>
                     </view>
                     <connections>
+                        <outlet property="corer" destination="kTJ-RA-Ifa" id="g5s-MX-KGV"/>
                         <outlet property="fire" destination="01a-7a-Yf7" id="a5R-GQ-GQL"/>
                         <outlet property="gameOver" destination="JK2-fk-Hto" id="Srz-e0-lha"/>
                         <outlet property="heel" destination="JBd-So-T3C" id="BQc-YT-4pi"/>
@@ -146,7 +147,6 @@
                         <outlet property="logFlame" destination="WUy-rX-wHi" id="OHH-Rg-1Cp"/>
                         <outlet property="no" destination="6bt-mj-8Rw" id="Dcv-PX-X6Y"/>
                         <outlet property="nomalAttack" destination="Cyw-IX-k5B" id="Rjm-Xg-w37"/>
-                        <outlet property="red" destination="kTJ-RA-Ifa" id="8Kt-21-Msu"/>
                         <outlet property="skillBackGround" destination="7an-Hr-o6t" id="HLz-zp-Ub7"/>
                         <outlet property="skillCaption" destination="iAC-0W-0DT" id="35X-iy-Fbp"/>
                         <outlet property="strongAttack" destination="Gkr-bc-ykG" id="263-a4-QgB"/>

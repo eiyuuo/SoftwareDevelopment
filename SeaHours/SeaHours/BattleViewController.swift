@@ -26,7 +26,7 @@ class BattleViewController: UIViewController {
     //背景系
     @IBOutlet weak var skillBackGround: UIImageView!
     @IBOutlet weak var teki: UIImageView!
-    @IBOutlet weak var red: UILabel!
+    @IBOutlet weak var corer: UILabel!
     
     //ラベル系
     @IBOutlet weak var label1: UILabel!
@@ -48,8 +48,7 @@ class BattleViewController: UIViewController {
     //スキルの使用ボタンについて
     @IBAction func yes(_ sender: Any) {
         //ボタン消す→プレイヤーのターン→敵のターンの順番で記述
-        buttonIsHide(skillName: nowChoseSkillName , boolType: true)
-        makeSkillButton(skillName : nowChoseSkillName , boolType : true)
+        makeSkillButton(skillName: nowChoseSkillName , boolType: true)
         
         battle.battlePlayerTurn(tuchButtonName: nowChoseSkillName)
         playerAnimation()
@@ -130,38 +129,58 @@ class BattleViewController: UIViewController {
     
     //プレイヤーのアニメーション
     func playerAnimation() {
-        if !battle.player.getIsDead() { //プレイヤーが生存時
+        if !battle.player.getIsDead() { //プレイヤーが生存時?
             //ここでnowChoseSkillでswith文？でアニメーション変化？流石にやりたくないです...
-            UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
-                self.teki.alpha = 0.0
-            }) { _ in
-                self.teki.alpha = 1.0
+            if (self.nowChoseSkillName != "ヒール" && self.nowChoseSkillName != "ハイヒール" && self.nowChoseSkillName != "グレイヒール"){
+                print(self.nowChoseSkillName)
                 UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
                     self.teki.alpha = 0.0
                 }) { _ in
                     self.teki.alpha = 1.0
-                }
-                //効果音位置
-                self.makeLog()
-                self.soundEffect(skillName: self.nowChoseSkillName)
+                    UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
+                        self.teki.alpha = 0.0
+                    }) { _ in
+                        self.teki.alpha = 1.0
+                    }
+                    //効果音位置
+                    self.makeLog()
+                    self.soundEffect(skillName: self.nowChoseSkillName)
 
-                //正確な動きになるが，場所はダメゼッタイ！！
-                self.battle.battleEnemyTurn()
-                self.enemyAnimation()
+                    //正確な動きになるが，場所はダメゼッタイ！！
+                    self.battle.battleEnemyTurn()
+                    self.enemyAnimation()
+                }
+            } else { //ヒール系のアニメーション
+                self.corer.backgroundColor = UIColor.green
+                UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
+                    self.corer.alpha = 0.8
+                }) { _ in
+                    self.corer.alpha = 0.0
+                    
+                    //効果音位置
+                    self.makeLog()
+                    self.soundEffect(skillName: self.nowChoseSkillName)
+                    
+                    //正確な動きになるが，場所はダメゼッタイ！！
+                    self.battle.battleEnemyTurn()
+                    self.enemyAnimation()
+                }
             }
         }else { //敵がやられた時？
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
-                self.red.alpha = 0.6
+                self.corer.alpha = 0.6
                 self.gameOver.isHidden = false
+                self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えずゲームクリア時にボタンを押せないように
             })
         }
     }
 
     //敵のアニメーション
     func enemyAnimation() {
-        if  !battle.enemy.getIsDead() { //敵が生存時
+        if  !battle.enemy.getIsDead() { //敵が生存時?
             //ここでbattle.enemy.getSkillName()でswith文？でアニメーション変化？流石にやりたくないです...
             UIView.animate(withDuration: 0.2, delay: 1.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 50.0, options: .autoreverse, animations: {
+                self.corer.backgroundColor = UIColor.red
                 self.teki.center.y += 100.0
                 self.teki.bounds.size.height += 30.0
                 self.teki.bounds.size.width += 30.0
@@ -172,20 +191,23 @@ class BattleViewController: UIViewController {
             }
             
             UIView.animate(withDuration: 0.2, delay: 1.2, animations: {
-                self.red.alpha = 0.8
+                self.corer.alpha = 0.8
             }) { _ in
-                self.red.alpha = 0.0
+                self.corer.alpha = 0.0
                 UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
-                    self.red.alpha = 0.8
+                    self.corer.alpha = 0.8
                 }) { _ in
-                    self.red.alpha = 0.0
+                    self.corer.alpha = 0.0
                 }
                 //効果音位置
                 self.makeLog()
                 self.soundEffect(skillName: self.battle.enemy.getChooseSkillName())
-                if self.battle.player.getIsDead() {
+                
+                self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : true)
+                if self.battle.player.getIsDead() {//プレイヤーが倒れたか
                     UIView.animate(withDuration: 0.5, delay: 1.5, animations: {
                         self.gameOver.isHidden = false
+                        self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えず戦闘不能時にボタンを押せないように
                     })
                 }
 
