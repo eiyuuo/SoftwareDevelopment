@@ -144,6 +144,7 @@ class StatusAdd {
     //変更したステータスの値を保存
     func SaveStatus(){
         
+        //使用している変数への保存
         status.setHP(point :hp)
         status.setSP(point :sp)
         status.setATK(point :atk)
@@ -151,7 +152,7 @@ class StatusAdd {
         status.setINT(point :int)
         status.setEXP(point :exp)
 
-        
+        //UserDefaultsへのデータ保存
         UserDefaults.standard.set(hp, forKey:"HPs")
         UserDefaults.standard.set(sp, forKey:"SPs")
         UserDefaults.standard.set(atk, forKey:"ATKs")
@@ -159,6 +160,8 @@ class StatusAdd {
         UserDefaults.standard.set(int, forKey:"INTs")
         UserDefaults.standard.set(exp, forKey:"EXPs")
         
+        
+        //現在ステータスの確認用出力
         print("HP:\(status.getHP())")
         print("SP:\(status.getSP())")
         print("ATK:\(status.getATK())")

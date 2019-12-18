@@ -25,6 +25,8 @@ class Status {
     var INT:Int = UserDefaults.standard.integer(forKey: "INTs")
     var EXP:Int = UserDefaults.standard.integer(forKey: "EXPs")
     
+    
+    //UserDefaultsに使用される初期ステータスの値設定
     init(){
         userDefaults.register(defaults: ["HPs": 20,"SPs": 5,"ATKs": 5,"DEFs": 5,"INTs": 5,"EXPs": 15])
         

@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     
     
     var TouchEXP: Bool = true //EXPの消費切り替え用変数
-    var JudgeEXP: Int!
+    var JudgeEXP: Int! //経験値判定
     
     
     
@@ -55,7 +55,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var DEFminus: UIButton!
     @IBOutlet weak var INTminus: UIButton!
     
-    
+    //ステータス保存ボタン
     @IBOutlet weak var Save: UIButton!
     
     
@@ -63,7 +63,7 @@ class GameViewController: UIViewController {
     
     
     
-    //TouchEXPの反転
+    //TouchEXPの反転処理
     @IBAction func TouchEXPpoint(_ sender: Any) {
         TouchEXP.toggle()
         if TouchEXP == false {
@@ -74,7 +74,7 @@ class GameViewController: UIViewController {
     }
     
     
-    //HPいにステータス割り振り
+    //HPへのステータス割り振り
     @IBAction func AddHP(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費-1の場合
@@ -123,8 +123,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    
+    //SPへのステータス割り振り
     @IBAction func AddSP(_ sender: Any) {
+        ////EXP消費-1の場合
         if TouchEXP == true {
             if 0 < JudgeEXP {
                 statusadd.AddSP()
@@ -146,6 +147,7 @@ class GameViewController: UIViewController {
                 SPi += 1
             }
         }else{
+            //EXP消費-10の場合
             if 10 <= JudgeEXP {
                 statusadd.AddTenSP()
                 statusadd.MinusTenEXP()
@@ -168,8 +170,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    
+    //ATKへのステータス割り振り
     @IBAction func AddATK(_ sender: Any) {
+        //EXP消費-1の場合
         if TouchEXP == true {
             if 0 < JudgeEXP {
                 statusadd.AddATK()
@@ -191,6 +194,7 @@ class GameViewController: UIViewController {
                 ATKi += 1
             }
         }else{
+            //EXP消費-10の場合
             if 10 <= JudgeEXP {
                 statusadd.AddTenATK()
                 statusadd.MinusTenEXP()
@@ -214,7 +218,9 @@ class GameViewController: UIViewController {
         
     }
     
+    //DEFへのステータス割り振り
     @IBAction func AddDEF(_ sender: Any) {
+        //EXP消費-1の場合
         if TouchEXP == true {
             if 0 < JudgeEXP {
                 statusadd.AddDEF()
@@ -236,6 +242,7 @@ class GameViewController: UIViewController {
                 DEFi += 1
             }
         }else{
+            //EXP消費-10の場合
             if 10 <= JudgeEXP {
                 statusadd.AddTenDEF()
                 statusadd.MinusTenEXP()
@@ -259,7 +266,9 @@ class GameViewController: UIViewController {
         
     }
     
+    //INTへのステータス割り振り
     @IBAction func AddINT(_ sender: Any) {
+        //EXP消費-1の場合
         if TouchEXP == true {
             if 0 < JudgeEXP {
                 statusadd.AddINT()
@@ -281,6 +290,7 @@ class GameViewController: UIViewController {
                 INTi += 1
             }
         }else{
+            //EXP消費-10の場合
             if 10 <= JudgeEXP {
                 statusadd.AddTenINT()
                 statusadd.MinusTenEXP()
@@ -305,7 +315,7 @@ class GameViewController: UIViewController {
     }
     
     
-    
+    //HPへのステータス減少
     @IBAction func MinusHP(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費+1の場合
@@ -331,7 +341,7 @@ class GameViewController: UIViewController {
                 
             }
         }else{
-                //EXP消費-10の場合
+            //EXP消費-10の場合
             if 20 < HPi {
                 statusadd.MinusTenHP()
                 statusadd.AddTenEXP()
@@ -355,11 +365,11 @@ class GameViewController: UIViewController {
         }
     }
     
-    
+    //SPへのステータス減少
     @IBAction func MinusSP(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費+1の場合
-            if 0 < SPi {
+            if 1 < SPi {
                 statusadd.MinusSP()
                 statusadd.AddEXP()
                        
@@ -405,10 +415,11 @@ class GameViewController: UIViewController {
         }
     }
     
+    //ATKへのステータス減少
     @IBAction func MinusATK(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費+1の場合
-            if 0 < ATKi {
+            if 1 < ATKi {
                 statusadd.MinusATK()
                 statusadd.AddEXP()
                        
@@ -430,7 +441,7 @@ class GameViewController: UIViewController {
                 
             }
         }else{
-                //EXP消費-10の場合
+            //EXP消費-10の場合
             if 10 < ATKi {
                 statusadd.MinusTenATK()
                 statusadd.AddTenEXP()
@@ -455,10 +466,11 @@ class GameViewController: UIViewController {
         }
     }
     
+    //DEFへのステータス減少
     @IBAction func MinusDEF(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費+1の場合
-            if 0 < DEFi {
+            if 1 < DEFi {
                 statusadd.MinusDEF()
                 statusadd.AddEXP()
                        
@@ -480,7 +492,7 @@ class GameViewController: UIViewController {
                 
             }
         }else{
-                //EXP消費-10の場合
+            //EXP消費-10の場合
             if 10 < DEFi {
                 statusadd.MinusTenDEF()
                 statusadd.AddTenEXP()
@@ -505,10 +517,11 @@ class GameViewController: UIViewController {
         }
     }
     
+    //INTへのステータス現象
     @IBAction func MinusINT(_ sender: Any) {
         if TouchEXP == true {
             //EXP消費+1の場合
-            if 0 < INTi {
+            if 1 < INTi {
                 statusadd.MinusINT()
                 statusadd.AddEXP()
                        
@@ -530,7 +543,7 @@ class GameViewController: UIViewController {
                 
             }
         }else{
-                //EXP消費-10の場合
+            //EXP消費-10の場合
             if 10 < INTi {
                 statusadd.MinusTenINT()
                 statusadd.AddTenEXP()
@@ -563,15 +576,17 @@ class GameViewController: UIViewController {
     
     
     
-    //メイン画面へ戻る
-    @IBAction func ReturnMain(_ sender: Any) {
-        
-    }
-    
-    
     //ステータスの保存
     @IBAction func SaveStatus(_ sender: Any) {
         statusadd.SaveStatus()
+    }
+    
+    
+    
+    
+    //メイン画面へ戻る
+    @IBAction func ReturnMain(_ sender: Any) {
+        
     }
     
     
@@ -590,7 +605,7 @@ class GameViewController: UIViewController {
         
         
         
-        
+        //各ステータス値をgetし変数へ格納
         HPi = status.getHP()
         SPi = status.getSP()
         ATKi = status.getATK()
@@ -625,6 +640,7 @@ class GameViewController: UIViewController {
         ChangeEXP.layer.borderColor = UIColor.white.cgColor
         ChangeEXP.layer.cornerRadius = 10.0
         
+        
         //各ボタンの装飾(マイナス)
         HPminus.layer.borderWidth = 1
         HPminus.layer.borderColor = UIColor.white.cgColor
@@ -647,12 +663,16 @@ class GameViewController: UIViewController {
         INTminus.layer.cornerRadius = 10.0
         
         
+        //保存ボタンの装飾
         Save.layer.borderWidth = 1
         Save.layer.borderColor = UIColor.white.cgColor
         Save.layer.cornerRadius = 10.0
         
     }
 
+    
+    
+    
     override var shouldAutorotate: Bool {
         return true
     }
