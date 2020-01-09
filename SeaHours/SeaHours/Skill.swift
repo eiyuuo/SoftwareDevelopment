@@ -181,7 +181,7 @@ class Skill {
     }
     
     func greatHeel() -> Double {
-        return 300
+        return 10000
     }
     
     //ゲッター

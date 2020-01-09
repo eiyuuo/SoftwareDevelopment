@@ -14,7 +14,7 @@ import AVFoundation
 class BattleViewController: UIViewController {
     
     private let skillDict = Skill().getSkillPointDict()
-    private let battle = Battle(enemyName: "dragon1")
+    private let battle = Battle(enemyName: "dragon")
     private var nowChoseSkillName : String = ""
     
     //音関係
@@ -82,7 +82,7 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func heel(_ sender: Any) {
-        buttonIsHide(skillName: "ハイヒール",boolType: false )
+        buttonIsHide(skillName: "グレイヒール",boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
     
