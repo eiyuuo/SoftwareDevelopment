@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D66512398F51800C7733C /* SceneManagement.swift */; };
+		EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB508FA238F4C69000DFEB4 /* TimerController.swift */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
@@ -51,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE8D66512398F51800C7733C /* SceneManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagement.swift; sourceTree = "<group>"; };
+		EEA18EAD239DE15600693F94 /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SeaHours; sourceTree = "<group>"; };
+		EEB508FA238F4C69000DFEB4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
@@ -156,6 +161,9 @@
 				E4EFAB3523C6C5960025506A /* battle.storyboard */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
 				EEEC620C238630E200C6819B /* Info.plist */,
+				EEB508FA238F4C69000DFEB4 /* TimerController.swift */,
+				EE8D66512398F51800C7733C /* SceneManagement.swift */,
+				EEA18EAD239DE15600693F94 /* SeaHours */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
@@ -321,6 +329,8 @@
 				E4716F6F23941B6600F09053 /* Enemy.swift in Sources */,
 				E4716F5D239275CA00F09053 /* Character.swift in Sources */,
 				EEEC6201238630E000C6819B /* GameScene.swift in Sources */,
+				EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */,
+				EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */,
 				E4716F782397805A00F09053 /* BattleViewController.swift in Sources */,
 				E4716F7123976D6100F09053 /* Battle.swift in Sources */,
 				E4716F5F2393A45B00F09053 /* Skill.swift in Sources */,
