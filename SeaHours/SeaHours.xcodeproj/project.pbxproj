@@ -13,7 +13,6 @@
 		02FC129023A1DE69007688B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC128F23A1DE69007688B6 /* Status.swift */; };
 		02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC129123A1DE6E007688B6 /* StatusAdd.swift */; };
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
-		EEEC6206238630E000C6819B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6204238630E000C6819B /* Main.storyboard */; };
 		EEEC6208238630E200C6819B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6207238630E200C6819B /* Assets.xcassets */; };
 		EEEC6216238630E200C6819B /* SeaHoursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6215238630E200C6819B /* SeaHoursTests.swift */; };
 		EEEC6221238630E200C6819B /* SeaHoursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6220238630E200C6819B /* SeaHoursUITests.swift */; };
@@ -44,7 +43,6 @@
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC61FA238630E000C6819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEEC6202238630E000C6819B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		EEEC6205238630E000C6819B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEEC6207238630E200C6819B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEEC620C238630E200C6819B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEEC6211238630E200C6819B /* SeaHoursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeaHoursTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +105,6 @@
 			children = (
 				EEEC61FA238630E000C6819B /* AppDelegate.swift */,
 				EEEC6202238630E000C6819B /* GameViewController.swift */,
-				EEEC6204238630E000C6819B /* Main.storyboard */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
 				EEEC620C238630E200C6819B /* Info.plist */,
 				02FC128F23A1DE69007688B6 /* Status.swift */,
@@ -240,7 +237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
 				02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
 			);
@@ -305,17 +301,6 @@
 			targetProxy = EEEC621D238630E200C6819B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EEEC6204238630E000C6819B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EEEC6205238630E000C6819B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EEEC6223238630E200C6819B /* Debug */ = {
