@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02696A2F23AB6BFC005E593F /* MagicFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02696A2E23AB6BFC005E593F /* MagicFish.swift */; };
+		02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02696A3223D12EE0005E593F /* PlayerStatus.storyboard */; };
 		0282588C23A12D3D00D77D05 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6202238630E000C6819B /* GameViewController.swift */; };
 		02FC129023A1DE69007688B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC128F23A1DE69007688B6 /* Status.swift */; };
 		02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC129123A1DE6E007688B6 /* StatusAdd.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02696A2E23AB6BFC005E593F /* MagicFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicFish.swift; sourceTree = "<group>"; };
+		02696A3223D12EE0005E593F /* PlayerStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerStatus.storyboard; sourceTree = "<group>"; };
 		02FC128F23A1DE69007688B6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		02FC129123A1DE6E007688B6 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,8 @@
 				EEEC620C238630E200C6819B /* Info.plist */,
 				02FC128F23A1DE69007688B6 /* Status.swift */,
 				02FC129123A1DE6E007688B6 /* StatusAdd.swift */,
+				02696A2E23AB6BFC005E593F /* MagicFish.swift */,
+				02696A3223D12EE0005E593F /* PlayerStatus.storyboard */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
+				02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +271,7 @@
 				0282588C23A12D3D00D77D05 /* GameViewController.swift in Sources */,
 				EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */,
 				02FC129023A1DE69007688B6 /* Status.swift in Sources */,
+				02696A2F23AB6BFC005E593F /* MagicFish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

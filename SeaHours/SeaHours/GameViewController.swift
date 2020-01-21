@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
+
 class GameViewController: UIViewController {
     
     //Classのインスタンス化
@@ -39,6 +41,21 @@ class GameViewController: UIViewController {
     @IBOutlet weak var DEFpoint: UILabel!
     @IBOutlet weak var INTpoint: UILabel!
     @IBOutlet weak var EXPpoint: UILabel!
+    
+    
+    //装備label
+    @IBOutlet weak var Weapon: UILabel!
+    @IBOutlet weak var Armor: UILabel!
+    
+    
+    //プレイヤーアイコンlabel
+    @IBOutlet weak var Icon: UILabel!
+    
+    
+    //アイテム欄，魔法欄
+    @IBOutlet weak var Itembutton: UIButton!
+    @IBOutlet weak var Magic: UIButton!
+    
     
     //各ステータスプラス
     @IBOutlet weak var HPButton: UIButton!
@@ -612,7 +629,7 @@ class GameViewController: UIViewController {
         DEFi = status.getDEF()
         INTi = status.getINT()
         JudgeEXP = status.getEXP()
-        
+
         
         
         //各ボタンの装飾(プラス)
@@ -668,9 +685,35 @@ class GameViewController: UIViewController {
         Save.layer.borderColor = UIColor.white.cgColor
         Save.layer.cornerRadius = 10.0
         
+            
+            
+        Weapon.layer.borderWidth = 1
+        Weapon.layer.borderColor = UIColor.white.cgColor
+        Weapon.layer.cornerRadius = 10.0
+        
+        Armor.layer.borderWidth = 1
+        Armor.layer.borderColor = UIColor.white.cgColor
+        Armor.layer.cornerRadius = 10.0
+        
+        
+        
+        Icon.layer.borderWidth = 1
+        Icon.layer.borderColor = UIColor.white.cgColor
+        Icon.layer.cornerRadius = 10.0
+        
+        
+        
+        Itembutton.layer.borderWidth = 1
+        Itembutton.layer.borderColor = UIColor.white.cgColor
+        Itembutton.layer.cornerRadius = 10.0
+        
+        Magic.layer.borderWidth = 1
+        Magic.layer.borderColor = UIColor.white.cgColor
+        Magic.layer.cornerRadius = 10.0
+        
+        
     }
 
-    
     
     
     override var shouldAutorotate: Bool {
