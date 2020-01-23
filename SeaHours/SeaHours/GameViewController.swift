@@ -1,4 +1,3 @@
-
 //
 //  GameViewController.swift
 //  SeaHours
@@ -12,32 +11,28 @@ import GameplayKit
 import AVFoundation
 
 class GameViewController: UIViewController {
-    /*
-    let sene=SceneManagement()
     
-    @IBAction func test(_ sender: Any) {
-        sene.sceneTransition(corrent: self, sb: "battle", wi: "battle")
+    /*
+    @IBAction func bottan() {
+        
+    //    UserDefaults.standard.set(120,forKey: “limit”)
+    //    userDefaults.synchronize()
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: “battle”,wi: “battleboard”)
+         */
+    
+    @IBAction func VS(_ sender: Any) {
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
+    }
+    
+    @IBAction func Status(_ sender: Any) {
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
- */
-//
-//    override var shouldAutorotate: Bool {
-//        return true
-//    }
-//
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        if UIDevice.current.userInterfaceIdiom == .phone {
-//            return .allButUpsideDown
-//        } else {
-//            return .all
-//        }
-//    }
-//
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+    
 }

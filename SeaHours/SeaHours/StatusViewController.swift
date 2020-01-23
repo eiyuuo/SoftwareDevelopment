@@ -603,7 +603,7 @@ class StatusViewController: UIViewController {
     
     //メイン画面へ戻る
     @IBAction func ReturnMain(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -10,7 +10,7 @@
         <!--Status View Controller-->
         <scene sceneID="xTa-pI-Rct">
             <objects>
-                <viewController id="XvE-uk-eQd" customClass="StatusViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Status" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XvE-uk-eQd" customClass="StatusViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="16Q-H0-A4y" customClass="SKView" customModule="SeaHours">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
