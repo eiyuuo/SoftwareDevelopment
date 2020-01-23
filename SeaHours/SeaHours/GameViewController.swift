@@ -15,37 +15,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if let view = self.view as! SKView? {
-//            // Load the SKScene from 'GameScene.sks'
-//            if let scene = SKScene(fileNamed: "GameScene") {
-//                // Set the scale mode to scale to fit the window
-//                scene.scaleMode = .aspectFill
-//
-//                // Present the scene
-//                view.presentScene(scene)
-//            }
-//
-//            view.ignoresSiblingOrder = true
-//
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//        }
+        view.backgroundColor = UIColor.black
     }
-//
-//    override var shouldAutorotate: Bool {
-//        return true
-//    }
-//
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        if UIDevice.current.userInterfaceIdiom == .phone {
-//            return .allButUpsideDown
-//        } else {
-//            return .all
-//        }
-//    }
-//
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+    
+    @IBAction func bottan() {
+//        UserDefaults.standard.set(120,forKey: "limit")
+//        userDefaults.synchronize()
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "battle",wi: "battleboard")
+        
+    }
 }

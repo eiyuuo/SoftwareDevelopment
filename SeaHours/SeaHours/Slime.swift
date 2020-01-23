@@ -14,6 +14,4 @@ class Slime : Enemy {
     init() {
         super.init(name : "スライム" ,maxHitPoint: 50, defense: 10, attack: 20, magickAttack: 30)
     }
-    
 }
-

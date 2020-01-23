@@ -172,6 +172,7 @@ class BattleViewController: UIViewController {
                 self.gameOver.isHidden = false
                 self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えずゲームクリア時にボタンを押せないように
             })
+
         }
     }
 

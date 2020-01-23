@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+
+class Kaihei : Enemy {
+    init() {
+        super.init(name : "カイヘイ", maxHitPoint: 300, defense: 15, attack: 30, magickAttack: 50)
+    }
+}
