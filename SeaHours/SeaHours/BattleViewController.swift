@@ -14,7 +14,7 @@ import AVFoundation
 class BattleViewController: UIViewController {
     
     private let skillDict = Skill().getSkillPointDict()
-    private let battle = Battle(enemyName: "dragon")//データベースから持ってくる
+    private let battle = Battle(enemyName: "magickFish")//データベースから持ってくる
     private var nowChoseSkillName : String = ""
     
     //音関係
@@ -35,6 +35,7 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var log: UILabel!
     @IBOutlet weak var skillCaption: UILabel!
     @IBOutlet weak var gameOver: UILabel!
+    
     
     //ボタン系
     @IBOutlet weak var nomalAttack : UIButton!
@@ -163,11 +164,12 @@ class BattleViewController: UIViewController {
                     self.enemyAnimation()
                 }
             }
-        }else { //敵がやられた時？
+        }else { //敵に負けたとき
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 self.corer.alpha = 0.6
                 self.gameOver.isHidden = false
                 self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えずゲームクリア時にボタンを押せないように
+                self.dismiss(animated: true, completion: nil)
             })
         }
     }
@@ -209,9 +211,10 @@ class BattleViewController: UIViewController {
                 }
 
             }
-        }else { //敵がやられた時
+        }else { //敵を倒したとき
             UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 self.teki.isHidden = true
+                self.dismiss(animated: true, completion: nil)
             })
         }
     }
@@ -248,8 +251,11 @@ class BattleViewController: UIViewController {
         
         no.isHidden = boolType
         skillBackGround.isHidden = boolType
+        skillCaption.text = "このスキルの消費SPは" +
+            String(battle.player.skill.getSkillPoint(keyName: nowChoseSkillName))
+            + "です"
         skillCaption.isHidden = boolType
-
+        
     }
 
     /*上詰のコードログが見えなくなった...

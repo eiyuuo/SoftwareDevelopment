@@ -10,15 +10,11 @@
         <!--Battle View Controller-->
         <scene sceneID="Sy2-rv-9XL">
             <objects>
-                <viewController storyboardIdentifier="battle" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MR5-U8-RvY" customClass="BattleViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YzG-fV-0h2" customClass="SKView">
+                <viewController storyboardIdentifier="VS" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MR5-U8-RvY" customClass="BattleViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YzG-fV-0h2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="黒.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3H3-Wy-AGe" userLabel="背景">
-                                <rect key="frame" x="-48" y="-31" width="1172" height="868"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teki1.png" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-so-H40">
                                 <rect key="frame" x="53" y="40" width="587" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzp-0q-9PL" userLabel="赤">
-                                <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                                <rect key="frame" x="-197" y="-226" width="1448" height="1189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -133,7 +129,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UkC-fO-ytx"/>
                     </view>
                     <connections>
@@ -148,7 +144,7 @@
                         <outlet property="no" destination="JLs-Ne-eoE" id="ha0-t1-q27"/>
                         <outlet property="nomalAttack" destination="vPw-a0-vxl" id="oB0-au-0xz"/>
                         <outlet property="skillBackGround" destination="zoh-Kx-n1n" id="h9f-vc-Hf7"/>
-                        <outlet property="skillCaption" destination="UZh-8c-4tI" id="SfE-q8-hd7"/>
+                        <outlet property="skillCaption" destination="UZh-8c-4tI" id="0vW-LF-Gka"/>
                         <outlet property="strongAttack" destination="lJV-O1-pNx" id="qnb-WH-2N3"/>
                         <outlet property="teki" destination="FDc-so-H40" id="w73-cy-bgg"/>
                         <outlet property="yes" destination="sn0-p4-WhL" id="1u7-eO-mlt"/>

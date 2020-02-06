@@ -12,13 +12,14 @@ class Battle { //戦闘を管理するクラス
     
     var player : Player
     var enemy : Enemy
+    let status = Status()
     
     private var logList : String = ""  //ログのリスト
     
     init(enemyName : String ) {
         
-        let playerStatas : [Int] = [20000 , 1000 , 3000 , 5000 , 300]//仮のステータス　後々ステータスクラスから引っ張る予定
-        self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxSkillPoint: playerStatas[4])
+        //データベースからの修正済み
+        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK(), magickAttack:status.getINT(), maxSkillPoint:status.getSP())
         
         switch enemyName { //どの敵なのか？
             
@@ -28,6 +29,10 @@ class Battle { //戦闘を管理するクラス
             
         case "slime" :
             self.enemy = Slime()
+            break
+            
+        case "magickFish" :
+            self.enemy = MagicFish()
             break
             
         default:
