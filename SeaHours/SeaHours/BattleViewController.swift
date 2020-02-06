@@ -17,6 +17,25 @@ class BattleViewController: UIViewController {
     private let battle = Battle(enemyName: "magickFish")//データベースから持ってくる
     private var nowChoseSkillName : String = ""
     
+    //仮
+    private let choseFlag:[String:Int] = ["skill": 0 ,"item": 1 ]
+    private var nowChoseList:String = "skill"
+    private let skillList:[[[String]]] = [
+                            [["通常攻撃","渾身の一撃", "スラント", "クロー" ],
+                             ["テールアタック" , "噛みつく" , "体当たり" , "エアスラッシュ" ],
+                             [ "クロスブレイブ","アッパーブレイド", "ドライブフェンサー" , "アークバイト" ] ,
+                             ["アストラルクロス" , "ツヴァイセイバー", "シャインセイバー" , "ドラグテイル" ],
+                             [ "リヴァイクロー" , "ファイア" , "ウィンド" , "アイス" ] ,
+                             ["ストーン" , "ショット", "ファイアアロウ" , "ウィンドカッター" ],
+                             ["アイスランス" , "ストーンエッジ" , "イフリート" , "テンペスト" ] ,
+                             [ "ブリザード"  , "アースクエイク" , "ナイトメア" , "ヒール" ],
+                             [ "ハイヒール" , "グレイヒール","",""]],
+                            //アイテム
+                             [["AAA","BBB","CCC","DDD"],
+                              ["aaa","bbb","ccc","ddd"]]
+                            ]
+    private var pageFlag:Int = 0
+    
     //音関係
     private var audioAttack: AVAudioPlayer!
     private var audioMagick: AVAudioPlayer!
@@ -35,15 +54,20 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var log: UILabel!
     @IBOutlet weak var skillCaption: UILabel!
     @IBOutlet weak var gameOver: UILabel!
+    @IBOutlet weak var pageNum: UILabel!
     
     
     //ボタン系
-    @IBOutlet weak var nomalAttack : UIButton!
-    @IBOutlet weak var strongAttack : UIButton!
-    @IBOutlet weak var fire : UIButton!
-    @IBOutlet weak var heel : UIButton!
+    @IBOutlet weak var button1 : UIButton!
+    @IBOutlet weak var button2 : UIButton!
+    @IBOutlet weak var button3 : UIButton!
+    @IBOutlet weak var button4 : UIButton!
     @IBOutlet weak var yes : UIButton!
     @IBOutlet weak var no : UIButton!
+    @IBOutlet weak var item: UIButton!
+    @IBOutlet weak var skill: UIButton!
+    @IBOutlet weak var Next: UIButton!
+    @IBOutlet weak var Back: UIButton!
     
     //スキルの使用ボタンについて
     @IBAction func yes(_ sender: Any) {
@@ -63,24 +87,72 @@ class BattleViewController: UIViewController {
         makeSkillButton(skillName : nowChoseSkillName , boolType : true)
     }
     
+    @IBAction func next(_ sender: Any) {
+        if pageFlag != skillList[choseFlag[nowChoseList]!].count-1 {
+            pageFlag+=1
+        } else{
+            pageFlag=0
+        }
+        button1.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][0], for: .normal)
+        button2.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][1], for: .normal)
+        button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
+        button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
+        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        if pageFlag != 0 {
+            pageFlag-=1
+        } else{
+            pageFlag=skillList[choseFlag[nowChoseList]!].count-1
+        }
+        button1.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][0], for: .normal)
+        button2.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][1], for: .normal)
+        button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
+        button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
+        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
+    }
+    
+    @IBAction func skillFlagButton(_ sender: Any) {
+        pageFlag=0
+        nowChoseList="skill"
+        button1.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][0], for: .normal)
+        button2.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][1], for: .normal)
+        button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
+        button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
+        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
+        
+    }
+    
+    @IBAction func itemFlagButton(_ sender: Any) {
+        pageFlag=0
+        nowChoseList="item"
+        button1.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][0], for: .normal)
+        button2.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][1], for: .normal)
+        button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
+        button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
+        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
+    }
+    
+    
     //スキルのボタンについて
-    @IBAction func nomalAttack(_ sender: Any) {
-        buttonIsHide(skillName: "通常攻撃",boolType: false )
+    @IBAction func button1(_ sender: Any) {
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][0],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
-    @IBAction func fire(_ sender: Any) {
-        buttonIsHide(skillName: "ファイア",boolType: false )
+    @IBAction func button2(_ sender: Any) {
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][2],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
-    @IBAction func strongAttack(_ sender: Any) {
-        buttonIsHide(skillName: "渾身の一撃",boolType: false )
+    @IBAction func button3(_ sender: Any) {
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][1],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
-    @IBAction func heel(_ sender: Any) {
-        buttonIsHide(skillName: "グレイヒール",boolType: false )
+    @IBAction func button4(_ sender: Any) {
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][3],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
@@ -93,10 +165,15 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
         audioBGM.play()
+        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
         makeLabelLine(label: log)
         makeLabelLine(label: label2)
+        button1.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][0], for: .normal)
+        button2.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][1], for: .normal)
+        button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
+        button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
         
     }
     //ーーーーーーーーーーーーーーーーー↑インスタンスみたいの↑ーーーーーーーーーーーーーーーーーー
@@ -233,10 +310,19 @@ class BattleViewController: UIViewController {
     
     //ボタンを消すなど
     func buttonIsHide(skillName : String , boolType : Bool){
-        strongAttack.isEnabled = boolType
-        nomalAttack.isEnabled = boolType
-        fire.isEnabled = boolType
-        heel.isEnabled = boolType
+        button2.isEnabled = boolType
+        button1.isEnabled = boolType
+        button3.isEnabled = boolType
+        button4.isEnabled = boolType
+        pageNum.isEnabled = boolType
+        skill.isEnabled = boolType
+        item.isEnabled = boolType
+        Next.isEnabled = boolType
+        Back.isEnabled = boolType
+        label1.isEnabled = boolType
+        label2.isEnabled = boolType
+        logFlame.isEnabled = boolType
+        log.isEnabled = boolType
         
         nowChoseSkillName = skillName
     }
