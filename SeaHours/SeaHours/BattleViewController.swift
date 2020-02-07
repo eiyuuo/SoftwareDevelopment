@@ -56,7 +56,6 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var gameOver: UILabel!
     @IBOutlet weak var pageNum: UILabel!
     
-    
     //ボタン系
     @IBOutlet weak var button1 : UIButton!
     @IBOutlet weak var button2 : UIButton!
@@ -121,7 +120,6 @@ class BattleViewController: UIViewController {
         button3.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][2], for: .normal)
         button4.setTitle(skillList[choseFlag[nowChoseList]!][pageFlag][3], for: .normal)
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
-        
     }
     
     @IBAction func itemFlagButton(_ sender: Any) {
@@ -142,12 +140,12 @@ class BattleViewController: UIViewController {
     }
 
     @IBAction func button2(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][2],boolType: false )
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][1],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
     @IBAction func button3(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][1],boolType: false )
+        buttonIsHide(skillName: skillList[choseFlag[nowChoseList]!][pageFlag][2],boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
     }
 
@@ -164,7 +162,7 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "game_explosion7", audioName: audioMagick)
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
-        audioBGM.play()
+        //audioBGM.play()
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChoseList]!].count)
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
@@ -310,37 +308,40 @@ class BattleViewController: UIViewController {
     
     //ボタンを消すなど
     func buttonIsHide(skillName : String , boolType : Bool){
-        button2.isEnabled = boolType
-        button1.isEnabled = boolType
-        button3.isEnabled = boolType
-        button4.isEnabled = boolType
-        pageNum.isEnabled = boolType
-        skill.isEnabled = boolType
-        item.isEnabled = boolType
-        Next.isEnabled = boolType
-        Back.isEnabled = boolType
-        label1.isEnabled = boolType
-        label2.isEnabled = boolType
-        logFlame.isEnabled = boolType
-        log.isEnabled = boolType
-        
         nowChoseSkillName = skillName
+        if (skillName != "" ){
+            button2.isEnabled = boolType
+            button1.isEnabled = boolType
+            button3.isEnabled = boolType
+            button4.isEnabled = boolType
+            pageNum.isEnabled = boolType
+            skill.isEnabled = boolType
+            item.isEnabled = boolType
+            Next.isEnabled = boolType
+            Back.isEnabled = boolType
+            label1.isEnabled = boolType
+            label2.isEnabled = boolType
+            logFlame.isEnabled = boolType
+            log.isEnabled = boolType
+        }
     }
     
     func makeSkillButton(skillName : String , boolType : Bool) {
-        yes.isHidden = boolType
-        if (skillDict[skillName]! <= battle.player.getSkillPoint()){
-            yes.isEnabled = true
-        } else {
-            yes.isEnabled = false
+        if (skillName != "" ){
+            yes.isHidden = boolType
+            if (skillDict[skillName]! <= battle.player.getSkillPoint()){
+                yes.isEnabled = true
+            } else {
+                yes.isEnabled = false
+            }
+            
+            no.isHidden = boolType
+            skillBackGround.isHidden = boolType
+            skillCaption.text =  skillName + "の消費SPは" +
+                String(battle.player.skill.getSkillPoint(keyName: nowChoseSkillName))
+                + "です"
+            skillCaption.isHidden = boolType
         }
-        
-        no.isHidden = boolType
-        skillBackGround.isHidden = boolType
-        skillCaption.text = "このスキルの消費SPは" +
-            String(battle.player.skill.getSkillPoint(keyName: nowChoseSkillName))
-            + "です"
-        skillCaption.isHidden = boolType
         
     }
 
