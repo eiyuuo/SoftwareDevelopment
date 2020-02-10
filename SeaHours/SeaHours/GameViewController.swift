@@ -31,8 +31,12 @@ class GameViewController: UIViewController {
         scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
     }
     
+    @IBAction func Shop(_ sender: Any) {
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "shop",wi: "shop")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }
