@@ -12,13 +12,14 @@ class Battle { //戦闘を管理するクラス
     
     var player : Player
     var enemy : Enemy
+    let status = Status()
     
     private var logList : String = ""  //ログのリスト
     
     init(enemyName : String ) {
         
-        let playerStatas : [Int] = [20000 , 1000000 , 3000000 , 50000000 , 300]//仮のステータス　後々ステータスクラスから引っ張る予定
-        self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxSkillPoint: playerStatas[4])
+        //データベースからの修正済み
+        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
         
         switch enemyName { //どの敵なのか？
             
@@ -30,6 +31,10 @@ class Battle { //戦闘を管理するクラス
             self.enemy = Slime()
             break
             
+        case "magickFish" :
+            self.enemy = MagicFish()
+            break
+            
         default:
             self.enemy = Slime()
             break
@@ -37,14 +42,23 @@ class Battle { //戦闘を管理するクラス
 
     }
     
-    func battlePlayerTurn(tuchButtonName : String) {
+    func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
-        //プレイヤー
         if (!player.getIsDead()) {
-            log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
-            logList = log  + logList
-            if (enemy.getIsDead()) {
-              logList = "\n" + enemy.getName() + "は倒れた" + logList
+            if (nowChose == "skill") //スキル処理
+            {
+                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                logList = log  + logList
+                if (enemy.getIsDead()) {
+                  logList = "\n" + enemy.getName() + "は倒れた" + logList
+                }
+            }else if (nowChose == "item") //アイテム処理
+            {
+                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                logList = log  + logList
+                if (enemy.getIsDead()) {
+                  logList = "\n" + enemy.getName() + "は倒れた" + logList
+                }
             }
         }
     }

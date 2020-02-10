@@ -18,7 +18,6 @@ class MagicFish : Enemy {
     override func selectSkill() -> Double {
         var damege :Double
                
-               let randomBool = Bool.random()
                let randomNumber = Int.random(in: 1 ... 100)
         
                 print(randomNumber)
@@ -37,6 +36,4 @@ class MagicFish : Enemy {
                return Double(damege)
                }
     }
-
-    
 }
