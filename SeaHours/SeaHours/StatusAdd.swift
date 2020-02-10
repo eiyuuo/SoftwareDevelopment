@@ -14,24 +14,17 @@ import GameplayKit
 //ステータスに能力を振るクラス
 class StatusAdd {
     
+    let userDefaults = UserDefaults.standard
     let status = Status()
     
-    var hp:Int!
-    var sp:Int!
-    var atk:Int!
-    var def:Int!
-    var int:Int!
-    var exp:Int!
+    var hp:Int = UserDefaults.standard.integer(forKey: "HPs")
+    var sp:Int = UserDefaults.standard.integer(forKey: "SPs")
+    var atk:Int = UserDefaults.standard.integer(forKey: "ATKs")
+    var def:Int = UserDefaults.standard.integer(forKey: "DEFs")
+    var int:Int = UserDefaults.standard.integer(forKey: "INTs")
+    var exp:Int = UserDefaults.standard.integer(forKey: "EXPs")
     
-    init(){
-        self.hp = status.getHP()
-        self.sp = status.getSP()
-        self.atk = status.getATK()
-        self.def = status.getDEF()
-        self.int = status.getINT()
-        self.exp = status.getEXP()
-    }
-    
+   
     
     //EXP-1の時のステータス割り振りおよび保存
     func AddHP(){
@@ -151,7 +144,9 @@ class StatusAdd {
         status.setDEF(point :def)
         status.setINT(point :int)
         status.setEXP(point :exp)
-
+        
+        
+        
         //UserDefaultsへのデータ保存
         UserDefaults.standard.set(hp, forKey:"HPs")
         UserDefaults.standard.set(sp, forKey:"SPs")
@@ -162,13 +157,14 @@ class StatusAdd {
         
         
         //現在ステータスの確認用出力
-        print("HP:\(status.getHP())")
-        print("SP:\(status.getSP())")
-        print("ATK:\(status.getATK())")
-        print("DEF:\(status.getDEF())")
-        print("INT:\(status.getINT())")
-        print("EXP:\(status.getEXP())")
-    }
+            print("HP:\(status.getHP())")
+            print("SP:\(status.getSP())")
+            print("ATK:\(status.getATK())")
+            print("DEF:\(status.getDEF())")
+            print("INT:\(status.getINT())")
+            print("EXP:\(status.getEXP())")
+        
+        }
     
     
     

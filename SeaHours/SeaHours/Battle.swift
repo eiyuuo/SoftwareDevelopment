@@ -13,11 +13,26 @@ class Battle { //戦闘を管理するクラス
     var player : Player
     var enemy : Enemy
     
+    let status = Status()
+    
+    var hp:Int!
+    var sp:Int!
+    var atk:Int!
+    var def:Int!
+    var int:Int!
+    var exp:Int!
+    
     private var logList : String = ""  //ログのリスト
     
     init(enemyName : String ) {
+        self.hp = status.getHP()
+        self.sp = status.getSP()
+        self.atk = status.getATK()
+        self.def = status.getDEF()
+        self.int = status.getINT()
+        self.exp = status.getEXP()
         
-        let playerStatas : [Int] = [20000 , 1000 , 3000 , 5000 , 300]//仮のステータス　後々ステータスクラスから引っ張る予定
+        let playerStatas : [Int] = [hp , sp , atk , def , int]//仮のステータス　後々ステータスクラスから引っ張る予定
         self.player = Player(maxHitPoint: playerStatas[0], defense: playerStatas[1], attack: playerStatas[2], magickAttack: playerStatas[3], maxSkillPoint: playerStatas[4])
         
         switch enemyName { //どの敵なのか？
