@@ -82,6 +82,7 @@ class BattleViewController: UIViewController {
         //battle.battleEnemyTurn()
         //enemyAnimation()
     }
+    
     @IBAction func backHome(_ sender: Any) {
         let exp = battle.status.getEXP() + battle.enemy.getExp()
         UserDefaults.standard.set(exp, forKey:"EXPs")
@@ -106,6 +107,7 @@ class BattleViewController: UIViewController {
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
     }
     
+
     @IBAction func back(_ sender: Any) {
         if pageFlag != 0 {
             pageFlag-=1
@@ -257,6 +259,7 @@ class BattleViewController: UIViewController {
                 //ここにボタン表示追加。ホームの戻るボタン＋どれだけのexpを獲得したか
                 self.dismiss(animated: true, completion: nil)
             })
+
         }
     }
 

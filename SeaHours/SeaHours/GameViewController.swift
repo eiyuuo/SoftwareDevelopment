@@ -12,20 +12,22 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-     @IBAction func VS(_ sender: Any) {
-        
+    
+    @IBAction func VS(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-        next.enemyName = "teki1"//ここに敵の名前
+        next.enemyName = "usagi"
         self.present(next, animated: true, completion: nil)
-        
-        let scene = SceneManagement()
-        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
     }
     
     @IBAction func Status(_ sender: Any) {
         let scene = SceneManagement()
         scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
+    }
+    
+    @IBAction func Shop(_ sender: Any) {
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "shop",wi: "shop")
     }
     
     override func viewDidLoad() {
