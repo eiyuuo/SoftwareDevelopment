@@ -40,6 +40,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+
     
     
 //        ["薬草","ポーション","ハイポーション","グレイトポーション","魔力草","魔力ポーション","魔力ハイポーション","魔力グレイトポーション"]
