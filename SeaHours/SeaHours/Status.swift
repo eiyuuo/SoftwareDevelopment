@@ -17,6 +17,7 @@ class Status {
     let userDefaults = UserDefaults.standard
 
     
+    
     //初期ステータス(可変)
     var HP:Int = UserDefaults.standard.integer(forKey: "HPs")
     var SP:Int = UserDefaults.standard.integer(forKey: "SPs")
@@ -28,7 +29,8 @@ class Status {
     
     //UserDefaultsに使用される初期ステータスの値設定
     init(){
-        userDefaults.register(defaults: ["HPs": 20,"SPs": 5,"ATKs": 5,"DEFs": 5,"INTs": 5,"EXPs": 15])
+        userDefaults.register(defaults: ["HPs": 20,"SPs": 10,"ATKs": 10,"DEFs": 10,"INTs": 10,"EXPs": 20])
+        
     }
 
     

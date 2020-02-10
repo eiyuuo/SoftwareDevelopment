@@ -11,12 +11,13 @@ import Foundation
 class Kaihe : Enemy {
 
     init() {
-        super.init(name : "カイヘイ" ,maxHitPoint: 17, defense: 7, attack: 15, magickAttack: 10,exp:10)
+        super.init(name : "カイヘイ" ,maxHitPoint: 17, defense: 7, attack: 15, magickAttack: 10,exp: 10)
+
     }
 
     override func selectSkill() -> Double {
         var damege :Double
-        let randomBool = Bool.random()
+        //let randomBool = Bool.random()
         let randomNumber = Int.random(in: 1 ... 100)
         
         if (30 <= randomNumber){

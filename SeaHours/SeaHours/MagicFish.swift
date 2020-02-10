@@ -7,6 +7,7 @@
 //
 
 
+
 import Foundation
 
 class MagicFish : Enemy {
@@ -23,15 +24,15 @@ class MagicFish : Enemy {
                 print(randomNumber)
         
                if (40 <= randomNumber){
-                   damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
+                   damege = self.skill.ice(magickAttack: magickAttack, randomNumber: randomNumber)
                    choseSkillName = "アイス"
                    return Double(damege)
                }else if(10 <= randomNumber){
-                   damege = self.skill.fire(magickAttack: magickAttack, randomNumber: randomNumber)
+                   damege = self.skill.shot(magickAttack: magickAttack, randomNumber: randomNumber)
                    choseSkillName = "ショット"
                    return Double(damege)
                }else{
-               damege = self.skill.fire(magickAttack: magickAttack, randomNumber: randomNumber)
+               damege = self.skill.tailAttack(attack: attack, randomNumber: randomNumber)
                choseSkillName = "テールアタック"
                return Double(damege)
                }
