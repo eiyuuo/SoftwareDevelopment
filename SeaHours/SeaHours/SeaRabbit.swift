@@ -11,7 +11,7 @@ import Foundation
 class SeaRabbit : Enemy {
 
     init() {
-        super.init(name : "ウミウサギ" ,maxHitPoint: 10, defense: 5, attack: 10, magickAttack: 10)
+        super.init(name : "ウミウサギ" ,maxHitPoint: 10, defense: 5, attack: 10, magickAttack: 10,exp: 10)
     }
 
     override func selectSkill() -> Double {

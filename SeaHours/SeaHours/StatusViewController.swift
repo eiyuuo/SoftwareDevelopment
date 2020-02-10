@@ -15,13 +15,10 @@ import GameplayKit
 class StatusViewController: UIViewController {
     
     //Classのインスタンス化
-    
-    
     let userDefaults = UserDefaults.standard
     let statusadd = StatusAdd()
     let status = Status()
-    
-    
+
     
     
     var TouchEXP: Bool = true //EXPの消費切り替え用変数
@@ -35,6 +32,12 @@ class StatusViewController: UIViewController {
     var DEFi: Int!
     var INTi: Int!
     
+    var hp:Int!
+    var sp:Int!
+    var atk:Int!
+    var def:Int!
+    var int:Int!
+    var exp:Int!
     
     
     //現在ステの表示label
@@ -49,10 +52,6 @@ class StatusViewController: UIViewController {
     //装備label
     @IBOutlet weak var Weapon: UILabel!
     @IBOutlet weak var Armor: UILabel!
-    
-    
-    //プレイヤーアイコンlabel
-    @IBOutlet weak var Icon: UILabel!
     
     
     //アイテム欄，魔法欄
@@ -615,6 +614,7 @@ class StatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         //labelに各ステータスの数字が連携
         print("画面表示")
         print(String(status.getHP()))
@@ -626,7 +626,6 @@ class StatusViewController: UIViewController {
         EXPpoint.text = status.getEXPs()
         
         
-        
         //各ステータス値をgetし変数へ格納
         HPi = status.getHP()
         SPi = status.getSP()
@@ -634,7 +633,8 @@ class StatusViewController: UIViewController {
         DEFi = status.getDEF()
         INTi = status.getINT()
         JudgeEXP = status.getEXP()
-
+    
+        
         
         
         //各ボタンの装飾(プラス)
@@ -700,11 +700,6 @@ class StatusViewController: UIViewController {
         Armor.layer.borderColor = UIColor.white.cgColor
         Armor.layer.cornerRadius = 10.0
         
-        
-        
-        Icon.layer.borderWidth = 1
-        Icon.layer.borderColor = UIColor.white.cgColor
-        Icon.layer.cornerRadius = 10.0
         
         
         

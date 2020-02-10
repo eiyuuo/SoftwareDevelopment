@@ -14,8 +14,8 @@ import GameplayKit
 //ステータスに能力を振るクラス
 class StatusAdd {
     
-    let status = Status()
     let userDefaults = UserDefaults.standard
+    let status = Status()
     
     var hp:Int = UserDefaults.standard.integer(forKey: "HPs")
     var sp:Int = UserDefaults.standard.integer(forKey: "SPs")
@@ -24,6 +24,7 @@ class StatusAdd {
     var int:Int = UserDefaults.standard.integer(forKey: "INTs")
     var exp:Int = UserDefaults.standard.integer(forKey: "EXPs")
     
+   
     
     //EXP-1の時のステータス割り振りおよび保存
     func AddHP(){
@@ -136,7 +137,6 @@ class StatusAdd {
     //変更したステータスの値を保存
     func SaveStatus(){
         //使用している変数への保存
-        
         status.setHP(point :self.hp)
         status.setSP(point :self.sp)
         status.setATK(point :self.atk)
@@ -156,13 +156,14 @@ class StatusAdd {
         
         
         //現在ステータスの確認用出力
-        print("HP:\(status.getHP())")
-        print("SP:\(status.getSP())")
-        print("ATK:\(status.getATK())")
-        print("DEF:\(status.getDEF())")
-        print("INT:\(status.getINT())")
-        print("EXP:\(status.getEXP())")
-    }
+            print("HP:\(status.getHP())")
+            print("SP:\(status.getSP())")
+            print("ATK:\(status.getATK())")
+            print("DEF:\(status.getDEF())")
+            print("INT:\(status.getINT())")
+            print("EXP:\(status.getEXP())")
+        
+        }
     
     
     
