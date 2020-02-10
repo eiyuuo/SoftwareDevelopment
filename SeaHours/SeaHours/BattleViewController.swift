@@ -16,6 +16,7 @@ class BattleViewController: UIViewController {
     private let skillDict = Skill().getSkillPointDict()
     private let battle = Battle(enemyName: "dragon")
     private var nowChoseSkillName : String = ""
+    var enemyName:String = ""
     
     //音関係
     private var audioAttack: AVAudioPlayer!
@@ -44,7 +45,7 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var yes : UIButton!
     @IBOutlet weak var no : UIButton!
     
-    
+
     //スキルの使用ボタンについて
     @IBAction func yes(_ sender: Any) {
         //ボタン消す→プレイヤーのターン→敵のターンの順番で記述
@@ -69,6 +70,8 @@ class BattleViewController: UIViewController {
     @IBAction func nomalAttack(_ sender: Any) {
         buttonIsHide(skillName: "通常攻撃",boolType: false )
         makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+
+        
     }
     
     @IBAction func fire(_ sender: Any) {
@@ -99,7 +102,9 @@ class BattleViewController: UIViewController {
         makeLabelLine(label: label1)
         makeLabelLine(label: log)
         makeLabelLine(label: label2)
-        
+        //画像の差し替え
+        let image = UIImage(named:enemyName )
+        teki.image = image
     }
     //ーーーーーーーーーーーーーーーーー↑インスタンスみたいの↑ーーーーーーーーーーーーーーーーーー
     

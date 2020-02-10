@@ -81,12 +81,10 @@
 		E4716F74239773AD00F09053 /* Dragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		E4716F772397805A00F09053 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		E4EFAB3523C6C5960025506A /* battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = battle.storyboard; sourceTree = "<group>"; };
-		EE5759D423D95E8500FF8A7D /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teki1.png; path = ../../../Downloads/oto/teki1.png; sourceTree = "<group>"; };
 		EE5759D523D95E8500FF8A7D /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kaihuku.mp3; path = ../../../Downloads/oto/kaihuku.mp3; sourceTree = "<group>"; };
 		EE5759D623D95E8500FF8A7D /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fruitsparfait.mp3; path = ../../../Downloads/oto/fruitsparfait.mp3; sourceTree = "<group>"; };
 		EE5759D723D95E8500FF8A7D /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_explosion7.mp3; path = ../../../Downloads/oto/game_explosion7.mp3; sourceTree = "<group>"; };
 		EE5759D823D95E8600FF8A7D /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "punch-high1.mp3"; path = "../../../Downloads/oto/punch-high1.mp3"; sourceTree = "<group>"; };
-		EE5759D923D95E8600FF8A7D /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黒.jpg"; path = "../../../Downloads/oto/黒.jpg"; sourceTree = "<group>"; };
 		EE8D66512398F51800C7733C /* SceneManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagement.swift; sourceTree = "<group>"; };
 		EEB508FA238F4C69000DFEB4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaihe.swift; sourceTree = "<group>"; };
@@ -177,8 +175,6 @@
 				EE5759D723D95E8500FF8A7D /* game_explosion7.mp3 */,
 				EE5759D523D95E8500FF8A7D /* kaihuku.mp3 */,
 				EE5759D823D95E8600FF8A7D /* punch-high1.mp3 */,
-				EE5759D423D95E8500FF8A7D /* teki1.png */,
-				EE5759D923D95E8600FF8A7D /* 黒.jpg */,
 				E4716F6E23941B6600F09053 /* Enemy.swift */,
 				E4716F722397733300F09053 /* Slime.swift */,
 				E4716F74239773AD00F09053 /* Dragon.swift */,
