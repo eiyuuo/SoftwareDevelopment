@@ -12,8 +12,6 @@ class Slime : Enemy {
     
     //ステータス記述
     init() {
-        super.init(name : "スライム" ,maxHitPoint: 50, defense: 10, attack: 20, magickAttack: 30)
+        super.init(name : "スライム" ,maxHitPoint: 50, defense: 10, attack: 20, magickAttack: 30, exp: 10)
     }
-    
 }
-

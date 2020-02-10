@@ -36,81 +36,81 @@ class Status {
     
     //get String
     func getHPs() -> String {
-        return String(HP)
+        return String(self.HP)
     }
     
     func getSPs() -> String {
-        return String(SP)
+        return String(self.SP)
     }
     
     func getATKs() -> String {
-        return String(ATK)
+        return String(self.ATK)
     }
     
     func getDEFs() -> String {
-        return String(DEF)
+        return String(self.DEF)
     }
     
     func getINTs() -> String {
-        return String(INT)
+        return String(self.INT)
     }
     
     func getEXPs() -> String {
-        return String(EXP)
+        return String(self.EXP)
     }
     
     
     
     //get Int
     func getHP() -> Int {
-        return Int(HP)
+        return Int(self.HP)
     }
     
     func getSP() -> Int {
-        return Int(SP)
+        return Int(self.SP)
     }
     
     func getATK() -> Int {
-        return Int(ATK)
+        return Int(self.ATK)
     }
     
     func getDEF() -> Int {
-        return Int(DEF)
+        return Int(self.DEF)
     }
     
     func getINT() -> Int {
-        return Int(INT)
+        return Int(self.INT)
     }
     
     func getEXP() -> Int {
-        return Int(EXP)
+        return Int(self.EXP)
     }
     
     
     
     //set Number
     func setEXP(point: Int) {
-        EXP = point
+        self.EXP = point
     }
     
     func setHP(point: Int) {
-        HP = point
+        self.HP = point
     }
     
     func setSP(point: Int) {
-        SP = point
+        self.SP = point
     }
     
     func setATK(point: Int) {
-        ATK = point
+        self.ATK = point
     }
     
     func setDEF(point: Int) {
-        DEF = point
+        self.DEF = point
     }
     
     func setINT(point: Int) {
-        INT = point
+        self.INT = point
     }
     
     

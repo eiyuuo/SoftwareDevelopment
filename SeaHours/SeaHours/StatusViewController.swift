@@ -18,7 +18,7 @@ class StatusViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     let statusadd = StatusAdd()
     let status = Status()
-    
+
     
     
     var TouchEXP: Bool = true //EXPの消費切り替え用変数
@@ -614,9 +614,10 @@ class StatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
-        
+
         //labelに各ステータスの数字が連携
+        print("画面表示")
+        print(String(status.getHP()))
         HPpoint.text = status.getHPs()
         SPpoint.text = status.getSPs()
         ATKpoint.text = status.getATKs()

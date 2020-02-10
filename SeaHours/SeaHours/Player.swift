@@ -13,16 +13,15 @@ class Player : Character {
     private var nowSkillPoint: Int
     private var item: [String] = [String]()
     
-    init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxSkillPoint: Int ) {
+    init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxSkillPoint: Int ,exp : Int) {
         self.maxSkillPoint = maxSkillPoint
         self.nowSkillPoint = self.maxSkillPoint
         
-        super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack)
+        super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack, exp: exp)
     }
     
     func skill_(enemy:Enemy ,skillName :String) -> String {
            var damage : Int
-        
         if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" ) {//回復系のスキル　3つしか想定してないのでいいよね...
             damage = damageCalculate(skillDamage: skill.choseSkill(skillName: skillName, attack: attack, magickAttack: magickAttack), enemyDefence: 0)
             
@@ -40,8 +39,13 @@ class Player : Character {
                return "\nプレイヤーは" +  skillName + "で" + enemy.getName() + "に" + String(damage) + "のダメージを与えた\n"
         }
     }
-
     
+    func item_(itemName : String) -> String {
+        var damage : Int
+        
+        return ""
+    }
+
     func getSkillPoint() -> Int {
         return nowSkillPoint
     }
