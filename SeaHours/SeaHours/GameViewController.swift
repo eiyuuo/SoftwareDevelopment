@@ -12,18 +12,8 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    /*
-    @IBAction func bottan() {
-        
-    //    UserDefaults.standard.set(120,forKey: “limit”)
-    //    userDefaults.synchronize()
-        let scene = SceneManagement()
-        scene.sceneTransition(corrent: self,sb: “battle”,wi: “battleboard”)
-         */
     
     @IBAction func VS(_ sender: Any) {
-//        let scene = SceneManagement()
-//        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "usagi"
