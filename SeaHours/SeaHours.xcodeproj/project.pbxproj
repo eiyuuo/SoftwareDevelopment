@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02696A3223D12EE0005E593F /* PlayerStatus.storyboard */; };
+		02696A3523D9374E005E593F /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02696A3423D9374E005E593F /* StatusViewController.swift */; };
+		02696A3723D94347005E593F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02696A3623D94347005E593F /* GameScene.swift */; };
+		02FC129023A1DE69007688B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC128F23A1DE69007688B6 /* Status.swift */; };
+		02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC129123A1DE6E007688B6 /* StatusAdd.swift */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
@@ -16,18 +21,16 @@
 		E4716F75239773AD00F09053 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F74239773AD00F09053 /* Dragon.swift */; };
 		E4716F782397805A00F09053 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F772397805A00F09053 /* BattleViewController.swift */; };
 		E4EFAB3623C6C5960025506A /* battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFAB3523C6C5960025506A /* battle.storyboard */; };
-		EE45245E23C6CB3300C5EB52 /* punch-high1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE45245823C6CB3300C5EB52 /* punch-high1.mp3 */; };
-		EE45245F23C6CB3300C5EB52 /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE45245923C6CB3300C5EB52 /* game_explosion7.mp3 */; };
-		EE45246023C6CB3300C5EB52 /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE45245A23C6CB3300C5EB52 /* kaihuku.mp3 */; };
-		EE45246123C6CB3300C5EB52 /* fruitsparfait.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE45245B23C6CB3300C5EB52 /* fruitsparfait.mp3 */; };
-		EE45246223C6CB3300C5EB52 /* teki1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE45245C23C6CB3300C5EB52 /* teki1.png */; };
-		EE45246323C6CB3300C5EB52 /* 黒.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE45245D23C6CB3300C5EB52 /* 黒.jpg */; };
-		EE523E9B23D6B25200A70E5D /* Kaihei.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE523E9A23D6B25200A70E5D /* Kaihei.swift */; };
+		EE5759DA23D95E8600FF8A7D /* teki1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D423D95E8500FF8A7D /* teki1.png */; };
+		EE5759DB23D95E8600FF8A7D /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D523D95E8500FF8A7D /* kaihuku.mp3 */; };
+		EE5759DC23D95E8600FF8A7D /* fruitsparfait.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D623D95E8500FF8A7D /* fruitsparfait.mp3 */; };
+		EE5759DD23D95E8600FF8A7D /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D723D95E8500FF8A7D /* game_explosion7.mp3 */; };
+		EE5759DE23D95E8600FF8A7D /* punch-high1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D823D95E8600FF8A7D /* punch-high1.mp3 */; };
+		EE5759DF23D95E8600FF8A7D /* 黒.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE5759D923D95E8600FF8A7D /* 黒.jpg */; };
 		EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D66512398F51800C7733C /* SceneManagement.swift */; };
 		EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB508FA238F4C69000DFEB4 /* TimerController.swift */; };
+		EEEA8F0B23F0ED4500B8ACA3 /* Kaihe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */; };
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
-		EEEC61FF238630E000C6819B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEEC61FE238630E000C6819B /* Actions.sks */; };
-		EEEC6201238630E000C6819B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6200238630E000C6819B /* GameScene.swift */; };
 		EEEC6203238630E000C6819B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6202238630E000C6819B /* GameViewController.swift */; };
 		EEEC6206238630E000C6819B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6204238630E000C6819B /* Main.storyboard */; };
 		EEEC6208238630E200C6819B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6207238630E200C6819B /* Assets.xcassets */; };
@@ -53,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02696A2E23AB6BFC005E593F /* MagicFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicFish.swift; sourceTree = "<group>"; };
+		02696A3223D12EE0005E593F /* PlayerStatus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerStatus.storyboard; sourceTree = "<group>"; };
+		02696A3423D9374E005E593F /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		02696A3623D94347005E593F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		02FC128F23A1DE69007688B6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		02FC129123A1DE6E007688B6 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
@@ -62,20 +71,17 @@
 		E4716F74239773AD00F09053 /* Dragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dragon.swift; sourceTree = "<group>"; };
 		E4716F772397805A00F09053 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		E4EFAB3523C6C5960025506A /* battle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = battle.storyboard; sourceTree = "<group>"; };
-		EE45245823C6CB3300C5EB52 /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "punch-high1.mp3"; path = "../../../Downloads/oto/punch-high1.mp3"; sourceTree = "<group>"; };
-		EE45245923C6CB3300C5EB52 /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_explosion7.mp3; path = ../../../Downloads/oto/game_explosion7.mp3; sourceTree = "<group>"; };
-		EE45245A23C6CB3300C5EB52 /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kaihuku.mp3; path = ../../../Downloads/oto/kaihuku.mp3; sourceTree = "<group>"; };
-		EE45245B23C6CB3300C5EB52 /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fruitsparfait.mp3; path = ../../../Downloads/oto/fruitsparfait.mp3; sourceTree = "<group>"; };
-		EE45245C23C6CB3300C5EB52 /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teki1.png; path = ../../../Downloads/oto/teki1.png; sourceTree = "<group>"; };
-		EE45245D23C6CB3300C5EB52 /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黒.jpg"; path = "../../../Downloads/oto/黒.jpg"; sourceTree = "<group>"; };
-		EE523E9A23D6B25200A70E5D /* Kaihei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaihei.swift; sourceTree = "<group>"; };
+		EE5759D423D95E8500FF8A7D /* teki1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teki1.png; path = ../../../Downloads/oto/teki1.png; sourceTree = "<group>"; };
+		EE5759D523D95E8500FF8A7D /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = kaihuku.mp3; path = ../../../Downloads/oto/kaihuku.mp3; sourceTree = "<group>"; };
+		EE5759D623D95E8500FF8A7D /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = fruitsparfait.mp3; path = ../../../Downloads/oto/fruitsparfait.mp3; sourceTree = "<group>"; };
+		EE5759D723D95E8500FF8A7D /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_explosion7.mp3; path = ../../../Downloads/oto/game_explosion7.mp3; sourceTree = "<group>"; };
+		EE5759D823D95E8600FF8A7D /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "punch-high1.mp3"; path = "../../../Downloads/oto/punch-high1.mp3"; sourceTree = "<group>"; };
+		EE5759D923D95E8600FF8A7D /* 黒.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "黒.jpg"; path = "../../../Downloads/oto/黒.jpg"; sourceTree = "<group>"; };
 		EE8D66512398F51800C7733C /* SceneManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManagement.swift; sourceTree = "<group>"; };
-		EEA18EAD239DE15600693F94 /* SeaHours */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SeaHours; sourceTree = "<group>"; };
 		EEB508FA238F4C69000DFEB4 /* TimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaihe.swift; sourceTree = "<group>"; };
 		EEEC61F7238630E000C6819B /* SeaHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEC61FA238630E000C6819B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEEC61FE238630E000C6819B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		EEEC6200238630E000C6819B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EEEC6202238630E000C6819B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EEEC6205238630E000C6819B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEEC6207238630E200C6819B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,32 +144,35 @@
 		EEEC61F9238630E000C6819B /* SeaHours */ = {
 			isa = PBXGroup;
 			children = (
-				EE45245B23C6CB3300C5EB52 /* fruitsparfait.mp3 */,
-				EE45245923C6CB3300C5EB52 /* game_explosion7.mp3 */,
-				EE45245A23C6CB3300C5EB52 /* kaihuku.mp3 */,
 				E406A2D323A7B43A00A576AC /* Player.swift */,
-				EE45245823C6CB3300C5EB52 /* punch-high1.mp3 */,
-				EE45245C23C6CB3300C5EB52 /* teki1.png */,
-				EE45245D23C6CB3300C5EB52 /* 黒.jpg */,
 				E4716F5C239275CA00F09053 /* Character.swift */,
 				E4716F7023976D6100F09053 /* Battle.swift */,
 				E4716F772397805A00F09053 /* BattleViewController.swift */,
 				E4716F5E2393A45B00F09053 /* Skill.swift */,
+				EE5759D623D95E8500FF8A7D /* fruitsparfait.mp3 */,
+				EE5759D723D95E8500FF8A7D /* game_explosion7.mp3 */,
+				EE5759D523D95E8500FF8A7D /* kaihuku.mp3 */,
+				EE5759D823D95E8600FF8A7D /* punch-high1.mp3 */,
+				EE5759D423D95E8500FF8A7D /* teki1.png */,
+				EE5759D923D95E8600FF8A7D /* 黒.jpg */,
 				E4716F6E23941B6600F09053 /* Enemy.swift */,
 				E4716F722397733300F09053 /* Slime.swift */,
 				E4716F74239773AD00F09053 /* Dragon.swift */,
 				EEEC61FA238630E000C6819B /* AppDelegate.swift */,
-				EEEC61FE238630E000C6819B /* Actions.sks */,
-				EEEC6200238630E000C6819B /* GameScene.swift */,
 				EEEC6202238630E000C6819B /* GameViewController.swift */,
 				EEEC6204238630E000C6819B /* Main.storyboard */,
 				E4EFAB3523C6C5960025506A /* battle.storyboard */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
 				EEEC620C238630E200C6819B /* Info.plist */,
+				02696A3623D94347005E593F /* GameScene.swift */,
 				EEB508FA238F4C69000DFEB4 /* TimerController.swift */,
 				EE8D66512398F51800C7733C /* SceneManagement.swift */,
-				EEA18EAD239DE15600693F94 /* SeaHours */,
-				EE523E9A23D6B25200A70E5D /* Kaihei.swift */,
+				02FC128F23A1DE69007688B6 /* Status.swift */,
+				02FC129123A1DE6E007688B6 /* StatusAdd.swift */,
+				02696A2E23AB6BFC005E593F /* MagicFish.swift */,
+				02696A3223D12EE0005E593F /* PlayerStatus.storyboard */,
+				02696A3423D9374E005E593F /* StatusViewController.swift */,
+				EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
@@ -290,16 +299,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE45245E23C6CB3300C5EB52 /* punch-high1.mp3 in Resources */,
-				EE45246123C6CB3300C5EB52 /* fruitsparfait.mp3 in Resources */,
+				EE5759DF23D95E8600FF8A7D /* 黒.jpg in Resources */,
 				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
-				EE45245F23C6CB3300C5EB52 /* game_explosion7.mp3 in Resources */,
-				EE45246223C6CB3300C5EB52 /* teki1.png in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
-				EEEC61FF238630E000C6819B /* Actions.sks in Resources */,
-				EE45246023C6CB3300C5EB52 /* kaihuku.mp3 in Resources */,
-				EE45246323C6CB3300C5EB52 /* 黒.jpg in Resources */,
+				EE5759DA23D95E8600FF8A7D /* teki1.png in Resources */,
+				EE5759DC23D95E8600FF8A7D /* fruitsparfait.mp3 in Resources */,
+				EE5759DD23D95E8600FF8A7D /* game_explosion7.mp3 in Resources */,
+				EE5759DB23D95E8600FF8A7D /* kaihuku.mp3 in Resources */,
 				E4EFAB3623C6C5960025506A /* battle.storyboard in Resources */,
+				02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */,
+				EE5759DE23D95E8600FF8A7D /* punch-high1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,17 +336,20 @@
 				E406A2D423A7B43A00A576AC /* Player.swift in Sources */,
 				E4716F6F23941B6600F09053 /* Enemy.swift in Sources */,
 				E4716F5D239275CA00F09053 /* Character.swift in Sources */,
-				EEEC6201238630E000C6819B /* GameScene.swift in Sources */,
 				EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */,
 				EEB508FB238F4C69000DFEB4 /* TimerController.swift in Sources */,
 				E4716F782397805A00F09053 /* BattleViewController.swift in Sources */,
 				E4716F7123976D6100F09053 /* Battle.swift in Sources */,
 				E4716F5F2393A45B00F09053 /* Skill.swift in Sources */,
 				EEEC6203238630E000C6819B /* GameViewController.swift in Sources */,
-				EE523E9B23D6B25200A70E5D /* Kaihei.swift in Sources */,
+				EEEA8F0B23F0ED4500B8ACA3 /* Kaihe.swift in Sources */,
 				EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */,
+				02696A3723D94347005E593F /* GameScene.swift in Sources */,
 				E4716F75239773AD00F09053 /* Dragon.swift in Sources */,
 				E4716F732397733300F09053 /* Slime.swift in Sources */,
+				02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */,
+				02FC129023A1DE69007688B6 /* Status.swift in Sources */,
+				02696A3523D9374E005E593F /* StatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
