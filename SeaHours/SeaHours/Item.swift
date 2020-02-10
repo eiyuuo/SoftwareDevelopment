@@ -21,7 +21,7 @@ class Item {
     
     var itemdescription:[Int:String] = [0:"体力を回復する草。HPを10回復する。",1:"薬草を加工した飲み薬。HPを25回復する。",2:"ポーションを特殊な方法で加工し効果を上昇させた飲み薬。HPを50回復する。",3:"様々な方法で効果を上昇させた最高級の飲み薬。HPを100回復する。",4:"魔力が回復する薬草。SPを10回復する。",5:"魔力草を加工した飲み薬。SPを25回復する。",6:"魔力ポーションを特殊な方法で加工し効果を上昇させた飲み薬。SPを50回復する。",7:"様々な方法で効果を上昇させた最高級の飲み薬。SPを100回復する。"]
     
-    var itemhave:[Int] = [0,0,3,0,0,1,2,2]
+    var itemhave:[Int:Int] = [0:10,1:2,2:3,3:0,4:0,5:0,6:0,7:0]
     
     var bukiname:[Int:String] = [0:"木の剣", 1:"アイアンソード",2:"マジックロッド",3:"クレイモア",4:"ソーラーロッド",5:"シーブレード",6:"シーロッド",7:"サイレントソード"]
     
@@ -60,7 +60,7 @@ class Item {
     }
     
     func GetItemHave(ID:Int) -> Int {
-        return itemhave[0]
+        return itemhave[ID, default: 0]
     }
     
     func GetBukiName(ID:Int) -> String {
@@ -158,7 +158,7 @@ class Item {
             }
         case "itemhave":
             for i in 0..<8 {
-                IntArray.append(itemhave[i])
+                IntArray.append(itemhave[i]!)
             }
         case "bukinumber":
             for i in 0..<8 {
