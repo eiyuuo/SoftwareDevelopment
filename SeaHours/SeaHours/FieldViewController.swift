@@ -10,8 +10,26 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class GameViewController: UIViewController {
+class FieldViewController: UIViewController {
+
+    @IBOutlet weak var minutelabel: UILabel!
+    @IBOutlet weak var secondlabel: UILabel!
+    let timer = TimerController()
+    var labelTimer:Timer!
+    let userDefaults = UserDefaults.standard
+    var count:Int = 0
     
+    //labelset関数を1秒ごとに行う処理を行っている
+    func labeltimer(){
+        labelTimer = Timer.scheduledTimer(timeInterval:1,target:self,selector:#selector(self.labelset),userInfo: nil,repeats:true)
+
+    }
+    
+    //labelを更新するための処理
+    @objc func labelset(){
+        minutelabel.text = timer.getStrMinute()
+        secondlabel.text = timer.getStrSecond()
+    }
     
     @IBAction func VS(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
@@ -39,5 +57,11 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        minutelabel.text = String("\(count/60) 分")
+        secondlabel.text = String("\(count%60) 秒")
+        
+        timer.setCount(count: count)
+        timer.createTimer()
+        labeltimer()
     }
 }
