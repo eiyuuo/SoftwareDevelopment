@@ -15,9 +15,12 @@ import GameplayKit
 class StatusViewController: UIViewController {
     
     //Classのインスタンス化
+    
+    
+    let userDefaults = UserDefaults.standard
     let statusadd = StatusAdd()
     let status = Status()
-    let userDefaults = UserDefaults.standard
+    
     
     
     
@@ -611,8 +614,10 @@ class StatusViewController: UIViewController {
     //画面起動時初期処理
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //labelに各ステータスの数字が連携
+        print("画面表示")
+        print(String(status.getHP()))
         HPpoint.text = status.getHPs()
         SPpoint.text = status.getSPs()
         ATKpoint.text = status.getATKs()
