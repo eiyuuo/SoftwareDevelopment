@@ -33,6 +33,15 @@
                                     <action selector="Status:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Cgo-Jl-WYh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxO-hT-5Ov">
+                                <rect key="frame" x="343" y="184" width="338" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="ショップ画面"/>
+                                <connections>
+                                    <action selector="Shop:" destination="BV1-FR-VrT" eventType="touchUpInside" id="awD-ZM-AK8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -40,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.69346733668343" y="137.41007194244605"/>
+            <point key="canvasLocation" x="138.28125" y="136.71875"/>
         </scene>
     </scenes>
 </document>

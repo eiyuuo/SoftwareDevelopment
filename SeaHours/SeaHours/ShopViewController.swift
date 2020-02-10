@@ -13,7 +13,7 @@ import GameplayKit
 let iteminf = item()
 var number = 0
 let userdefaults = UserDefaults()
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let itemname=iteminf.MakeStringArray(dicname: "name")
     var havearray = iteminf.MakeIntArray(dicname: "have")
     
