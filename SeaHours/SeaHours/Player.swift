@@ -11,7 +11,8 @@ import Foundation
 class Player : Character {
     private var maxSkillPoint: Int
     private var nowSkillPoint: Int
-    private var item: [String] = [String]()
+    private var item: Item = Item()
+    
     
     init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxSkillPoint: Int ,exp : Int) {
         self.maxSkillPoint = maxSkillPoint
@@ -21,7 +22,7 @@ class Player : Character {
     }
     
     func skill_(enemy:Enemy ,skillName :String) -> String {
-           var damage : Int
+        var damage : Int
         if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" ) {//回復系のスキル　3つしか想定してないのでいいよね...
             damage = damageCalculate(skillDamage: skill.choseSkill(skillName: skillName, attack: attack, magickAttack: magickAttack), enemyDefence: 0)
             
@@ -40,15 +41,21 @@ class Player : Character {
         }
     }
     
-    func item_(itemName : String) -> String {
-        var damage : Int
+    func item_(itemNumber : String) -> String {
+        let number : Int! = item.itemname2[itemNumber]
+        guard let itemName = item.itemname[number] else { return "hoge" }
+        let itemEffect : Int = item.itemnumber[number] ?? 0
         
-        return ""
+        hitPointOpelate(changePoint: itemEffect)
+        
+        return "\nプレイヤーは" +  itemName + "で" + String(itemEffect) + "回復した\n"
+        
     }
 
     func getSkillPoint() -> Int {
         return nowSkillPoint
     }
+    
     
     func skillPointOplate(changePoint : Int){
         nowSkillPoint = nowSkillPoint + changePoint

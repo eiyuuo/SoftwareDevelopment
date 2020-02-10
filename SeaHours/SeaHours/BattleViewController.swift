@@ -14,9 +14,13 @@ import AVFoundation
 class BattleViewController: UIViewController {
     
     private let skillDict = Skill().getSkillPointDict()
+    private let skillHitPersent = Skill().getSkillHitPersent()
     private var nowChoseSkillName : String = ""
     var enemyName : String = ""
+    private var farstFrag : Bool = false
     private var battle : Battle!
+    private let userDefaults = UserDefaults.standard
+    private var items : Item = Item()
     
     //仮
     private let choseFlag:[String:Int] = ["skill": 0 ,"item": 1 ]
@@ -32,8 +36,8 @@ class BattleViewController: UIViewController {
                              [ "ブリザード"  , "アースクエイク" , "ナイトメア" , "ヒール" ],
                              [ "ハイヒール" , "グレイヒール","",""]],
                             //アイテム
-                             [["AAA","BBB","CCC","DDD"],
-                              ["aaa","bbb","ccc","ddd"]]
+                             [["薬草","ポーション","ハイポーション","グレイトポーション"],
+                              ["魔力草","魔力ポーション","魔力ハイポーション","魔力グレイトポーション"]]
                             ]
     private var pageFlag:Int = 0
     
@@ -69,6 +73,7 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var Next: UIButton!
     @IBOutlet weak var Back: UIButton!
     @IBOutlet weak var backHome: UIButton!
+    @IBOutlet weak var farstFlagButton: UIButton!
     
     //スキルの使用ボタンについて
     @IBAction func yes(_ sender: Any) {
@@ -83,15 +88,25 @@ class BattleViewController: UIViewController {
         //enemyAnimation()
     }
     
+    @IBAction func no(_ sender: Any) {
+        buttonIsHide(skillName: nowChoseSkillName , boolType: true)
+        makeSkillButton(skillName : nowChoseSkillName , boolType : true)
+    }
+    
+    @IBAction func farstFlagButton(_ sender: Any) {
+        if farstFrag {
+            farstFrag = false
+        }else {
+            farstFrag = true
+        }
+        
+        farstFlagButton.setTitle("確認処理" + String(farstFrag), for: .normal)
+    }
+    
     @IBAction func backHome(_ sender: Any) {
         let exp = battle.status.getEXP() + battle.enemy.getExp()
         UserDefaults.standard.set(exp, forKey:"EXPs")
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func no(_ sender: Any) {
-        buttonIsHide(skillName: nowChoseSkillName , boolType: true)
-        makeSkillButton(skillName : nowChoseSkillName , boolType : true)
     }
     
     @IBAction func next(_ sender: Any) {
@@ -100,13 +115,8 @@ class BattleViewController: UIViewController {
         } else{
             pageFlag=0
         }
-        button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
-        button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
-        button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
-        button4.setTitle(skillList[choseFlag[nowChose]!][pageFlag][3], for: .normal)
-        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
+        changeButtonName()
     }
-    
 
     @IBAction func back(_ sender: Any) {
         if pageFlag != 0 {
@@ -114,26 +124,24 @@ class BattleViewController: UIViewController {
         } else{
             pageFlag=skillList[choseFlag[nowChose]!].count-1
         }
-        button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
-        button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
-        button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
-        button4.setTitle(skillList[choseFlag[nowChose]!][pageFlag][3], for: .normal)
-        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
+        changeButtonName()
     }
     
     @IBAction func skillFlagButton(_ sender: Any) {
         pageFlag=0
         nowChose="skill"
-        button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
-        button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
-        button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
-        button4.setTitle(skillList[choseFlag[nowChose]!][pageFlag][3], for: .normal)
-        pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
+        changeButtonName()
+        
     }
     
     @IBAction func itemFlagButton(_ sender: Any) {
         pageFlag=0
         nowChose="item"
+        changeButtonName()
+    }
+    
+    //上の処理で使用している。ボタンの名前を入れ替える処理をまとめたもの
+    func changeButtonName(){
         button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
         button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
         button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
@@ -144,25 +152,37 @@ class BattleViewController: UIViewController {
     
     //スキルのボタンについて
     @IBAction func button1(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][0],boolType: false )
-        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+        buttonFunc(listNum: 0)
     }
 
     @IBAction func button2(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][1],boolType: false )
-        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+        buttonFunc(listNum: 1)
     }
 
     @IBAction func button3(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][2],boolType: false )
-        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+        buttonFunc(listNum: 2)
     }
 
     @IBAction func button4(_ sender: Any) {
-        buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][3],boolType: false )
-        makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+        buttonFunc(listNum: 3)
     }
 
+    func buttonFunc(listNum : Int)  {
+        if farstFrag {
+            buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][listNum],boolType: false )
+            makeSkillButton(skillName: nowChoseSkillName , boolType: true)
+            if (skillDict[nowChoseSkillName]! <= battle.player.getSkillPoint()){
+                battle.battlePlayerTurn(nowChose: nowChose, tuchButtonName: nowChoseSkillName)
+                   playerAnimation()
+            }else {
+                buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][listNum],boolType: true )
+            }
+        } else{
+            buttonIsHide(skillName: skillList[choseFlag[nowChose]!][pageFlag][listNum],boolType: false )
+            makeSkillButton(skillName : nowChoseSkillName , boolType : false)
+        }
+    }
+    
     //ーーーーーーーーーーーーーーーーー↓インスタンスみたいの↓ーーーーーーーーーーーーーーーーーー
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,7 +236,7 @@ class BattleViewController: UIViewController {
     func playerAnimation() {
         if !battle.player.getIsDead() { //プレイヤーが生存時?
             //ここでnowChoseSkillでswith文？でアニメーション変化？流石にやりたくないです...
-            if (self.nowChoseSkillName != "ヒール" && self.nowChoseSkillName != "ハイヒール" && self.nowChoseSkillName != "グレイヒール"){
+            if (self.nowChoseSkillName != "ヒール" && self.nowChoseSkillName != "ハイヒール" && self.nowChoseSkillName != "グレイヒール" && self.nowChose != "item"){
                 print(self.nowChoseSkillName)
                 UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
                     self.teki.alpha = 0.0
@@ -343,14 +363,37 @@ class BattleViewController: UIViewController {
         if(skillName == "game clear"){
             backHome.isHidden = boolType
             skillBackGround.isHidden = boolType
-            skillCaption.text="獲得expは" + String(self.battle.enemy.getExp()) + "です。"
+            skillCaption.text="獲得expは" + String(battle.enemy.getExp()) + "です。"
             skillCaption.isHidden = boolType
         }else if (skillName == "game ver"){
             //いる？
-        }
-        else if (skillName != "" ){
+        }else if (nowChose == "skill") {
+            
+            if (skillName != "" ){
+                yes.isHidden = boolType
+                if (skillDict[skillName]! <= battle.player.getSkillPoint()){
+                    yes.isEnabled = true
+                } else {
+                    yes.isEnabled = false
+                }
+                no.isHidden = boolType
+                
+                let useSp : Int = skillDict[skillName] ?? 9999999999
+                let hitNum : Int = skillHitPersent[skillName] ?? 0
+                
+                skillBackGround.isHidden = boolType
+                skillCaption.text =  skillName + "の消費SPは" +
+                    String(useSp)
+                    + "，命中率は" + String(hitNum) + "です。"
+                skillCaption.isHidden = boolType
+            }
+        }else if (nowChose == "item" ){
             yes.isHidden = boolType
-            if (skillDict[skillName]! <= battle.player.getSkillPoint()){
+            
+            let haveItemNum : Int = items.itemname2[nowChoseSkillName] ?? 0
+            
+            //ユーザーデフォルトから持ってくる
+            if ( haveItemNum != 0){
                 yes.isEnabled = true
             } else {
                 yes.isEnabled = false
@@ -358,9 +401,8 @@ class BattleViewController: UIViewController {
             
             no.isHidden = boolType
             skillBackGround.isHidden = boolType
-            skillCaption.text =  skillName + "の消費SPは" +
-                String(battle.player.skill.getSkillPoint(keyName: nowChoseSkillName))
-                + "です。" + String()
+            skillCaption.text =  skillName + "の所持数は" +
+                String(haveItemNum) + "です。"
             skillCaption.isHidden = boolType
         }
     }
@@ -378,21 +420,23 @@ class BattleViewController: UIViewController {
     func playAudio(audioName : AVAudioPlayer!) {
        /* if(audioName.isPlaying) {
             //音が再生中の場合は停止する。
-            //audioName.stop()
+            audioName.stop()
             audioName.currentTime = 0
-            //audioName.play()
+            audioName.play()
         } else {
             //音が停止中の場合は再生する。
-            //audioName.play()
+            audioName.play()
         }
          */
     }
     
+    //物理攻撃とかのフラグあった方がよさそう...
     func soundEffect(skillName : String) {
-        if (skillName == "通常攻撃" || skillName == "渾身の一撃" ) {
-            playAudio(audioName: audioAttack)
-        } else if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール"){
-            playAudio(audioName: audioKaihuku)
+        if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" || nowChose == "item"){
+        playAudio(audioName: audioKaihuku)
+        } else if (skillName == "通常攻撃" || skillName == "渾身の一撃" || skillName == "スラント" || skillName == "クロー"
+        || skillName == "テールアタック" || skillName == "噛みつく" || skillName == "体当たり" || skillName == "エアスラッシュ" || skillName == "クロスブレイブ" || skillName == "アッパーブレイド" || skillName == "ドライブフェンサー" || skillName == "アークバイト" || skillName == "アストラルクロス" || skillName == "ツヴァイセイバー" || skillName == "シャインセイバー" || skillName == "ドラグテイル" || skillName == "リヴァイクロー" ) {
+        playAudio(audioName: audioAttack)
         } else {
             playAudio(audioName: audioMagick)
         }

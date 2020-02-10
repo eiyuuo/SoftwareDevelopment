@@ -170,12 +170,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSw-cF-w0C">
-                                <rect key="frame" x="388" y="385" width="182" height="48"/>
+                                <rect key="frame" x="436" y="381" width="182" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="ホームに戻る"/>
                                 <connections>
                                     <action selector="backHome:" destination="MR5-U8-RvY" eventType="touchUpInside" id="ep6-vX-wll"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-wW-Z2y">
+                                <rect key="frame" x="35" y="487" width="66" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="確認なし"/>
+                                <connections>
+                                    <action selector="farstFlagButton:" destination="MR5-U8-RvY" eventType="touchUpInside" id="DJE-2U-gh8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -191,6 +200,7 @@
                         <outlet property="button3" destination="lJV-O1-pNx" id="n2y-JY-nyL"/>
                         <outlet property="button4" destination="af2-TO-BVc" id="2Aw-Y3-P8g"/>
                         <outlet property="corer" destination="wzp-0q-9PL" id="QbH-KX-62m"/>
+                        <outlet property="farstFlagButton" destination="JeV-wW-Z2y" id="g9n-Q5-6hV"/>
                         <outlet property="gameOver" destination="bCq-Ou-db1" id="ke4-Hb-LJz"/>
                         <outlet property="item" destination="fwB-ss-Eit" id="84O-Ef-ib7"/>
                         <outlet property="label1" destination="DmO-T1-TeB" id="hgF-mB-MdE"/>

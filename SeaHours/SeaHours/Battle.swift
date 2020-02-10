@@ -44,6 +44,7 @@ class Battle { //戦闘を管理するクラス
     
     func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
+        print(nowChose)
         if (!player.getIsDead()) {
             if (nowChose == "skill") //スキル処理
             {
@@ -54,11 +55,8 @@ class Battle { //戦闘を管理するクラス
                 }
             }else if (nowChose == "item") //アイテム処理
             {
-                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                log = player.item_(itemNumber: tuchButtonName)
                 logList = log  + logList
-                if (enemy.getIsDead()) {
-                  logList = "\n" + enemy.getName() + "は倒れた" + logList
-                }
             }
         }
     }

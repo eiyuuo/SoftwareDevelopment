@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-let iteminf = item()
+let iteminf = Item()
 var number = 0
 let userdefaults = UserDefaults()
 var exp = 0
