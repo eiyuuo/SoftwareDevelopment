@@ -22,8 +22,12 @@ class GameViewController: UIViewController {
          */
     
     @IBAction func VS(_ sender: Any) {
-        let scene = SceneManagement()
-        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
+//        let scene = SceneManagement()
+//        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "usagi"
+        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func Status(_ sender: Any) {
