@@ -18,6 +18,7 @@
 		02696A4323D943FA005E593F /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 02696A3D23D943FA005E593F /* game_explosion7.mp3 */; };
 		02FC129023A1DE69007688B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC128F23A1DE69007688B6 /* Status.swift */; };
 		02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC129123A1DE6E007688B6 /* StatusAdd.swift */; };
+		25DBCC5023F134DD001FF1EC /* Golem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DBCC4F23F134DD001FF1EC /* Golem.swift */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
@@ -68,6 +69,7 @@
 		02696A3D23D943FA005E593F /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = game_explosion7.mp3; path = "../../../../../Downloads/oto 2/game_explosion7.mp3"; sourceTree = "<group>"; };
 		02FC128F23A1DE69007688B6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		02FC129123A1DE6E007688B6 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
+		25DBCC4F23F134DD001FF1EC /* Golem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Golem.swift; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				02696A2E23AB6BFC005E593F /* MagicFish.swift */,
 				02696A3223D12EE0005E593F /* PlayerStatus.storyboard */,
 				02696A3423D9374E005E593F /* StatusViewController.swift */,
+				25DBCC4F23F134DD001FF1EC /* Golem.swift */,
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				E4716F75239773AD00F09053 /* Dragon.swift in Sources */,
 				E4716F732397733300F09053 /* Slime.swift in Sources */,
 				02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */,
+				25DBCC5023F134DD001FF1EC /* Golem.swift in Sources */,
 				02FC129023A1DE69007688B6 /* Status.swift in Sources */,
 				02696A3523D9374E005E593F /* StatusViewController.swift in Sources */,
 			);
