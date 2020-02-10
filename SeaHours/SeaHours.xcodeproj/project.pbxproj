@@ -12,7 +12,6 @@
 		02696A3723D94347005E593F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02696A3623D94347005E593F /* GameScene.swift */; };
 		02FC129023A1DE69007688B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC128F23A1DE69007688B6 /* Status.swift */; };
 		02FC129223A1DE6E007688B6 /* StatusAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC129123A1DE6E007688B6 /* StatusAdd.swift */; };
-		E400E9B923EC771500F16878 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = E400E9B823EC771500F16878 /* sound */; };
 		E40296A023C6E4160010C7DE /* MagicFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402969F23C6E4160010C7DE /* MagicFish.swift */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
@@ -56,7 +55,6 @@
 		02696A3623D94347005E593F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		02FC128F23A1DE69007688B6 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		02FC129123A1DE6E007688B6 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
-		E400E9B823EC771500F16878 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		E402969F23C6E4160010C7DE /* MagicFish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicFish.swift; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E456F4A223D96EDF004FEFD2 /* StatusAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusAdd.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 		EEEC61F9238630E000C6819B /* SeaHours */ = {
 			isa = PBXGroup;
 			children = (
-				E400E9B823EC771500F16878 /* sound */,
 				E406A2D323A7B43A00A576AC /* Player.swift */,
 				E4716F5C239275CA00F09053 /* Character.swift */,
 				E402969F23C6E4160010C7DE /* MagicFish.swift */,
@@ -289,7 +286,6 @@
 				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
 				E4EFAB3623C6C5960025506A /* battle.storyboard in Resources */,
-				E400E9B923EC771500F16878 /* sound in Resources */,
 				02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
