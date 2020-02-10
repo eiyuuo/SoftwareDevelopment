@@ -12,7 +12,7 @@ import Foundation
 class MagicFish : Enemy {
     
     init() {
-        super.init(name : "マジックフィッシュ" ,maxHitPoint: 25, defense: 8, attack: 15, magickAttack: 80)
+        super.init(name : "マジックフィッシュ" ,maxHitPoint: 25, defense: 8, attack: 15, magickAttack: 80,exp: 10)
     }
     
     override func selectSkill() -> Double {
