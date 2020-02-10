@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-T1-TeB" userLabel="HPSPLabel">
-                                <rect key="frame" x="671" y="592" width="353" height="185"/>
+                                <rect key="frame" x="671" y="592" width="353" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,13 +162,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="このスキルを使用しますか？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8c-4tI">
-                                <rect key="frame" x="390" y="320" width="300" height="73"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="このスキルを使用しますか？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-8c-4tI">
+                                <rect key="frame" x="0.0" y="320" width="1024" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSw-cF-w0C">
+                                <rect key="frame" x="388" y="385" width="182" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="ホームに戻る"/>
+                                <connections>
+                                    <action selector="backHome:" destination="MR5-U8-RvY" eventType="touchUpInside" id="ep6-vX-wll"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UkC-fO-ytx"/>
@@ -176,6 +185,7 @@
                     <connections>
                         <outlet property="Back" destination="Nuw-9f-UtV" id="4Mm-TK-cFn"/>
                         <outlet property="Next" destination="P8I-dE-iOa" id="tMF-Jg-YYb"/>
+                        <outlet property="backHome" destination="jSw-cF-w0C" id="e5V-K2-v3R"/>
                         <outlet property="button1" destination="vPw-a0-vxl" id="B8v-qA-3Mc"/>
                         <outlet property="button2" destination="T1p-Ol-UcP" id="7mg-Wx-HlS"/>
                         <outlet property="button3" destination="lJV-O1-pNx" id="n2y-JY-nyL"/>
@@ -183,7 +193,7 @@
                         <outlet property="corer" destination="wzp-0q-9PL" id="QbH-KX-62m"/>
                         <outlet property="gameOver" destination="bCq-Ou-db1" id="ke4-Hb-LJz"/>
                         <outlet property="item" destination="fwB-ss-Eit" id="84O-Ef-ib7"/>
-                        <outlet property="label1" destination="DmO-T1-TeB" id="l2t-u0-1uO"/>
+                        <outlet property="label1" destination="DmO-T1-TeB" id="hgF-mB-MdE"/>
                         <outlet property="label2" destination="Af3-K0-SlO" id="Uiv-Mn-hGs"/>
                         <outlet property="log" destination="lyC-la-zrD" id="0G9-Eg-8NK"/>
                         <outlet property="logFlame" destination="RLm-vF-ehi" id="vhl-Ss-Xka"/>

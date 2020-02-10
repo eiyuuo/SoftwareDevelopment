@@ -19,7 +19,7 @@ class Battle { //戦闘を管理するクラス
     init(enemyName : String ) {
         
         //データベースからの修正済み
-        self.player = Player(maxHitPoint:status.getHP()+10000, defense:status.getDEF(), attack: status.getATK(), magickAttack:status.getINT()+10000, maxSkillPoint:status.getSP())
+        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
         
         switch enemyName { //どの敵なのか？
             
@@ -42,14 +42,23 @@ class Battle { //戦闘を管理するクラス
 
     }
     
-    func battlePlayerTurn(tuchButtonName : String) {
+    func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
-        //プレイヤー
         if (!player.getIsDead()) {
-            log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
-            logList = log  + logList
-            if (enemy.getIsDead()) {
-              logList = "\n" + enemy.getName() + "は倒れた" + logList
+            if (nowChose == "skill") //スキル処理
+            {
+                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                logList = log  + logList
+                if (enemy.getIsDead()) {
+                  logList = "\n" + enemy.getName() + "は倒れた" + logList
+                }
+            }else if (nowChose == "item") //アイテム処理
+            {
+                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                logList = log  + logList
+                if (enemy.getIsDead()) {
+                  logList = "\n" + enemy.getName() + "は倒れた" + logList
+                }
             }
         }
     }

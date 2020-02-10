@@ -11,13 +11,12 @@ import Foundation
 class MagicFish : Enemy {
     
     init() {
-        super.init(name : "マジックフィッシュ" ,maxHitPoint: 25, defense: 8, attack: 15, magickAttack: 80)
+        super.init(name : "マジックフィッシュ" ,maxHitPoint: 250, defense: 80, attack: 15, magickAttack: 80, exp: 10)
     }
     
     override func selectSkill() -> Double {
         var damege :Double
                
-               let randomBool = Bool.random()
                let randomNumber = Int.random(in: 1 ... 100)
         
                 print(randomNumber)
@@ -36,6 +35,5 @@ class MagicFish : Enemy {
                return Double(damege)
                }
     }
-
     
 }

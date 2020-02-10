@@ -13,6 +13,12 @@ import AVFoundation
 class GameViewController: UIViewController {
     
      @IBAction func VS(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "teki1"//ここに敵の名前
+        self.present(next, animated: true, completion: nil)
+        
         let scene = SceneManagement()
         scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
     }
