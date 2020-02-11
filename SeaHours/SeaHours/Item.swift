@@ -13,8 +13,8 @@ class Item {
     init() {
         //UserDefaults.standard初期値
         userDefaults.register(defaults: ["itemname": ["non","non","non","non","non","non","non","non"],"itemhave": [0,0,0,0,0,0,0,0],"itemprice": [0,0,0,0,0,0,0,0],"bukiname":
-            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],
-                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0]])
+            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],"bukinumber1": 0,"bukinumber2": 0,
+                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0],"bougunumber1": 0,"bougunumber2": 0])
     }
     
     var itemname2:[String:Int] = ["薬草":0, "ポーション":1,"ハイポーション":2,"グレイトポーション":3,"魔力草":4,"魔力ポーション":5,"魔力ハイポーション":6,"魔力グレイトポーション":7]
