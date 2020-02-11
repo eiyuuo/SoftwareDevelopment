@@ -106,31 +106,24 @@ class FieldViewController: UIViewController {
         self.present(next, animated: true, completion: nil)
         golem.isEnabled = false
     }
-
-    @IBAction func GostShip(_ sender:Any){
-        EnemyCount[4]=1
+    
+    @IBAction func umiUsagi(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
+        next.enemyName = "UmiUsagi"
+        self.present(next, animated: true, completion: nil)
+    }
+    
+    @IBAction func gostShip(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "GostShip"
         next.count = timer.getCount()
         UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
-        gostship.isEnabled = false
     }
-
-
-    @IBAction func UmiUsagi(_ sender:Any){
-        EnemyCount[5]=1
-        let storyboard = UIStoryboard(name: "battle", bundle: nil)
-        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-        next.enemyName = "UmiUsagi"
-        next.count = timer.getCount()
-        UserDefaults.standard.set(0, forKey:"tag")
-        self.present(next, animated: true, completion: nil)
-        umiusagi.isEnabled = false
-    }
-
-
     @IBAction func golem(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
