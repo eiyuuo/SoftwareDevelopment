@@ -14,77 +14,86 @@ let iteminf = Item()
 var number = 0
 let userdefaults = UserDefaults()
 var exp = 0
-var selectnumber = 1
+var namearray = iteminf.MakeStringArray(dicname: "itemname")
+var havearray = iteminf.MakeIntArray(dicname: "itemhave")
+var pricearray = iteminf.MakeIntArray(dicname: "itemprice")
+var shopkey = "item"
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var itemname = iteminf.MakeStringArray(dicname: "itemname")
-    var havearray = iteminf.MakeIntArray(dicname: "itemhave")
-    var pricearray = iteminf.MakeIntArray(dicname: "itemprice")
-    func setshop(page:Int) {
-        switch selectnumber {
-        case 1:
-            itemname = iteminf.MakeStringArray(dicname: "itemname")
-            havearray = iteminf.MakeIntArray(dicname: "itemhave")
-            pricearray = iteminf.MakeIntArray(dicname: "itemprice")
-        case 2:
-            itemname = iteminf.MakeStringArray(dicname: "bukiname")
-            havearray = iteminf.MakeIntArray(dicname: "bukihave")
-            pricearray = iteminf.MakeIntArray(dicname: "bukiprice")
-        case 3:
-            itemname = iteminf.MakeStringArray(dicname: "bouguname")
-            havearray = iteminf.MakeIntArray(dicname: "bouguhave")
-            pricearray = iteminf.MakeIntArray(dicname: "bouguprice")
-        default:
-            itemname = iteminf.MakeStringArray(dicname: "itemname")
-            havearray = iteminf.MakeIntArray(dicname: "itemhave")
-            pricearray = iteminf.MakeIntArray(dicname: "itemprice")
-        }
-    }
-
-
     
     
-//        ["薬草","ポーション","ハイポーション","グレイトポーション","魔力草","魔力ポーション","魔力ハイポーション","魔力グレイトポーション"]
-    
-    @IBOutlet var buy: UIButton!
-    @IBOutlet var choice: UIButton!
-    @IBOutlet var Description: UILabel!
-    @IBOutlet var tableview: UITableView!
-
-    
-    
-    
+    @IBOutlet weak var tld: UILabel!
+    @IBOutlet weak var reloadlabel: UIButton!
+    @IBOutlet weak var nextlabel: UIButton!
+    @IBOutlet weak var backlabel: UIButton!
+    @IBOutlet weak var choicelabel: UIButton!
+    @IBOutlet weak var buylabel: UIButton!
+    @IBOutlet weak var ind: UILabel!
+    @IBOutlet weak var shop: UILabel!
+    @IBOutlet weak var Description: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ボタン装飾できん
-        choice.layer.borderWidth = 1
-        choice.layer.borderColor = UIColor.white.cgColor
-        choice.layer.cornerRadius = 10.0
-        
-        buy.layer.borderWidth = 1
-        buy.layer.borderColor = UIColor.white.cgColor
-        buy.layer.cornerRadius = 10.0
+        //ボタン装飾
+        tld.layer.borderWidth = 1
+        tld.layer.borderColor = UIColor.white.cgColor
+        ind.layer.borderWidth = 1
+        ind.layer.borderColor = UIColor.white.cgColor
+        shop.layer.borderWidth = 1
+        shop.layer.borderColor = UIColor.white.cgColor
+        buylabel.layer.borderWidth = 1
+        buylabel.layer.borderColor = UIColor.white.cgColor
+        choicelabel.layer.borderWidth = 1
+        choicelabel.layer.borderColor = UIColor.white.cgColor
+        backlabel.layer.borderWidth = 1
+        backlabel.layer.borderColor = UIColor.white.cgColor
+        nextlabel.layer.borderWidth = 1
+        nextlabel.layer.borderColor = UIColor.white.cgColor
+        reloadlabel.layer.borderWidth = 1
+        reloadlabel.layer.borderColor = UIColor.white.cgColor
         
         // 説明の表示
-        Description.text = iteminf.itemdescription[number]
-    }
-    
-
-
-
-
-    
-    //↓tableviewの表示
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemname.count
-    }
+        switch shopkey {
+        case "item":
+            Description.text = iteminf.itemdescription[number]
+        case "buki":
+            Description.text = iteminf.bukidescription[number]
+        case "bougu":
+            Description.text = iteminf.bougudescription[number]
+        default:
+            Description.text = iteminf.itemdescription[number]
+        }
         
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    //↓tableviewの表示
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return namearray.count
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = UIColor.black
+        cell.textLabel?.textColor = UIColor(red: 19/255, green: 144/255, blue: 250/255, alpha: 1.0)
+        tableView.backgroundColor = UIColor.black
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel!.text = itemname[indexPath.row]
-
+        switch shopkey {
+        case "item":
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        case "buki":
+            namearray = iteminf.MakeStringArray(dicname: "bukiname")
+        case "bougu":
+            namearray = iteminf.MakeStringArray(dicname: "bouguname")
+        default:
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        }
+        cell.textLabel!.text = namearray[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 30)
         return cell
     }
 
@@ -96,13 +105,11 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         number = indexPath.row
         print(number)
     }
-    //ボタン押してからの処理
-    @IBAction func choice(_ sender: Any) {
-        Description.text = iteminf.itemdescription[number]
-    }
     
+    //ボタン押してからの処理
+
     @IBAction func buy(_ sender: Any) {
-        exp = UserDefaults.standard.integer(forKey:"EXPs")
+            exp = UserDefaults.standard.integer(forKey:"EXPs")
         if exp <= pricearray[number] {
             exp = exp - pricearray[number]
             havearray[number] += 1
@@ -113,29 +120,73 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         else {
             print(UserDefaults.standard.array(forKey: "have") as Any)
         }
-       
-        
-    }
-    @IBAction func back(_ sender: Any) {
-        if selectnumber == 1 {
-            selectnumber = 3
-        }
-        else {
-            selectnumber += 1
-        }
-        setshop(page: selectnumber)
-    }
-    @IBAction func next(_ sender: Any) {
-        if selectnumber == 3 {
-            selectnumber = 1
-        }
-        else {
-            selectnumber -= 1
-        }
-        setshop(page: selectnumber)
     }
     
+    @IBAction func choice(_ sender: Any) {
+        switch shopkey {
+        case "item":
+            Description.text = iteminf.itemdescription[number]
+        case "buki":
+            Description.text = iteminf.bukidescription[number]
+        case "bougu":
+            Description.text = iteminf.bougudescription[number]
+        default:
+            Description.text = iteminf.itemdescription[number]
+        }
+    }
 
+    
+    @IBAction func back(_ sender: Any) {
+        if shopkey == "item" {
+            shopkey = "bougu"
+        }
+        else if shopkey == "buki"{
+            shopkey = "item"
+        }
+        else if shopkey == "bougu"{
+            shopkey = "buki"
+        }
+        switch shopkey {
+        case "item":
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        case "buki":
+            namearray = iteminf.MakeStringArray(dicname: "bukiname")
+        case "bougu":
+            namearray = iteminf.MakeStringArray(dicname: "bouguname")
+        default:
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        }
+        namearray = iteminf.MakeStringArray(dicname: "itemname")
+        print(namearray)
+        print(shopkey)
+    }
+
+
+    @IBAction func next(_ sender: Any) {
+        if shopkey == "item" {
+            shopkey = "buki"
+        }
+        else if shopkey == "buki"{
+            shopkey = "bougu"
+        }
+        else if shopkey == "bougu"{
+            shopkey = "item"
+        }
+        switch shopkey {
+        case "item":
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        case "buki":
+            namearray = iteminf.MakeStringArray(dicname: "bukiname")
+        case "bougu":
+            namearray = iteminf.MakeStringArray(dicname: "bouguname")
+        default:
+            namearray = iteminf.MakeStringArray(dicname: "itemname")
+        }
+        print(namearray)
+        print(shopkey)
+    }
+    
+    @IBAction func reload(_ sender: Any) {
+        tableView.reloadData()
+    }
 }
-
-

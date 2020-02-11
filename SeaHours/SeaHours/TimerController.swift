@@ -9,54 +9,63 @@
 import Foundation
 import UIKit
 
-class TimerViewController :UIViewController{
-    let timeLimit:Int = 3
-    var count :Int = 0
+class TimerController {
+    var count :Int = 180
     var time:Timer!
     var minuteCount:Int = 0
     var secondCount:Int = 0
-
-
-    @IBOutlet weak var minuteLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
+    var strMinute:String = ""
+    var strSecond:String = ""
     
+    //getterとsetter
+    func getCount() -> Int {
+        return self.count
+    }
     
-    override func viewDidAppear(_ animated: Bool) {
-           super.viewDidAppear(animated)
-           //画面が表示されたらタイマーを動かす
-           createTimer()
-       }
+    func setCount(count:Int) {
+        self.count = count
+    }
+    
+    func getStrMinute() -> String {
+        return self.strMinute
+    }
+    
+    func setStrMinute(strMinute:String) {
+        self.strMinute = strMinute
+    }
+
+    func getStrSecond() -> String {
+        return self.strSecond
+    }
+    
+    func setStrSecond(strSecond:String) {
+        self.strSecond = strSecond
+    }
     
     //タイマーの作成をする
-    func createTimer(){
-        count  = timeLimit*60
-        time = Timer.scheduledTimer(timeInterval:1,target:self,selector:Selector(("timerCount")),userInfo: nil,repeats:true)
-        
+    func createTimer() {
+        //1秒ごとにtimerCount()関数を行う処理
+        time = Timer.scheduledTimer(timeInterval:1,target:self,selector:#selector(self.timerCount),userInfo: nil,repeats:true)
     }
     
     
     //タイマーの計算を行ってテキストとして表示する
-    @objc  func timerCount(){
+    @objc func timerCount() {
         
         //if文でcount/60が59以上か判断してtrueだったらcount/60をして分表示を行っている．
-        if count / 60 <= 59  {
-            //ここに分のテキストを表示するのを書く
-            minuteCount = count / 60
-            minuteLabel.text = String("\(minuteCount) 分")
-            
-        }
+        //ここに分のテキストを表示するのを書く
+        minuteCount = getCount() / 60
+        setStrMinute(strMinute:String("\(minuteCount) 分"))
         
-        //if文で何秒か判定して秒表示を行っている．．
-        if count % timeLimit  <= 60{
-            //ここに秒のテキストを表示するのを書く
-            secondCount = count % 60
-            secondLabel.text = String("\(secondCount) 秒")
-            if count == 0{
-                time.invalidate()
-            }
-        }
-        count  -= 1
         
+        //秒数を表示する．if は0秒になったらタイマーが終了する処理．
+        secondCount = getCount() % 60
+        setStrSecond(strSecond:String("\(secondCount) 秒"))
+        if getCount() == 0 {
+            time.invalidate()
+            print("終わり")
+        }
+        setCount(count:count-1)
+        print(getStrMinute()+getStrSecond())
     }
 }
-

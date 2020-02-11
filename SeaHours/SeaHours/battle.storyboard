@@ -11,6 +11,7 @@
         <scene sceneID="Sy2-rv-9XL">
             <objects>
                 <viewController storyboardIdentifier="VS" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MR5-U8-RvY" customClass="BattleViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
+
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YzG-fV-0h2">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
