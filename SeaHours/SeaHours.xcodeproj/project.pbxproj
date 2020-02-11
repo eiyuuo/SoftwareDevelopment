@@ -187,13 +187,7 @@
 				E4716F722397733300F09053 /* Slime.swift */,
 				EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */,
 				EE9B678923F1237C006FE430 /* SeaRabbit.swift */,
-
 				A26FF11B23F25490001C2FD1 /* Gostship.swift */,
-				023070BD23F25BAE005D24BB /* HaveItem.storyboard */,
-				023070BF23F25BF5005D24BB /* HaveSkill.storyboard */,
-				023070C123F266FB005D24BB /* HaveItemViewController.swift */,
-				023070C323F26713005D24BB /* HaveSkillViewController.swift */,
-
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
