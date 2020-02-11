@@ -170,7 +170,6 @@
 				EE9B678F23F15C8D006FE430 /* TitleViewController.swift */,
 				E4EFAB3523C6C5960025506A /* battle.storyboard */,
 				EE9B679123F167E6006FE430 /* Field.storyboard */,
-				EEEC6202238630E000C6819B /* FieldViewController.swift */,
 				EEEA8F0D23F0F7F100B8ACA3 /* shop.storyboard */,
 				EEEA8F0F23F0F80000B8ACA3 /* ShopViewController.swift */,
 				02696A3223D12EE0005E593F /* PlayerStatus.storyboard */,
@@ -178,6 +177,7 @@
 				02FC128F23A1DE69007688B6 /* Status.swift */,
 				02FC129123A1DE6E007688B6 /* StatusAdd.swift */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
+				EEEC6202238630E000C6819B /* FieldViewController.swift */,
 				EEEC620C238630E200C6819B /* Info.plist */,
 				02696A3623D94347005E593F /* GameScene.swift */,
 				EE8D66512398F51800C7733C /* SceneManagement.swift */,
@@ -187,7 +187,6 @@
 				E4716F722397733300F09053 /* Slime.swift */,
 				EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */,
 				EE9B678923F1237C006FE430 /* SeaRabbit.swift */,
-
 				A26FF11B23F25490001C2FD1 /* Gostship.swift */,
 			);
 			path = SeaHours;
