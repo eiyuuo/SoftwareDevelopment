@@ -32,7 +32,7 @@ class Battle { //戦闘を管理するクラス
         self.exp = status.getEXP()
  
         //データベースからの修正済み
-        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
+        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF()+500, attack: status.getATK()+80, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
 
         
         switch enemyName { //どの敵なのか？

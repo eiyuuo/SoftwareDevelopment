@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBAction func VS(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-        next.enemyName = "doragon"
+        next.enemyName = "magickFish"
         self.present(next, animated: true, completion: nil)
     }
     
