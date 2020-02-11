@@ -49,9 +49,16 @@ class StatusViewController: UIViewController {
     @IBOutlet weak var EXPpoint: UILabel!
     
     
+    //アイコン用
+    @IBOutlet weak var icon: UILabel!
+    
     //装備label
     @IBOutlet weak var Weapon: UILabel!
     @IBOutlet weak var Armor: UILabel!
+    
+    
+    
+    @IBOutlet weak var bar: UILabel!
     
     
     //アイテム欄，魔法欄
@@ -691,7 +698,7 @@ class StatusViewController: UIViewController {
         Save.layer.cornerRadius = 10.0
         
             
-            
+        /*
         Weapon.layer.borderWidth = 1
         Weapon.layer.borderColor = UIColor.white.cgColor
         Weapon.layer.cornerRadius = 10.0
@@ -699,8 +706,15 @@ class StatusViewController: UIViewController {
         Armor.layer.borderWidth = 1
         Armor.layer.borderColor = UIColor.white.cgColor
         Armor.layer.cornerRadius = 10.0
+        */
         
+        icon.layer.borderWidth = 1
+        icon.layer.borderColor = UIColor.white.cgColor
+        icon.layer.cornerRadius = 10.0
         
+        bar.layer.borderWidth = 1
+        bar.layer.borderColor = UIColor.white.cgColor
+        bar.layer.cornerRadius = 10.0
         
         
         Itembutton.layer.borderWidth = 1
