@@ -463,7 +463,6 @@ class Skill {
     
     //ゲッター
     func getSkillPoint(keyName : String) -> Int {
-        print (skillPointDict[keyName]!)
         return skillPointDict[keyName]!
     }
 

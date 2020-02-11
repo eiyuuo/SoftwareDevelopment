@@ -308,37 +308,52 @@ class BattleViewController: UIViewController {
     //敵のアニメーション
     func enemyAnimation() {
         if  !battle.enemy.getIsDead() { //敵が生存時?
+            let enemyNowChoseSkillName = battle.enemy.getChooseSkillName()
             //ここでbattle.enemy.getSkillName()でswith文？でアニメーション変化？流石にやりたくないです...
-            UIView.animate(withDuration: 0.2, delay: 1.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 50.0, options: .autoreverse, animations: {
-                self.corer.backgroundColor = UIColor.red
-                self.teki.center.y += 100.0
-                self.teki.bounds.size.height += 30.0
-                self.teki.bounds.size.width += 30.0
-            }) { _ in
-                self.teki.center.y -= 100.0
-                self.teki.bounds.size.height -= 30.0
-                self.teki.bounds.size.width -= 30.0
-            }
-            
-            UIView.animate(withDuration: 0.2, delay: 1.2, animations: {
-                self.corer.alpha = 0.8
-            }) { _ in
-                self.corer.alpha = 0.0
-                UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
+            if (enemyNowChoseSkillName != "ヒール" && enemyNowChoseSkillName != "ハイヒール" && enemyNowChoseSkillName != "グレイヒール"){
+                UIView.animate(withDuration: 0.2, delay: 1.0, usingSpringWithDamping: 0.1, initialSpringVelocity: 50.0, options: .autoreverse, animations: {
+                    self.corer.backgroundColor = UIColor.red
+                    self.teki.center.y += 100.0
+                    self.teki.bounds.size.height += 30.0
+                    self.teki.bounds.size.width += 30.0
+                }) { _ in
+                    self.teki.center.y -= 100.0
+                    self.teki.bounds.size.height -= 30.0
+                    self.teki.bounds.size.width -= 30.0
+                }
+                
+                UIView.animate(withDuration: 0.2, delay: 1.2, animations: {
                     self.corer.alpha = 0.8
                 }) { _ in
                     self.corer.alpha = 0.0
+                    UIView.animate(withDuration: 0.2, delay: 0.0, animations: {
+                        self.corer.alpha = 0.8
+                    }) { _ in
+                        self.corer.alpha = 0.0
+                    }
+                    //効果音位置
+                    self.makeLog()
+                    self.soundEffect(skillName: self.battle.enemy.getChooseSkillName())
+                    
+                    self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : true)
+                    if self.battle.player.getIsDead() {//プレイヤーが倒れたか
+                        UIView.animate(withDuration: 0.5, delay: 1.5, animations: {
+                            self.gameOver.isHidden = false
+                            self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えず戦闘不能時にボタンを押せないように
+                        })
+                    }
                 }
-                //効果音位置
-                self.makeLog()
-                self.soundEffect(skillName: self.battle.enemy.getChooseSkillName())
-                
-                self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : true)
-                if self.battle.player.getIsDead() {//プレイヤーが倒れたか
-                    UIView.animate(withDuration: 0.5, delay: 1.5, animations: {
-                        self.gameOver.isHidden = false
-                        self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えず戦闘不能時にボタンを押せないように
-                    })
+            }else { //ヒール系のアニメーション
+                self.corer.backgroundColor = UIColor.green
+                UIView.animate(withDuration: 0.2, delay: 1.2, animations: {
+                    self.corer.alpha = 0.8
+                }) { _ in
+                    self.corer.alpha = 0.0
+                    
+                    //効果音位置
+                    self.makeLog()
+                    self.soundEffect(skillName: self.nowChoseSkillName)
+                    self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : true)
                 }
             }
         }else { //敵を倒したとき
