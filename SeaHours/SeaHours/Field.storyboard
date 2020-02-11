@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="バトル画面" image="doragon"/>
                                 <connections>
-                                    <action selector="VS:" destination="155-Xy-1id" eventType="touchUpInside" id="fA9-h3-5SO"/>
+                                    <action selector="doragon:" destination="155-Xy-1id" eventType="touchUpInside" id="Ppc-IK-FAd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTy-t7-s00">
@@ -85,16 +85,25 @@
                                 <rect key="frame" x="368" y="565" width="195" height="177"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Golem" image="Golem"/>
+                                <connections>
+                                    <action selector="Golem:" destination="155-Xy-1id" eventType="touchUpInside" id="OGL-Da-Xog"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQB-aH-Ttc">
                                 <rect key="frame" x="493" y="304" width="105" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UmiUsagi" image="UmiUsagi"/>
+                                <connections>
+                                    <action selector="UmiUsagi:" destination="155-Xy-1id" eventType="touchUpInside" id="390-6U-fTf"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-8V-Wn6">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-8V-Wn6" userLabel="GostShip">
                                 <rect key="frame" x="366" y="96" width="199" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="GostShip"/>
+                                <connections>
+                                    <action selector="GostShip:" destination="155-Xy-1id" eventType="touchUpInside" id="23P-hu-Lu9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ショップ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEW-GB-n8V">
                                 <rect key="frame" x="698" y="146" width="189" height="68"/>
@@ -117,13 +126,19 @@
                         <viewLayoutGuide key="safeArea" id="Prj-MH-vo7"/>
                     </view>
                     <connections>
+                        <outlet property="golem" destination="7yr-8f-ipl" id="bB1-Nj-XBo"/>
+                        <outlet property="gostship" destination="Ymd-8V-Wn6" id="MSR-uE-wKr"/>
+                        <outlet property="kaihei" destination="9Jp-Vh-yuQ" id="tTx-7O-IBn"/>
+                        <outlet property="magicFish" destination="GVr-c8-puK" id="qgT-eb-H32"/>
                         <outlet property="minutelabel" destination="ijV-Dk-XJ6" id="Nzj-Zr-QnA"/>
                         <outlet property="secondlabel" destination="rHF-Ka-SeE" id="ym1-iI-Orb"/>
+                        <outlet property="slime" destination="caW-SS-WZY" id="2ht-g8-Myw"/>
+                        <outlet property="umiusagi" destination="RQB-aH-Ttc" id="OVv-it-nsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgv-VF-Rso" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023.0468749999999" y="147.65625"/>
+            <point key="canvasLocation" x="-1799" y="16"/>
         </scene>
     </scenes>
     <resources>

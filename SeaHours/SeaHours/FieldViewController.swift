@@ -11,7 +11,13 @@ import GameplayKit
 import AVFoundation
 
 class FieldViewController: UIViewController {
-
+    @IBOutlet weak var slime: UIButton!
+    @IBOutlet weak var kaihei: UIButton!
+    @IBOutlet weak var magicFish: UIButton!
+    @IBOutlet weak var golem: UIButton!
+    @IBOutlet weak var umiusagi: UIButton!
+    @IBOutlet weak var gostship: UIButton!
+    
     
     @IBOutlet weak var minutelabel: UILabel!
     @IBOutlet weak var secondlabel: UILabel!
@@ -31,35 +37,75 @@ class FieldViewController: UIViewController {
         minutelabel.text = timer.getStrMinute()
         secondlabel.text = timer.getStrSecond()
     }
-    
-    @IBAction func VS(_ sender: Any) {
+    var EnemyCount :[Int]=[0,0,0,0,0,0,0]
+
+    @IBAction func doragon(_ sender: Any) {
+        var x = 0
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
 
-        next.enemyName = "magickFish"
-
-        self.present(next, animated: true, completion: nil)
+        next.enemyName = "doragon"
+        for i in EnemyCount{
+            x = x+i
+        }
+        if x==6{
+            self.present(next, animated: true, completion: nil)
+        }
     }
     
     @IBAction func slime(_ sender:Any){
+        EnemyCount[0]=1
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "slime"
         self.present(next, animated: true, completion: nil)
+        slime.isEnabled = false
     }
     
     @IBAction func kaihe(_ sender:Any){
+        EnemyCount[1]=1
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "kaihe"
         self.present(next, animated: true, completion: nil)
+        kaihei.isEnabled = false
     }
     
     @IBAction func magickFish(_ sender:Any){
+        EnemyCount[2]=1
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "magickFish"
         self.present(next, animated: true, completion: nil)
+        magicFish.isEnabled = false
+        
+    }
+    
+    @IBAction func Golem(_ sender:Any){
+        EnemyCount[3]=1
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "Golem"
+        self.present(next, animated: true, completion: nil)
+        golem.isEnabled = false
+    }
+    
+    @IBAction func GostShip(_ sender:Any){
+        EnemyCount[4]=1
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "GostShip"
+        self.present(next, animated: true, completion: nil)
+        gostship.isEnabled = false
+    }
+    
+    @IBAction func UmiUsagi(_ sender:Any){
+        EnemyCount[5]=1
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "UmiUsagi"
+        self.present(next, animated: true, completion: nil)
+        umiusagi.isEnabled = false
     }
     
     
