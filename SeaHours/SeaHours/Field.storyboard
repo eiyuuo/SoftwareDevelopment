@@ -87,7 +87,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UmiUsagi" image="UmiUsagi"/>
                                 <connections>
-                                    <action selector="UmiUsagi:" destination="155-Xy-1id" eventType="touchUpInside" id="390-6U-fTf"/>
+                                    <action selector="UmiUsagi:" destination="155-Xy-1id" eventType="touchUpInside" id="Nyx-8M-MlX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-8V-Wn6" userLabel="GostShip">
