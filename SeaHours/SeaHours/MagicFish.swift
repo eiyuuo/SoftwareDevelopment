@@ -19,7 +19,7 @@ class MagicFish : Enemy {
     override func selectSkill() -> Double {
         var damege :Double
                
-               let randomNumber = Int.random(in: 1 ... 100)
+            let randomNumber = Int.random(in: 1 ... 100)
         
         
                if (70 <= randomNumber){

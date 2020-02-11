@@ -31,5 +31,6 @@ class Slime : Enemy {
                damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                return Double(damege)
                }
+
     }
 }

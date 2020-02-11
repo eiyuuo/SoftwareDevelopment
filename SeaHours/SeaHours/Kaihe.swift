@@ -12,6 +12,7 @@ class Kaihe : Enemy {
 
     init() {
         super.init(name : "カイヘイ" ,maxHitPoint: 17, defense: 7, attack: 15, magickAttack: 10,exp: 10)
+
     }
 
     override func selectSkill() -> Double {

@@ -12,26 +12,34 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
+    /*
+    @IBAction func bottan() {
+        
+    //    UserDefaults.standard.set(120,forKey: “limit”)
+    //    userDefaults.synchronize()
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: “battle”,wi: “battleboard”)
+         */
     
     @IBAction func VS(_ sender: Any) {
+//        let scene = SceneManagement()
+//        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+
         next.enemyName = "magickFish"
+
         self.present(next, animated: true, completion: nil)
     }
     
-    
-
-    
     @IBAction func Status(_ sender: Any) {
-//        let scene = SceneManagement()
-//        scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
-        let storyboard = UIStoryboard(name: "PlayerStatus", bundle: nil)
-        let next  = storyboard.instantiateViewController(withIdentifier:"Status") as! StatusViewController
-        self.present(next, animated: true, completion: nil)
+        let scene = SceneManagement()
+        scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
     }
     
     @IBAction func Shop(_ sender: Any) {
+//        let scene = SceneManagement()
+//        scene.sceneTransition(corrent: self,sb: "shop",wi: "shop")
         let storyboard = UIStoryboard(name: "shop", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"shop") as! ShopViewController
         self.present(next, animated: true, completion: nil)
