@@ -9,7 +9,7 @@
 import Foundation
 
 class Skill {
-    private let skillPointDict:[String:Int] =
+    let skillPointDict:[String:Int] =
         ["通常攻撃" : 0 ,
          "渾身の一撃" : 5 ,
          "スラント" : 5 ,
@@ -45,7 +45,7 @@ class Skill {
          "ハイヒール" : 20 ,
          "グレイヒール" : 50]
     
-    private let skillHitPersent : [String : Int] =
+    let skillHitPersent : [String : Int] =
         ["通常攻撃" : 100 ,
         "渾身の一撃" : 95 ,
         "スラント" : 95 ,
@@ -186,7 +186,7 @@ class Skill {
             return highHeel()
             
         case "グレイヒール":
-            return greatHeel()
+            return greatHeel(magickAttack: magickAttack)
             
         default:
             return 0
@@ -457,7 +457,7 @@ class Skill {
         return 100
     }
     
-    func greatHeel() -> Double {
+    func greatHeel(magickAttack : Int) -> Double {
         return 300
     }
     

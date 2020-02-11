@@ -12,36 +12,52 @@ import Foundation
 
 class MagicFish : Enemy {
     
+    let userDefaults = UserDefaults.standard
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     init() {
-        super.init(name : "マジックフィッシュ" ,maxHitPoint: 150, defense: 15, attack: 15, magickAttack: 40,exp: 40)
+        super.init(name : "マジックフィッシュ" ,maxHitPoint: 150*difficulty*2, defense: 25*difficulty, attack: 15*difficulty, magickAttack: 40*difficulty,exp: 20*difficulty)
     }
     
     override func selectSkill() -> Double {
         var damege :Double
                
-            let randomNumber = Int.random(in: 1 ... 100)
+        let randomNumber = Int.random(in: 1 ... 100)
         
         
-               if (70 <= randomNumber){
-                choseSkillName = "アイス"
-                damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-                   return damege
-               }else if(50 <= randomNumber){
-                   choseSkillName = "ショット"
-                   damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-                   return damege
-               }else if(40 <= randomNumber){
-               choseSkillName = "ストーン"
-               damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-               return Double(damege)
-               }else if(10 <= randomNumber){
-               choseSkillName = "ヒール"
-               damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-               return damege
-               }else{
-               choseSkillName = "テールアタック"
-               damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-               return Double(damege)
-               }
+        var Skill_dif:[String] = []
+        
+        if (difficulty == 1){
+            Skill_dif = ["アイス","ショット","ストーン","ヒール","テールアタック"]
+        }else if(difficulty == 10){
+            Skill_dif = ["アイスランス","アイス","ストーンエッジ","ハイヒール","アークバイト"]
+        }else if(difficulty == 30){
+            Skill_dif = ["ブリザード","アイスランス","アースクエイク","グレイヒール","アイス"]
+        }
+        
+        
+        
+        if (70 <= randomNumber){
+         choseSkillName = Skill_dif[0]
+         damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+            return damege
+        }else if(50 <= randomNumber){
+            choseSkillName = Skill_dif[1]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+            return damege
+        }else if(40 <= randomNumber){
+        choseSkillName = Skill_dif[2]
+        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+        return Double(damege)
+        }else if(10 <= randomNumber){
+        choseSkillName = Skill_dif[3]
+        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+        return damege
+        }else{
+        choseSkillName = Skill_dif[4]
+        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+        return Double(damege)
+        }
+        
     }
 }
