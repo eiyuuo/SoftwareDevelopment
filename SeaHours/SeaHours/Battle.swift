@@ -48,6 +48,10 @@ class Battle { //戦闘を管理するクラス
         case "magickFish" :
             self.enemy = MagicFish()
             break
+        
+        case "gostship" :
+            self.enemy = Gostship()
+            break
             
         default:
             self.enemy = Slime()
