@@ -20,7 +20,7 @@ class Golem : Enemy {
         let randomNumber = Int.random(in: 1 ... 100)
         if (60<=randomNumber){
             damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
-            choseSkillName = "攻撃"
+            choseSkillName = "通常攻撃"
             return Double(damege)
         }else{
             damege = self.skill.stone(magickAttack: magickAttack, randomNumber: randomNumber)
