@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-let iteminf = item()
+let iteminf = Item()
 let userDefaults = UserDefaults.standard
 //var namearray = iteminf.MakeStringArray(dicname: "itemname")
 //var havearray = iteminf.MakeIntArray(dicname: "itemhave")
