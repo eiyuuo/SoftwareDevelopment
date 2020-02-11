@@ -24,7 +24,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="バトル画面" image="doragon"/>
                                 <connections>
-                                    <action selector="VS:" destination="155-Xy-1id" eventType="touchUpInside" id="fA9-h3-5SO"/>
+                                    <action selector="doragon:" destination="155-Xy-1id" eventType="touchUpInside" id="aY6-Pg-ul4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTy-t7-s00">
