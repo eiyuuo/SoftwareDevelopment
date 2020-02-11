@@ -85,6 +85,8 @@ class Skill {
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
         let randomNumber = Int.random(in: 1 ... 100)
         
+        print(skillName)
+        
         switch skillName {
 //ここからアタック系スキル
         case "通常攻撃":
@@ -155,38 +157,38 @@ class Skill {
             return shot(magickAttack: magickAttack,randomNumber : randomNumber)
         
         case "ファイアアロウ":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return fireArrow(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ウィンドカッター":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return windCutter(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "アイスランス":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return iceLance(magickAttack: magickAttack,randomNumber : randomNumber)
         
         case "ストーンエッジ":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return stoneEdge(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "イフリート":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return ifrit(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "テンペスト":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return tempest(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ブリザード":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return blizzard(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ナイトメア":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return nightmare(magickAttack: magickAttack,randomNumber : randomNumber)
             
 //ここから回復スキル
         case "ヒール":
-            return heel()
+            return heel(magickAttack : magickAttack)
             
         case "ハイヒール":
-            return highHeel()
+            return highHeel(magickAttack : magickAttack)
             
         case "グレイヒール":
-            return greatHeel()
+            return greatHeel(magickAttack : magickAttack)
             
         default:
             return 0
@@ -196,9 +198,6 @@ class Skill {
 //攻撃依存スキル
     func nomalAttack(attack : Int,randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
-        print("hoge")
-        print(randomNumber)
-        print(100 - randomNumber)
         if (100 - randomNumber > 0){
             return Double(attack) * 1
         }else {
@@ -449,16 +448,16 @@ class Skill {
     }
 
 //回復系スキル
-    func heel() -> Double {
-        return 10
+    func heel(magickAttack : Int) -> Double {
+        return Double(magickAttack + 10)
     }
     
-    func highHeel() -> Double {
-        return 100
+    func highHeel(magickAttack : Int) -> Double {
+        return Double(2 * magickAttack + 100)
     }
     
-    func greatHeel() -> Double {
-        return 300
+    func greatHeel(magickAttack : Int) -> Double {
+        return Double(3 * magickAttack + 300)
     }
     
     //ゲッター

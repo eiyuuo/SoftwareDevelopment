@@ -16,11 +16,6 @@ class Doragon : Enemy {
     override func selectSkill() -> Double {
         var damege :Double
         
-        print("hoge")
-        print(nowHitPoint)
-        print(nowHitPoint < maxHitPoint/10)
-        print(maxHitPoint)
-        
                if (nowHitPoint < maxHitPoint/10 ){
                 choseSkillName = "ドラグテイル"
                 damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
@@ -37,7 +32,7 @@ class Doragon : Enemy {
                     }
                }else {
                    if Bool.random() {
-                       choseSkillName = "テールアタック"
+                       choseSkillName = "ナイトメア"
                        damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                        return damege
                    } else {

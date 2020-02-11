@@ -16,16 +16,18 @@
 		A239ECF623E278460062A3DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239ECF523E278460062A3DB /* SceneDelegate.swift */; };
 		E40296A023C6E4160010C7DE /* MagicFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402969F23C6E4160010C7DE /* MagicFish.swift */; };
 		E406A2D423A7B43A00A576AC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406A2D323A7B43A00A576AC /* Player.swift */; };
+		E45A1A7B23F2BC9F00023571 /* fruitsparfait.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E45A1A7723F2BC9F00023571 /* fruitsparfait.mp3 */; };
+		E45A1A7C23F2BC9F00023571 /* punch-high1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E45A1A7823F2BC9F00023571 /* punch-high1.mp3 */; };
+		E45A1A7D23F2BC9F00023571 /* kaihuku.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E45A1A7923F2BC9F00023571 /* kaihuku.mp3 */; };
+		E45A1A7E23F2BC9F00023571 /* game_explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E45A1A7A23F2BC9F00023571 /* game_explosion7.mp3 */; };
 		E4716F5D239275CA00F09053 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5C239275CA00F09053 /* Character.swift */; };
 		E4716F5F2393A45B00F09053 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F5E2393A45B00F09053 /* Skill.swift */; };
 		E4716F6F23941B6600F09053 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F6E23941B6600F09053 /* Enemy.swift */; };
 		E4716F732397733300F09053 /* Slime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F722397733300F09053 /* Slime.swift */; };
 		E4716F75239773AD00F09053 /* Dragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4716F74239773AD00F09053 /* Dragon.swift */; };
-
 		E48AE49523D93E0200FFEF14 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48AE49423D93E0200FFEF14 /* BattleViewController.swift */; };
 		E48AE49723D93E2F00FFEF14 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48AE49623D93E2F00FFEF14 /* Battle.swift */; };
 		E4EFAB3623C6C5960025506A /* battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFAB3523C6C5960025506A /* battle.storyboard */; };
-
 		EE8D66522398F51800C7733C /* SceneManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D66512398F51800C7733C /* SceneManagement.swift */; };
 		EE9B678A23F1237C006FE430 /* SeaRabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B678923F1237C006FE430 /* SeaRabbit.swift */; };
 		EE9B679023F15C8D006FE430 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B678F23F15C8D006FE430 /* TitleViewController.swift */; };
@@ -34,10 +36,6 @@
 		EEEA8F0B23F0ED4500B8ACA3 /* Kaihe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA8F0A23F0ED4500B8ACA3 /* Kaihe.swift */; };
 		EEEA8F0E23F0F7F100B8ACA3 /* shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA8F0D23F0F7F100B8ACA3 /* shop.storyboard */; };
 		EEEA8F1023F0F80000B8ACA3 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA8F0F23F0F80000B8ACA3 /* ShopViewController.swift */; };
-		EEEA8F1223F0F81300B8ACA3 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA8F1123F0F81300B8ACA3 /* Extention.swift */; };
-		EEEA8F1423F0F81B00B8ACA3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA8F1323F0F81B00B8ACA3 /* Item.swift */; };
-		EEEA8F1823F0FF9200B8ACA3 /* battle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4EFAB3523C6C5960025506A /* battle.storyboard */; };
-
 		EEEC61FB238630E000C6819B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC61FA238630E000C6819B /* AppDelegate.swift */; };
 		EEEC6203238630E000C6819B /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEC6202238630E000C6819B /* FieldViewController.swift */; };
 		EEEC6206238630E000C6819B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEC6204238630E000C6819B /* Main.storyboard */; };
@@ -73,6 +71,10 @@
 		A239ECF523E278460062A3DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E402969F23C6E4160010C7DE /* MagicFish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicFish.swift; sourceTree = "<group>"; };
 		E406A2D323A7B43A00A576AC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E45A1A7723F2BC9F00023571 /* fruitsparfait.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fruitsparfait.mp3; sourceTree = "<group>"; };
+		E45A1A7823F2BC9F00023571 /* punch-high1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "punch-high1.mp3"; sourceTree = "<group>"; };
+		E45A1A7923F2BC9F00023571 /* kaihuku.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kaihuku.mp3; sourceTree = "<group>"; };
+		E45A1A7A23F2BC9F00023571 /* game_explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = game_explosion7.mp3; sourceTree = "<group>"; };
 		E4716F5C239275CA00F09053 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E4716F5E2393A45B00F09053 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		E4716F6E23941B6600F09053 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
@@ -165,15 +167,11 @@
 				E4716F5C239275CA00F09053 /* Character.swift */,
 				E402969F23C6E4160010C7DE /* MagicFish.swift */,
 				E4716F5E2393A45B00F09053 /* Skill.swift */,
-
 				E48AE49623D93E2F00FFEF14 /* Battle.swift */,
 				E48AE49423D93E0200FFEF14 /* BattleViewController.swift */,
 				E4716F6E23941B6600F09053 /* Enemy.swift */,
 				E4716F74239773AD00F09053 /* Dragon.swift */,
-
 				EEEC61FA238630E000C6819B /* AppDelegate.swift */,
-				EEEA8F1123F0F81300B8ACA3 /* Extention.swift */,
-
 				EEEC6204238630E000C6819B /* Main.storyboard */,
 				EE9B678F23F15C8D006FE430 /* TitleViewController.swift */,
 				E4EFAB3523C6C5960025506A /* battle.storyboard */,
@@ -186,6 +184,10 @@
 				02FC128F23A1DE69007688B6 /* Status.swift */,
 				02FC129123A1DE6E007688B6 /* StatusAdd.swift */,
 				EEEC6207238630E200C6819B /* Assets.xcassets */,
+				E45A1A7723F2BC9F00023571 /* fruitsparfait.mp3 */,
+				E45A1A7A23F2BC9F00023571 /* game_explosion7.mp3 */,
+				E45A1A7923F2BC9F00023571 /* kaihuku.mp3 */,
+				E45A1A7823F2BC9F00023571 /* punch-high1.mp3 */,
 				EEEC620C238630E200C6819B /* Info.plist */,
 				02696A3623D94347005E593F /* GameScene.swift */,
 				EE8D66512398F51800C7733C /* SceneManagement.swift */,
@@ -322,12 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEEC6206238630E000C6819B /* Main.storyboard in Resources */,
+				E45A1A7C23F2BC9F00023571 /* punch-high1.mp3 in Resources */,
+				E45A1A7E23F2BC9F00023571 /* game_explosion7.mp3 in Resources */,
+				E45A1A7B23F2BC9F00023571 /* fruitsparfait.mp3 in Resources */,
 				E4EFAB3623C6C5960025506A /* battle.storyboard in Resources */,
 				EEEC6208238630E200C6819B /* Assets.xcassets in Resources */,
-
 				EE9B679223F167E6006FE430 /* Field.storyboard in Resources */,
-
 				EEEA8F0E23F0F7F100B8ACA3 /* shop.storyboard in Resources */,
+				E45A1A7D23F2BC9F00023571 /* kaihuku.mp3 in Resources */,
 				02696A3323D12EE0005E593F /* PlayerStatus.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

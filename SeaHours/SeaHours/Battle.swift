@@ -54,7 +54,6 @@ class Battle { //戦闘を管理するクラス
     
     func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
-        print(nowChose)
         if (!player.getIsDead()) {
             if (nowChose == "skill") //スキル処理
             {
