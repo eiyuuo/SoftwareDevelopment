@@ -9,13 +9,85 @@
 import Foundation
 
 class Skill {
-    private let skillPointDict:[String:Int] = ["通常攻撃" : 0 , "渾身の一撃" : 5 , "スラント" : 5 , "クロー" : 5 , "テールアタック" : 5 , "噛みつく" : 5 , "体当たり" : 5 , "エアスラッシュ" : 13 , "クロスブレイブ" : 13 , "アッパーブレイド" : 13 , "ドライブフェンサー" : 13 , "アークバイト" : 13 , "アストラルクロス" : 25 , "ツヴァイセイバー" : 25 , "シャインセイバー" : 25 , "ドラグテイル" : 25 , "リヴァイクロー" : 30 , "ファイア" : 5 , "ウィンド" : 5 , "アイス" : 5 , "ストーン" : 5 , "ショット" : 5 , "ファイアアロウ" : 20 , "ウィンドカッター" : 20 , "アイスランス" : 20 , "ストーンエッジ" : 20 , "イフリート" : 50 , "テンペスト" : 50 , "ブリザード" : 50 , "アースクエイク" : 50 , "ナイトメア" : 60 , "ヒール" : 5 , "ハイヒール" : 20 , "グレイヒール" : 50 ,"" : 9999999999999999]
+    let skillPointDict:[String:Int] =
+        ["通常攻撃" : 0 ,
+         "渾身の一撃" : 5 ,
+         "スラント" : 5 ,
+         "クロー" : 5 ,
+         "テールアタック" : 5 ,
+         "噛みつく" : 5 ,
+         "体当たり" : 5 ,
+         "エアスラッシュ" : 13 ,
+         "クロスブレイブ" : 13 ,
+         "アッパーブレイド" : 13 ,
+         "ドライブフェンサー" : 13 ,
+         "アークバイト" : 13 ,
+         "アストラルクロス" : 25 ,
+         "ツヴァイセイバー" : 25,
+         "シャインセイバー" : 25 ,
+         "ドラグテイル" : 25 ,
+         "リヴァイクロー" : 30 ,
+         "ファイア" : 5 ,
+         "ウィンド" : 5 ,
+         "アイス" : 5 ,
+         "ストーン" : 5 ,
+         "ショット" : 5 ,
+         "ファイアアロウ" : 20 ,
+         "ウィンドカッター" : 20 ,
+         "アイスランス" : 20 ,
+         "ストーンエッジ" : 20 ,
+         "イフリート" : 50 ,
+         "テンペスト" : 50 ,
+         "ブリザード" : 50 ,
+         "アースクエイク" : 50 ,
+         "ナイトメア" : 60 ,
+         "ヒール" : 5 ,
+         "ハイヒール" : 20 ,
+         "グレイヒール" : 50]
+    
+    let skillHitPersent : [String : Int] =
+        ["通常攻撃" : 100 ,
+        "渾身の一撃" : 95 ,
+        "スラント" : 95 ,
+        "クロー" : 95 ,
+        "テールアタック" : 95 ,
+        "噛みつく" : 95 ,
+        "体当たり" : 100 ,
+        "エアスラッシュ" : 80 ,
+        "クロスブレイブ" : 80 ,
+        "アッパーブレイド" : 80 ,
+        "ドライブフェンサー" : 80 ,
+        "アークバイト" : 80 ,
+        "アストラルクロス" : 70 ,
+        "ツヴァイセイバー" : 65,
+        "シャインセイバー" : 70 ,
+        "ドラグテイル" : 70,
+        "リヴァイクロー" : 70 ,
+        "ファイア" : 100 ,
+        "ウィンド" : 95 ,
+        "アイス" : 95 ,
+        "ストーン" : 90 ,
+        "ショット" : 90 ,
+        "ファイアアロウ" : 90 ,
+        "ウィンドカッター" : 80 ,
+        "アイスランス" : 75 ,
+        "ストーンエッジ" : 90 ,
+        "イフリート" : 60 ,
+        "テンペスト" : 70 ,
+        "ブリザード" : 65 ,
+        "アースクエイク" : 70 ,
+        "ナイトメア" : 70 ,
+        "ヒール" : 100,
+        "ハイヒール" : 100,
+        "グレイヒール" : 100]
+        
     
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
-        let randomNumber = Int.random(in: 0 ... 100)
+        let randomNumber = Int.random(in: 1 ... 100)
+        
+        print(skillName)
         
         switch skillName {
-            
 //ここからアタック系スキル
         case "通常攻撃":
             return nomalAttack(attack: attack ,randomNumber: randomNumber)
@@ -85,38 +157,38 @@ class Skill {
             return shot(magickAttack: magickAttack,randomNumber : randomNumber)
         
         case "ファイアアロウ":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return fireArrow(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ウィンドカッター":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return windCutter(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "アイスランス":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return iceLance(magickAttack: magickAttack,randomNumber : randomNumber)
         
         case "ストーンエッジ":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return stoneEdge(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "イフリート":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return ifrit(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "テンペスト":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return tempest(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ブリザード":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return blizzard(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ナイトメア":
-            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            return nightmare(magickAttack: magickAttack,randomNumber : randomNumber)
             
 //ここから回復スキル
         case "ヒール":
-            return heel()
+            return heel(magickAttack : magickAttack)
             
         case "ハイヒール":
-            return highHeel()
+            return highHeel(magickAttack : magickAttack)
             
         case "グレイヒール":
-            return greatHeel()
+            return greatHeel(magickAttack : magickAttack)
             
         default:
             return 0
@@ -376,26 +448,29 @@ class Skill {
     }
 
 //回復系スキル
-    func heel() -> Double {
-        return 10
+    func heel(magickAttack : Int) -> Double {
+        return Double(magickAttack + 10)
     }
     
-    func highHeel() -> Double {
-        return 100
+    func highHeel(magickAttack : Int) -> Double {
+        return Double(2 * magickAttack + 100)
     }
     
-    func greatHeel() -> Double {
-        return 300
+    func greatHeel(magickAttack : Int) -> Double {
+        return Double(3 * magickAttack + 300)
     }
     
     //ゲッター
     func getSkillPoint(keyName : String) -> Int {
-        print (skillPointDict[keyName]!)
         return skillPointDict[keyName]!
     }
 
     func getSkillPointDict() -> [String:Int] {
         return skillPointDict
+    }
+    
+    func getSkillHitPersent() -> [String : Int] {
+        return skillHitPersent
     }
     
 }

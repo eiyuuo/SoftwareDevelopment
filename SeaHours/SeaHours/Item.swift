@@ -8,9 +8,17 @@
 
 import Foundation
 import UIKit
-
 class item {
+    let userDefaults = UserDefaults.standard
+    init() {
+        //UserDefaults.standard初期値
+        userDefaults.register(defaults: ["itemname": ["non","non","non","non","non","non","non","non"],"itemhave": [0,0,0,0,0,0,0,0],"itemprice": [0,0,0,0,0,0,0,0],"bukiname":
+            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],
+                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0]])
+    }
     
+    var itemname2:[String:Int] = ["薬草":0, "ポーション":1,"ハイポーション":2,"グレイトポーション":3,"魔力草":4,"魔力ポーション":5,"魔力ハイポーション":6,"魔力グレイトポーション":7]
+
     var itemname:[Int:String] = [0:"薬草", 1:"ポーション",2:"ハイポーション",3:"グレイトポーション",4:"魔力草",5:"魔力ポーション",6:"魔力ハイポーション",7:"魔力グレイトポーション"]
    
     var itemnumber:[Int:Int] = [0:10,1:25,2:50,3:100,4:10,5:25,6:50,7:100]
@@ -19,7 +27,7 @@ class item {
     
     var itemdescription:[Int:String] = [0:"体力を回復する草。HPを10回復する。",1:"薬草を加工した飲み薬。HPを25回復する。",2:"ポーションを特殊な方法で加工し効果を上昇させた飲み薬。HPを50回復する。",3:"様々な方法で効果を上昇させた最高級の飲み薬。HPを100回復する。",4:"魔力が回復する薬草。SPを10回復する。",5:"魔力草を加工した飲み薬。SPを25回復する。",6:"魔力ポーションを特殊な方法で加工し効果を上昇させた飲み薬。SPを50回復する。",7:"様々な方法で効果を上昇させた最高級の飲み薬。SPを100回復する。"]
     
-    var itemhave:[Int:Int] = [0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0]
+    var itemhave:[Int:Int] = [0:10,1:2,2:3,3:0,4:0,5:0,6:0,7:0]
     
     var bukiname:[Int:String] = [0:"木の剣", 1:"アイアンソード",2:"マジックロッド",3:"クレイモア",4:"ソーラーロッド",5:"シーブレード",6:"シーロッド",7:"サイレントソード"]
     
@@ -109,29 +117,35 @@ class item {
         case "itemname":
             for i in 0..<8 {
                 StringArray.append(itemname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "itemname")
             }
 
         case "itemdescription":
             for i in 0..<8 {
                 StringArray.append(itemdescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "itemdescription")
             }
         case "bukiname":
             for i in 0..<8 {
                 StringArray.append(bukiname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bukiname")
             }
 
         case "bukidescription":
             for i in 0..<8 {
                 StringArray.append(bukidescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bukidescription")
             }
         case "bouguname":
             for i in 0..<8 {
                 StringArray.append(bouguname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bouguname")
             }
 
         case "bougudescription":
             for i in 0..<8 {
                 StringArray.append(bougudescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bouguname")
             }
 
         default:
@@ -148,46 +162,62 @@ class item {
         case "itemnumber":
             for i in 0..<8 {
                 IntArray.append(itemnumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemnumber")
             }
-            
+
         case "itemprice":
             for i in 0..<8 {
                 IntArray.append(itemprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemprice")
             }
         case "itemhave":
             for i in 0..<8 {
                 IntArray.append(itemhave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemhave")
             }
         case "bukinumber":
             for i in 0..<8 {
                 IntArray.append(bukinumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukinumber")
             }
             
         case "bukiprice":
             for i in 0..<8 {
                 IntArray.append(bukiprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukiprice")
             }
         case "bukihave":
             for i in 0..<8 {
                 IntArray.append(bukihave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukihave")
             }
         case "bougunumber":
             for i in 0..<8 {
                 IntArray.append(bougunumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bougunumber")
             }
             
         case "bouguprice":
             for i in 0..<8 {
                 IntArray.append(bouguprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bouguprice")
             }
         case "bouguhave":
             for i in 0..<8 {
                 IntArray.append(bouguhave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bouguhave")
             }
 
         default:
             print("nodicname")
         }
         return IntArray
+        
+    }
+        
+    func saveItem() {
+        let list = MakeIntArray(dicname: "itemhave")
+        UserDefaults.standard.set(list, forKey: "itemhave")
     }
 }
+

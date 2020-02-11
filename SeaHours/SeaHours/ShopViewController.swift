@@ -11,45 +11,50 @@ import SpriteKit
 import GameplayKit
 
 let iteminf = item()
-var number = 0
-let userdefaults = UserDefaults()
-var exp = 0
-var namearray = iteminf.MakeStringArray(dicname: "itemname")
-var havearray = iteminf.MakeIntArray(dicname: "itemhave")
-var pricearray = iteminf.MakeIntArray(dicname: "itemprice")
-var shopkey = "item"
+let userDefaults = UserDefaults.standard
+//var namearray = iteminf.MakeStringArray(dicname: "itemname")
+//var havearray = iteminf.MakeIntArray(dicname: "itemhave")
+//var pricearray = iteminf.MakeIntArray(dicname: "itemprice")
+var namearray: [String] = userDefaults.array(forKey: "itemname") as! [String]
+var havearray: [Int] = userDefaults.array(forKey: "itemhave") as! [Int]
+var pricearray: [Int] = userDefaults.array(forKey: "itemprice") as! [Int]
+
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+    var number = 0
+    var exp = 0
+    var shopkey = "item"
     @IBOutlet weak var tld: UILabel!
-    @IBOutlet weak var reloadlabel: UIButton!
+    @IBOutlet weak var fild: UIButton!
     @IBOutlet weak var nextlabel: UIButton!
     @IBOutlet weak var backlabel: UIButton!
-    @IBOutlet weak var choicelabel: UIButton!
     @IBOutlet weak var buylabel: UIButton!
-    @IBOutlet weak var ind: UILabel!
     @IBOutlet weak var shop: UILabel!
     @IBOutlet weak var Description: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var exps: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //ボタン装飾
+        fild.layer.borderWidth = 1
+        fild.layer.borderColor = UIColor.white.cgColor
         tld.layer.borderWidth = 1
         tld.layer.borderColor = UIColor.white.cgColor
-        ind.layer.borderWidth = 1
-        ind.layer.borderColor = UIColor.white.cgColor
+        Description.layer.borderWidth = 1
+        Description.layer.borderColor = UIColor.white.cgColor
         shop.layer.borderWidth = 1
         shop.layer.borderColor = UIColor.white.cgColor
         buylabel.layer.borderWidth = 1
         buylabel.layer.borderColor = UIColor.white.cgColor
-        choicelabel.layer.borderWidth = 1
-        choicelabel.layer.borderColor = UIColor.white.cgColor
         backlabel.layer.borderWidth = 1
         backlabel.layer.borderColor = UIColor.white.cgColor
         nextlabel.layer.borderWidth = 1
         nextlabel.layer.borderColor = UIColor.white.cgColor
-        reloadlabel.layer.borderWidth = 1
-        reloadlabel.layer.borderColor = UIColor.white.cgColor
+        price.layer.borderWidth = 1
+        price.layer.borderColor = UIColor.white.cgColor
+        exps.layer.borderWidth = 1
+        exps.layer.borderColor = UIColor.white.cgColor
         
         // 説明の表示
         switch shopkey {
@@ -103,38 +108,102 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //ここに処理を書く
         number = indexPath.row
+        switch shopkey {
+        case "item":
+            Description.text = iteminf.itemdescription[number]
+            let pice = iteminf.itemprice[number]!
+            let strprice = String(pice)
+            price.text = "値段：\(strprice)EXP"
+            let ex = userDefaults.integer(forKey:"EXPs")
+            let strexp = String(ex)
+            exps.text = "所持EXP：\(strexp)"
+        case "buki":
+            Description.text = iteminf.bukidescription[number]
+            let pice = iteminf.bukiprice[number]!
+            let strprice = String(pice)
+            price.text = "値段：\(strprice)EXP"
+            let ex = userDefaults.integer(forKey:"EXPs")
+            let strexp = String(ex)
+            exps.text = "所持EXP：\(strexp)"
+        case "bougu":
+            Description.text = iteminf.bougudescription[number]
+            let pice = iteminf.bouguprice[number]!
+            let strprice = String(pice)
+            price.text = "値段：\(strprice)EXP"
+            let ex = userDefaults.integer(forKey:"EXPs")
+            let strexp = String(ex)
+            exps.text = "所持EXP：\(strexp)"
+        default:
+            Description.text = iteminf.itemdescription[number]
+        }
         print(number)
     }
     
     //ボタン押してからの処理
 
     @IBAction func buy(_ sender: Any) {
-            exp = UserDefaults.standard.integer(forKey:"EXPs")
-        if exp <= pricearray[number] {
-            exp = exp - pricearray[number]
-            havearray[number] += 1
-            UserDefaults.standard.set(exp, forKey: "EXPs")
-            UserDefaults.standard.set(havearray,forKey: "have")
-            print(UserDefaults.standard.array(forKey: "have") as Any)
-        }
-        else {
-            print(UserDefaults.standard.array(forKey: "have") as Any)
+        exp = userDefaults.integer(forKey:"EXPs")
+        print(exp)
+        print(pricearray)
+        switch shopkey {
+        case "item":
+            pricearray = iteminf.MakeIntArray(dicname: "itemprice")
+            if exp >= pricearray[number] {
+                exp = exp - pricearray[number]
+                havearray[number] += 1
+                userDefaults.set(exp, forKey: "EXPs")
+                userDefaults.set(havearray,forKey: "itemhave")
+                print(userDefaults.array(forKey: "itemhave") as Any)
+                let ex = userDefaults.integer(forKey:"EXPs")
+                let strexp = String(ex)
+                exps.text = "所持EXP：\(strexp)"
+                print("アイテム")
+            }
+            else {
+                print("miss")
+            }
+        case "buki":
+            pricearray = iteminf.MakeIntArray(dicname: "bukiprice")
+            if exp >= pricearray[number] {
+                exp = exp - pricearray[number]
+                havearray[number] += 1
+                userDefaults.set(exp, forKey: "EXPs")
+                userDefaults.set(havearray,forKey: "bukihave")
+                print(userDefaults.array(forKey: "bukihave") as Any)
+                let ex = userDefaults.integer(forKey:"EXPs")
+                let strexp = String(ex)
+                exps.text = "所持EXP：\(strexp)"
+                print("武器")
+            }
+            else {
+                print("miss")
+            }
+        case "bougu":
+            pricearray = iteminf.MakeIntArray(dicname: "bouguprice")
+            if exp >= pricearray[number] {
+                exp = exp - pricearray[number]
+                havearray[number] += 1
+                userDefaults.set(exp, forKey: "EXPs")
+                userDefaults.set(havearray,forKey: "bouguhave")
+                print(userDefaults.array(forKey: "bouguhave") as Any)
+                let ex = userDefaults.integer(forKey:"EXPs")
+                let strexp = String(ex)
+                exps.text = "所持EXP：\(strexp)"
+                print("防具")
+            }
+            else {
+                print("miss")
+            }
+        default:
+            print("miss")
+        
         }
     }
     
-    @IBAction func choice(_ sender: Any) {
-        switch shopkey {
-        case "item":
-            Description.text = iteminf.itemdescription[number]
-        case "buki":
-            Description.text = iteminf.bukidescription[number]
-        case "bougu":
-            Description.text = iteminf.bougudescription[number]
-        default:
-            Description.text = iteminf.itemdescription[number]
-        }
+    @IBAction func fild(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-
+    
     
     @IBAction func back(_ sender: Any) {
         if shopkey == "item" {
@@ -149,16 +218,21 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch shopkey {
         case "item":
             namearray = iteminf.MakeStringArray(dicname: "itemname")
+            havearray = userDefaults.array(forKey: "itemhave") as! [Int]
         case "buki":
             namearray = iteminf.MakeStringArray(dicname: "bukiname")
+            havearray = userDefaults.array(forKey: "bukihave") as! [Int]
         case "bougu":
             namearray = iteminf.MakeStringArray(dicname: "bouguname")
+            havearray = userDefaults.array(forKey: "bouguhave") as! [Int]
         default:
             namearray = iteminf.MakeStringArray(dicname: "itemname")
+            havearray = userDefaults.array(forKey: "itemhave") as! [Int]
         }
         namearray = iteminf.MakeStringArray(dicname: "itemname")
         print(namearray)
         print(shopkey)
+        tableView.reloadData()
     }
 
 
@@ -175,18 +249,20 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch shopkey {
         case "item":
             namearray = iteminf.MakeStringArray(dicname: "itemname")
+            havearray = userDefaults.array(forKey: "itemhave") as! [Int]
         case "buki":
             namearray = iteminf.MakeStringArray(dicname: "bukiname")
+            havearray = userDefaults.array(forKey: "bukihave") as! [Int]
         case "bougu":
             namearray = iteminf.MakeStringArray(dicname: "bouguname")
+            havearray = userDefaults.array(forKey: "bouguhave") as! [Int]
         default:
             namearray = iteminf.MakeStringArray(dicname: "itemname")
+            havearray = userDefaults.array(forKey: "itemhave") as! [Int]
         }
+        namearray = iteminf.MakeStringArray(dicname: "itemname")
         print(namearray)
         print(shopkey)
-    }
-    
-    @IBAction func reload(_ sender: Any) {
         tableView.reloadData()
     }
 }

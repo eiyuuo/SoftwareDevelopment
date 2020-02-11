@@ -21,8 +21,8 @@ class Enemy : Character {
         let randomBool = Bool.random()
         let randomNumber = Int.random(in: 1 ... 100)
         if (randomBool){
-            damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
-            choseSkillName = "通常攻撃"
+            choseSkillName = "ヒール"
+            damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return Double(damege)
         }else{
             damege = self.skill.fire(magickAttack: magickAttack, randomNumber: randomNumber)
@@ -33,13 +33,23 @@ class Enemy : Character {
     
     func skill(player : Player ) -> String {
         var damage : Int
+        let num : Double = selectSkill()
         
-        damage = damageCalculate(skillDamage: selectSkill(), enemyDefence: player.defense)
+        if (choseSkillName == "ヒール" || choseSkillName == "ハイヒール" || choseSkillName == "グレイヒール" ) {//回復系のスキル　3つしか想定してないのでいいよね...
+            damage = damageCalculate(skillDamage: num , enemyDefence: 0)
+            hitPointOpelate(changePoint: damage)
+            
+            return "\n" +  name + "は" +  choseSkillName + "で" + String(damage) + "回復した"
+
+            
+        } else {
+        damage = damageCalculate(skillDamage: num , enemyDefence: player.defense)
         
         player.hitPointOpelate(changePoint: -damage)
         player.deadJudgment()
         
         return "\n" + getName() + "はプレイヤーに" + getChooseSkillName() + "で" + String(damage) + "のダメージを与えた"
+        }
     }
     
     func getName() -> String {
