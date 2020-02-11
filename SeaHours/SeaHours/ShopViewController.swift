@@ -18,6 +18,7 @@ let userDefaults = UserDefaults.standard
 var namearray: [String] = userDefaults.array(forKey: "itemname") as! [String]
 var havearray: [Int] = userDefaults.array(forKey: "itemhave") as! [Int]
 var pricearray: [Int] = userDefaults.array(forKey: "itemprice") as! [Int]
+
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var number = 0
     var exp = 0

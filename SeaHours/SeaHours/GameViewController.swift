@@ -26,7 +26,9 @@ class GameViewController: UIViewController {
 //        scene.sceneTransition(corrent: self,sb: "battle",wi: "VS")
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-        next.enemyName = "usagi"
+
+        next.enemyName = "magickFish"
+
         self.present(next, animated: true, completion: nil)
     }
     
