@@ -19,7 +19,12 @@ class Battle { //戦闘を管理するクラス
     init(enemyName : String ) {
  
         //データベースからの修正済み
-        self.player = Player(maxHitPoint:status.getHP()+10000000000, defense:status.getDEF(), attack: status.getATK()+10000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
+        self.player = Player(maxHitPoint:UserDefaults.standard.integer(forKey: "HPs"),
+                             defense:UserDefaults.standard.integer(forKey: "DEFs"),
+                             attack: UserDefaults.standard.integer(forKey: "ATKs"),
+                             magickAttack:UserDefaults.standard.integer(forKey: "INTs"),
+                             maxSkillPoint:UserDefaults.standard.integer(forKey: "SPs"),
+                             exp:UserDefaults.standard.integer(forKey: "EXPs"))
 
         
         switch enemyName { //どの敵なのか？
@@ -36,12 +41,12 @@ class Battle { //戦闘を管理するクラス
             self.enemy = MagicFish()
             break
         
-        case "gostship" :
+        case "GostShip" :
             self.enemy = Gostship()
             break
 
         
-        case "seaUsagi" :
+        case "UmiUsagi" :
             self.enemy = SeaRabbit()
             break
              

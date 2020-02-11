@@ -94,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="UmiUsagi" image="UmiUsagi"/>
                                 <connections>
-                                    <action selector="UmiUsagi:" destination="155-Xy-1id" eventType="touchUpInside" id="390-6U-fTf"/>
+                                    <action selector="umiUsagi:" destination="155-Xy-1id" eventType="touchUpInside" id="Fh4-JC-8H9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymd-8V-Wn6" userLabel="GostShip">
@@ -102,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="GostShip"/>
                                 <connections>
-                                    <action selector="GostShip:" destination="155-Xy-1id" eventType="touchUpInside" id="23P-hu-Lu9"/>
+                                    <action selector="gostShip:" destination="155-Xy-1id" eventType="touchUpInside" id="GyJ-sq-jlt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ショップ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEW-GB-n8V">

@@ -13,7 +13,7 @@ class Gostship : Enemy {
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
     
     init() {
-        super.init(name : "幽霊船" ,maxHitPoint: 100*difficulty, defense: 20*difficulty, attack: 15*difficulty, magickAttack: 15*difficulty,exp: 100*difficulty/2)
+        super.init(name : "幽霊船" ,maxHitPoint: 100*difficulty, defense: 20*difficulty, attack: 15*difficulty, magickAttack: 15*difficulty,exp: 40*difficulty/2)
     }
     
     override func selectSkill() -> Double {
