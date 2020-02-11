@@ -32,12 +32,14 @@ class Battle { //戦闘を管理するクラス
         self.exp = status.getEXP()
  
         //データベースからの修正済み
-        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
+
+        self.player = Player(maxHitPoint:status.getHP()+100000000, defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
+
 
         
         switch enemyName { //どの敵なのか？
             
-        case "dragon" :
+        case "doragon" :
             self.enemy = Doragon()
             break
             
@@ -52,7 +54,16 @@ class Battle { //戦闘を管理するクラス
         case "gostship" :
             self.enemy = Gostship()
             break
-            
+
+        /*
+        case "seaUsagi" :
+            self.enemy = SeaUsagi()
+            break
+             
+        case "kaihei" :
+             self.enemy = Kaihei()
+             break
+        */           
         default:
             self.enemy = Slime()
             break
@@ -62,6 +73,7 @@ class Battle { //戦闘を管理するクラス
     
     func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
+        print(nowChose)
         if (!player.getIsDead()) {
             if (nowChose == "skill") //スキル処理
             {
@@ -72,11 +84,8 @@ class Battle { //戦闘を管理するクラス
                 }
             }else if (nowChose == "item") //アイテム処理
             {
-                log = player.skill_(enemy: enemy ,skillName: tuchButtonName)
+                log = player.item_(itemNumber: tuchButtonName)
                 logList = log  + logList
-                if (enemy.getIsDead()) {
-                  logList = "\n" + enemy.getName() + "は倒れた" + logList
-                }
             }
         }
     }
