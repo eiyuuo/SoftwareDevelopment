@@ -8,8 +8,14 @@
 
 import Foundation
 import UIKit
-
-class Item {
+class item {
+    let userDefaults = UserDefaults.standard
+    init() {
+        //UserDefaults.standard初期値
+        userDefaults.register(defaults: ["itemname": ["non","non","non","non","non","non","non","non"],"itemhave": [0,0,0,0,0,0,0,0],"itemprice": [0,0,0,0,0,0,0,0],"bukiname":
+            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],
+                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0]])
+    }
     
     var itemname2:[String:Int] = ["薬草":0, "ポーション":1,"ハイポーション":2,"グレイトポーション":3,"魔力草":4,"魔力ポーション":5,"魔力ハイポーション":6,"魔力グレイトポーション":7]
 
@@ -111,29 +117,35 @@ class Item {
         case "itemname":
             for i in 0..<8 {
                 StringArray.append(itemname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "itemname")
             }
 
         case "itemdescription":
             for i in 0..<8 {
                 StringArray.append(itemdescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "itemdescription")
             }
         case "bukiname":
             for i in 0..<8 {
                 StringArray.append(bukiname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bukiname")
             }
 
         case "bukidescription":
             for i in 0..<8 {
                 StringArray.append(bukidescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bukidescription")
             }
         case "bouguname":
             for i in 0..<8 {
                 StringArray.append(bouguname[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bouguname")
             }
 
         case "bougudescription":
             for i in 0..<8 {
                 StringArray.append(bougudescription[i]!)
+                UserDefaults.standard.set(StringArray, forKey: "bouguname")
             }
 
         default:
@@ -150,50 +162,61 @@ class Item {
         case "itemnumber":
             for i in 0..<8 {
                 IntArray.append(itemnumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemnumber")
             }
-            
+
         case "itemprice":
             for i in 0..<8 {
                 IntArray.append(itemprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemprice")
             }
         case "itemhave":
             for i in 0..<8 {
                 IntArray.append(itemhave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "itemhave")
             }
         case "bukinumber":
             for i in 0..<8 {
                 IntArray.append(bukinumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukinumber")
             }
             
         case "bukiprice":
             for i in 0..<8 {
                 IntArray.append(bukiprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukiprice")
             }
         case "bukihave":
             for i in 0..<8 {
                 IntArray.append(bukihave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bukihave")
             }
         case "bougunumber":
             for i in 0..<8 {
                 IntArray.append(bougunumber[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bougunumber")
             }
             
         case "bouguprice":
             for i in 0..<8 {
                 IntArray.append(bouguprice[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bouguprice")
             }
         case "bouguhave":
             for i in 0..<8 {
                 IntArray.append(bouguhave[i]!)
+                UserDefaults.standard.set(IntArray, forKey: "bouguhave")
             }
 
         default:
             print("nodicname")
         }
         return IntArray
+        
     }
         
     func saveItem() {
 //        UserDefaults.standard.set(have)
     }
 }
+
