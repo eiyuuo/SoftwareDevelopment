@@ -190,10 +190,4 @@ class item {
         }
         return IntArray
     }
-    
-    func saveItem() {
-//        UserDefaults.standard.set(have)
-    }
-    
-    
 }

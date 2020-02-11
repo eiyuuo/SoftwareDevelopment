@@ -97,7 +97,7 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "game_explosion7", audioName: audioMagick)
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
-        audioBGM.play()
+        //audioBGM.play()
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
         makeLabelLine(label: log)
@@ -272,7 +272,7 @@ class BattleViewController: UIViewController {
     
     //音の再生について
     func playAudio(audioName : AVAudioPlayer!) {
-        if(audioName.isPlaying) {
+        /*if(audioName.isPlaying) {
             //音が再生中の場合は停止する。
             audioName.stop()
             audioName.currentTime = 0
@@ -281,6 +281,7 @@ class BattleViewController: UIViewController {
             //音が停止中の場合は再生する。
             audioName.play()
         }
+ */
     }
     
     func soundEffect(skillName : String) {

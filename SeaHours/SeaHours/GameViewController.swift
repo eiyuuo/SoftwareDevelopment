@@ -36,8 +36,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func Shop(_ sender: Any) {
-        let scene = SceneManagement()
-        scene.sceneTransition(corrent: self,sb: "shop",wi: "shop")
+//        let scene = SceneManagement()
+//        scene.sceneTransition(corrent: self,sb: "shop",wi: "shop")
+        let storyboard = UIStoryboard(name: "shop", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"shop") as! ShopViewController
+        self.present(next, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
