@@ -9,8 +9,7 @@
 import Foundation
 
 class Skill {
-    
-    private let skillPointDict:[String:Int] = ["通常攻撃" : 0 , "渾身の一撃" : 5 , "スラント" : 5 , "クロー" : 5 , "テールアタック" : 5 , "噛みつく" : 5 , "体当たり" : 5 , "エアスラッシュ" : 13 , "クロスブレイブ" : 13 , "アッパーブレイド" : 13 , "ドライブフェンサー" : 13 , "アークバイト" : 13 , "アストラルクロス" : 25 , "ツヴァイセイバー" : 25 , "シャインセイバー" : 25 , "ドラグテイル" : 25 , "リヴァイクロー" : 30 , "ファイア" : 5 , "ウィンド" : 5 , "アイス" : 5 , "ストーン" : 5 , "ショット" : 5 , "ファイアアロウ" : 20 , "ウィンドカッター" : 20 , "アイスランス" : 20 , "ストーンエッジ" : 20 , "イフリート" : 50 , "テンペスト" : 50 , "ブリザード" : 50 , "アースクエイク" : 50 , "ナイトメア" : 60 , "ヒール" : 5 , "ハイヒール" : 20 , "グレイヒール" : 50 ]
+    private let skillPointDict:[String:Int] = ["通常攻撃" : 0 , "渾身の一撃" : 5 , "スラント" : 5 , "クロー" : 5 , "テールアタック" : 5 , "噛みつく" : 5 , "体当たり" : 5 , "エアスラッシュ" : 13 , "クロスブレイブ" : 13 , "アッパーブレイド" : 13 , "ドライブフェンサー" : 13 , "アークバイト" : 13 , "アストラルクロス" : 25 , "ツヴァイセイバー" : 25 , "シャインセイバー" : 25 , "ドラグテイル" : 25 , "リヴァイクロー" : 30 , "ファイア" : 5 , "ウィンド" : 5 , "アイス" : 5 , "ストーン" : 5 , "ショット" : 5 , "ファイアアロウ" : 20 , "ウィンドカッター" : 20 , "アイスランス" : 20 , "ストーンエッジ" : 20 , "イフリート" : 50 , "テンペスト" : 50 , "ブリザード" : 50 , "アースクエイク" : 50 , "ナイトメア" : 60 , "ヒール" : 5 , "ハイヒール" : 20 , "グレイヒール" : 50 ,"" : 9999999999999999]
     
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
         let randomNumber = Int.random(in: 0 ... 100)
@@ -39,6 +38,36 @@ class Skill {
         case "体当たり":
             return bodyBlow(attack: attack, randomNumber: randomNumber)
             
+        case "エアスラッシュ":
+            return airSlash(attack: attack, randomNumber: randomNumber)
+            
+        case "クロスブレイブ":
+            return crossBrave(attack: attack, randomNumber: randomNumber)
+            
+        case "アッパーブレイド":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+            
+        case "ドライブフェンサー":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+        
+        case "アークバイト":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+            
+        case "アストラルクロス":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+            
+        case "ツヴァイセイバー":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+            
+        case "シャインセイバー":
+            return upperBlade(attack: attack, randomNumber: randomNumber)
+        
+        case "ドラグテイル":
+            return dragTail(attack: attack, randomNumber: randomNumber)
+        
+        case "リヴァイクロー":
+            return leviClaw(attack: attack, randomNumber: randomNumber)
+            
 //ここから魔法系スキル
         case "ファイア":
             return fire(magickAttack: magickAttack,randomNumber : randomNumber)
@@ -53,6 +82,30 @@ class Skill {
             return stone(magickAttack: magickAttack,randomNumber : randomNumber)
             
         case "ショット":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+        
+        case "ファイアアロウ":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "ウィンドカッター":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "アイスランス":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+        
+        case "ストーンエッジ":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "イフリート":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "テンペスト":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "ブリザード":
+            return shot(magickAttack: magickAttack,randomNumber : randomNumber)
+            
+        case "ナイトメア":
             return shot(magickAttack: magickAttack,randomNumber : randomNumber)
             
 //ここから回復スキル
@@ -128,6 +181,85 @@ class Skill {
         }
     }
     
+    func airSlash(attack : Int,randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(attack) * 3
+        }else {
+            return 0
+        }
+    }
+    
+    func crossBrave(attack : Int,randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(attack) * 3.4
+        }else {
+            return 0
+        }
+    }
+    
+    func upperBlade(attack : Int,randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(attack) * 3
+        }else {
+            return 0
+        }
+    }
+    
+    func Drivefencer(attack : Int,randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(attack) * 3.4
+        }else {
+            return 0
+        }
+    }
+    
+    func arkBite(attack : Int,randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(attack) * 3
+        }else {
+            return 0
+        }
+    }
+    
+    func astralCross(attack : Int,randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+            return Double(attack) * 5
+        }else {
+            return 0
+        }
+    }
+    
+    func zweiSaber(attack : Int,randomNumber : Int) -> Double {
+        if (65 - randomNumber > 0){
+    return Double(attack) * 5.5
+        }else {
+            return 0
+        }
+    }
+    
+    func shineSaber(attack : Int,randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+    return Double(attack) * 5.2
+        }else {
+            return 0
+        }
+    }
+    
+    func dragTail(attack : Int,randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+    return Double(attack) * 5
+        }else {
+            return 0
+        }
+    }
+    
+    func leviClaw(attack : Int,randomNumber : Int) -> Double {
+        if (60 - randomNumber > 0){
+    return Double(attack) * 6
+        }else {
+            return 0
+        }
+    }
     
 //魔法依存スキル
     func fire(magickAttack : Int, randomNumber : Int) -> Double {
@@ -171,6 +303,78 @@ class Skill {
         }
     }
     
+    func fireArrow(magickAttack : Int, randomNumber : Int) -> Double {
+        if (90 - randomNumber > 0){
+            return Double(magickAttack) * 4.2
+        }else {
+            return 0
+        }
+    }
+    
+    func windCutter(magickAttack : Int, randomNumber : Int) -> Double {
+        if (80 - randomNumber > 0){
+            return Double(magickAttack) * 4
+        }else {
+            return 0
+        }
+    }
+    
+    func iceLance(magickAttack : Int, randomNumber : Int) -> Double {
+        if (75 - randomNumber > 0){
+            return Double(magickAttack) * 4.4
+        }else {
+            return 0
+        }
+    }
+    
+    func stoneEdge(magickAttack : Int, randomNumber : Int) -> Double {
+        if (90 - randomNumber > 0){
+            return Double(magickAttack) * 4
+        }else {
+            return 0
+        }
+    }
+    
+    func ifrit(magickAttack : Int, randomNumber : Int) -> Double {
+        if (60 - randomNumber > 0){
+            return Double(magickAttack) * 8.5
+        }else {
+            return 0
+        }
+    }
+    
+    func tempest(magickAttack : Int, randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+            return Double(magickAttack) * 8
+        }else {
+            return 0
+        }
+    }
+    
+    func blizzard(magickAttack : Int, randomNumber : Int) -> Double {
+        if (65 - randomNumber > 0){
+            return Double(magickAttack) * 8.4
+        }else {
+            return 0
+        }
+    }
+    
+    func earthquake(magickAttack : Int, randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+            return Double(magickAttack) * 8.2
+        }else {
+            return 0
+        }
+    }
+    
+    func nightmare(magickAttack : Int, randomNumber : Int) -> Double {
+        if (70 - randomNumber > 0){
+            return Double(magickAttack) * 9
+        }else {
+            return 0
+        }
+    }
+
 //回復系スキル
     func heel() -> Double {
         return 10
@@ -181,7 +385,7 @@ class Skill {
     }
     
     func greatHeel() -> Double {
-        return 10000
+        return 300
     }
     
     //ゲッター

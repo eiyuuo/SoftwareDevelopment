@@ -10,7 +10,7 @@ import Foundation
 
 class Enemy : Character {
     
-    private var choseSkillName : String = ""
+    var choseSkillName : String = ""
         
     func selectSkill() -> Double {
         //スキルを自動で選ぶ。例）HP50％を切ったら別のスキルなど？

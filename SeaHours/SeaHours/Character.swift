@@ -16,12 +16,12 @@ class Character {
     var nowHitPoint: Int
     var defense: Int
     var attack : Int
-    //↓ステータスではintになってる
     var magickAttack: Int
     var isDead: Bool
+    var exp : Int
     
     
-    init(name : String, maxHitPoint : Int, defense : Int, attack : Int, magickAttack : Int) {
+    init(name : String, maxHitPoint : Int, defense : Int, attack : Int, magickAttack : Int , exp : Int) {
         self.name = name
         self.maxHitPoint = maxHitPoint
         self.nowHitPoint = self.maxHitPoint
@@ -29,6 +29,7 @@ class Character {
         self.attack = attack
         self.magickAttack = magickAttack
         self.isDead = false
+        self.exp = exp
     }
     
     func hitPointOpelate(changePoint : Int) {
@@ -74,5 +75,9 @@ class Character {
     
     func getHitPoint() -> Int { //戦闘クラスでログとか表示に仕様
         return nowHitPoint
+    }
+    
+    func getExp() -> Int {
+        return exp
     }
 }
