@@ -37,26 +37,30 @@ class MagicFish : Enemy {
         
         
         
-        if (70 <= randomNumber){
-         choseSkillName = Skill_dif[0]
-         damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+        if (70 <= randomNumber && randomNumber <= 100){
+            choseSkillName = Skill_dif[0]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return damege
-        }else if(50 <= randomNumber){
+            
+        }else if(50 <= randomNumber && randomNumber < 70){
             choseSkillName = Skill_dif[1]
             damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return damege
-        }else if(40 <= randomNumber){
-        choseSkillName = Skill_dif[2]
-        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-        return Double(damege)
-        }else if(10 <= randomNumber){
-        choseSkillName = Skill_dif[3]
-        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-        return damege
+            
+        }else if(40 <= randomNumber && randomNumber < 50){
+            choseSkillName = Skill_dif[2]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+            return damege
+            
+        }else if(10 <= randomNumber && randomNumber < 40){
+            choseSkillName = Skill_dif[3]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+            return damege
+            
         }else{
-        choseSkillName = Skill_dif[4]
-        damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-        return Double(damege)
+            choseSkillName = Skill_dif[4]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+            return damege
         }
         
     }
