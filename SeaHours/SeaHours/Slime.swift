@@ -10,6 +10,9 @@ import Foundation
 
 class Slime : Enemy {
     
+    let userDefaults = UserDefaults.standard
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     //ステータス記述
     init() {
         super.init(name : "スライム" ,maxHitPoint: 12, defense: 7, attack: 12, magickAttack: 2, exp: 3)
@@ -18,19 +21,29 @@ class Slime : Enemy {
     override func selectSkill() -> Double {
         var damege :Double
                
-               let randomNumber = Int.random(in: 1 ... 100)
+        let randomNumber = Int.random(in: 1 ... 100)
         
-                print(randomNumber)
         
-               if (80 <= randomNumber){
-                   choseSkillName = "通常攻撃"
-                   damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-                   return damege
-               }else{
-               choseSkillName = "体当たり"
+        var Skill_dif:[String] = []
+        
+        if (difficulty == 1){
+            Skill_dif = ["通常攻撃","体当たり"]
+        }else if(difficulty == 10){
+            Skill_dif = ["通常攻撃","体当たり"]
+        }else if(difficulty == 30){
+            Skill_dif = ["通常攻撃","体当たり"]
+        }
+        
+        
+        if (80 <= randomNumber){
+               choseSkillName = Skill_dif[0]
                damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-               return Double(damege)
-               }
+               return damege
+           }else{
+           choseSkillName = Skill_dif[1]
+           damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
+           return Double(damege)
+        }
 
     }
 }
