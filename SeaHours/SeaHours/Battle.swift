@@ -51,6 +51,7 @@ class Battle { //戦闘を管理するクラス
         
         case "Golem" :
             self.enemy = Golem()
+
             
         default:
             self.enemy = Slime()

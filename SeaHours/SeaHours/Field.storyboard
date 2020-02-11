@@ -86,7 +86,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Golem" image="Golem"/>
                                 <connections>
-                                    <action selector="golem:" destination="155-Xy-1id" eventType="touchUpInside" id="CPc-xq-cs0"/>
+                                    <action selector="Golem:" destination="155-Xy-1id" eventType="touchUpInside" id="OGL-Da-Xog"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQB-aH-Ttc">

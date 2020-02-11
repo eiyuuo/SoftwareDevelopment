@@ -20,6 +20,10 @@ var havearray: [Int] = userDefaults.array(forKey: "itemhave") as! [Int]
 var pricearray: [Int] = userDefaults.array(forKey: "itemprice") as! [Int]
 
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var bukinum1 = userDefaults.integer(forKey: "bukinumber1")
+    var bukinum2 = userDefaults.integer(forKey: "bukinumber2")
+    var bougunum1 = userDefaults.integer(forKey: "bougunumber1")
+    var bougunum2 = userDefaults.integer(forKey: "bougunumber2")
     var number = 0
     var exp = 0
     var shopkey = "item"
@@ -165,34 +169,52 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
         case "buki":
             pricearray = iteminf.MakeIntArray(dicname: "bukiprice")
             if exp >= pricearray[number] {
-                exp = exp - pricearray[number]
-                havearray[number] += 1
-                userDefaults.set(exp, forKey: "EXPs")
-                userDefaults.set(havearray,forKey: "bukihave")
-                print(userDefaults.array(forKey: "bukihave") as Any)
-                let ex = userDefaults.integer(forKey:"EXPs")
-                let strexp = String(ex)
-                exps.text = "所持EXP：\(strexp)"
-                print("武器")
+                if havearray[number] == 0 {
+                    exp = exp - pricearray[number]
+                    havearray[number] += 1
+                    bukinum1 = bukinum2
+                    bukinum1 = iteminf.bukinumber[number]!
+                    userDefaults.set(bukinum2, forKey: "bukinumber2")
+                    userDefaults.set(bukinum1, forKey: "bukinumber1")
+                    userDefaults.set(exp, forKey: "EXPs")
+                    userDefaults.set(havearray,forKey: "bukihave")
+                    print(userDefaults.array(forKey: "bukihave") as Any)
+                    let ex = userDefaults.integer(forKey:"EXPs")
+                    let strexp = String(ex)
+                    exps.text = "所持EXP：\(strexp)"
+                    print("武器")
+                }
+                else{
+                    Description.text = "あなたはすでにこの武器を持っています"
+                }
             }
             else {
-                print("miss")
+                Description.text = "経験値が足りません"
             }
         case "bougu":
             pricearray = iteminf.MakeIntArray(dicname: "bouguprice")
             if exp >= pricearray[number] {
-                exp = exp - pricearray[number]
-                havearray[number] += 1
-                userDefaults.set(exp, forKey: "EXPs")
-                userDefaults.set(havearray,forKey: "bouguhave")
-                print(userDefaults.array(forKey: "bouguhave") as Any)
-                let ex = userDefaults.integer(forKey:"EXPs")
-                let strexp = String(ex)
-                exps.text = "所持EXP：\(strexp)"
-                print("防具")
+                if havearray[number] == 0 {
+                    exp = exp - pricearray[number]
+                    havearray[number] += 1
+                    bougunum1 = bougunum2
+                    bougunum1 = iteminf.bougunumber[number]!
+                    userDefaults.set(bougunum2, forKey: "bougunumber2")
+                    userDefaults.set(bougunum1, forKey: "bougunumber1")
+                    userDefaults.set(exp, forKey: "EXPs")
+                    userDefaults.set(havearray,forKey: "bouguhave")
+                    print(userDefaults.array(forKey: "bouguhave") as Any)
+                    let ex = userDefaults.integer(forKey:"EXPs")
+                    let strexp = String(ex)
+                    exps.text = "所持EXP：\(strexp)"
+                    print("防具")
+                }
+                else {
+                    Description.text = "あなたはすでにこの防具を持っています"
+                }
             }
             else {
-                print("miss")
+                Description.text = "経験値が足りません"
             }
         default:
             print("miss")
