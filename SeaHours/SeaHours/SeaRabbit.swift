@@ -29,6 +29,7 @@ class SeaRabbit : Enemy {
         }
         
         let randomNumber = Int.random(in: 1 ... 100)
+        var choseSkileName:String = ""
         
         if (30 <= randomNumber){
             choseSkillName = Skill_dif[0]
