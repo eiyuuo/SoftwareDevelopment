@@ -9,7 +9,6 @@
 import Foundation
 
 class Kaihe : Enemy {
-    
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
 
     init() {

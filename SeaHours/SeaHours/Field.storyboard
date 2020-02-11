@@ -43,15 +43,8 @@
                                     <action selector="Shop:" destination="155-Xy-1id" eventType="touchUpInside" id="ym6-qt-egJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijV-Dk-XJ6">
-                                <rect key="frame" x="772" y="92" width="67" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHF-Ka-SeE">
-                                <rect key="frame" x="872" y="92" width="99" height="42"/>
+                                <rect key="frame" x="872" y="92" width="100" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +79,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Golem" image="Golem"/>
                                 <connections>
-                                    <action selector="golem:" destination="155-Xy-1id" eventType="touchUpInside" id="CPc-xq-cs0"/>
+                                    <action selector="Golem:" destination="155-Xy-1id" eventType="touchUpInside" id="OGL-Da-Xog"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQB-aH-Ttc">
@@ -121,13 +114,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijV-Dk-XJ6">
+                                <rect key="frame" x="759" y="92" width="100" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Prj-MH-vo7"/>
                     </view>
                     <connections>
+                        <outlet property="golem" destination="7yr-8f-ipl" id="bB1-Nj-XBo"/>
+                        <outlet property="gostship" destination="Ymd-8V-Wn6" id="MSR-uE-wKr"/>
+                        <outlet property="kaihei" destination="9Jp-Vh-yuQ" id="tTx-7O-IBn"/>
+                        <outlet property="magicFish" destination="GVr-c8-puK" id="qgT-eb-H32"/>
                         <outlet property="minutelabel" destination="ijV-Dk-XJ6" id="Nzj-Zr-QnA"/>
                         <outlet property="secondlabel" destination="rHF-Ka-SeE" id="ym1-iI-Orb"/>
+                        <outlet property="slime" destination="caW-SS-WZY" id="2ht-g8-Myw"/>
+                        <outlet property="umiusagi" destination="RQB-aH-Ttc" id="OVv-it-nsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgv-VF-Rso" sceneMemberID="firstResponder"/>

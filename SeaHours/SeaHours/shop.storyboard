@@ -110,6 +110,20 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dO-Aq-sQT">
+                                <rect key="frame" x="759" y="27" width="100" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4my-pS-lPu">
+                                <rect key="frame" x="875" y="27" width="100" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="ZRi-Vd-IGV"/>
@@ -120,8 +134,10 @@
                         <outlet property="buylabel" destination="vYP-9u-RlX" id="qlx-NM-DxT"/>
                         <outlet property="exps" destination="Kg2-W1-dJ1" id="Jdu-zh-VjG"/>
                         <outlet property="fild" destination="DRf-22-pbV" id="Ith-WN-Qsr"/>
+                        <outlet property="minutelabel" destination="5dO-Aq-sQT" id="AJI-Jg-RMZ"/>
                         <outlet property="nextlabel" destination="22x-pN-8Xf" id="8JO-Ie-O9B"/>
                         <outlet property="price" destination="SXK-sX-5iX" id="X0j-4N-lrK"/>
+                        <outlet property="secondlabel" destination="4my-pS-lPu" id="QUg-Fy-A5F"/>
                         <outlet property="shop" destination="OAA-q6-w5M" id="gi3-xf-82X"/>
                         <outlet property="tableView" destination="9Qs-5n-wTA" id="6OZ-Sw-uRO"/>
                         <outlet property="tld" destination="fz3-Uq-cT1" id="msM-cv-tVi"/>

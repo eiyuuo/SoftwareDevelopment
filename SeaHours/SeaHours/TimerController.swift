@@ -49,6 +49,7 @@ class TimerController {
     }
     
     
+    
     //タイマーの計算を行ってテキストとして表示する
     @objc func timerCount() {
         

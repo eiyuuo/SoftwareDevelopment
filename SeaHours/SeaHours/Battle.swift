@@ -9,15 +9,15 @@
 import Foundation
 
 class Battle { //戦闘を管理するクラス
-    
+
     var player : Player
     var enemy : Enemy
     let status = Status()
-    
+
     private var logList : String = ""  //ログのリスト
-    
+
     init(enemyName : String ) {
- 
+
         //データベースからの修正済み
         self.player = Player(maxHitPoint:UserDefaults.standard.integer(forKey: "HPs"),
                              defense:UserDefaults.standard.integer(forKey: "DEFs"),
@@ -26,21 +26,21 @@ class Battle { //戦闘を管理するクラス
                              maxSkillPoint:UserDefaults.standard.integer(forKey: "SPs"),
                              exp:UserDefaults.standard.integer(forKey: "EXPs"))
 
-        
+
         switch enemyName { //どの敵なのか？
-            
+
         case "doragon" :
             self.enemy = Doragon()
             break
-            
+
         case "slime" :
             self.enemy = Slime()
             break
-            
+
         case "magickFish" :
             self.enemy = MagicFish()
             break
-        
+          
         case "GostShip" :
             self.enemy = Gostship()
             break
@@ -49,21 +49,21 @@ class Battle { //戦闘を管理するクラス
         case "UmiUsagi" :
             self.enemy = SeaRabbit()
             break
-             
+
         case "kaihei" :
              self.enemy = Kaihe()
              break
-        
+
         case "Golem" :
             self.enemy = Golem()
-            
+
         default:
             self.enemy = Slime()
             break
         }
 
     }
-    
+
     func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
         if (!player.getIsDead()) {
@@ -81,7 +81,7 @@ class Battle { //戦闘を管理するクラス
             }
         }
     }
-    
+
     func battleEnemyTurn() {
         var log : String = ""
         //エネミー
@@ -93,7 +93,7 @@ class Battle { //戦闘を管理するクラス
             }
         }
     }
-    
+
     func getLogList() -> String {
         return logList
     }

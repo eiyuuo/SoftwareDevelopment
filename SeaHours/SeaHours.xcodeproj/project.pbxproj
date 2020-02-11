@@ -171,6 +171,7 @@
 			children = (
 				EEEC6204238630E000C6819B /* Main.storyboard */,
 				E4EFAB3523C6C5960025506A /* battle.storyboard */,
+				E48AE49423D93E0200FFEF14 /* BattleViewController.swift */,
 				EE9B679123F167E6006FE430 /* Field.storyboard */,
 				EEEA8F0D23F0F7F100B8ACA3 /* shop.storyboard */,
 				02696A3223D12EE0005E593F /* PlayerStatus.storyboard */,

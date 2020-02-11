@@ -189,6 +189,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omM-do-8Fb">
+                                <rect key="frame" x="771" y="40" width="100" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-lc-X84">
+                                <rect key="frame" x="904" y="40" width="100" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UkC-fO-ytx"/>
@@ -209,9 +223,11 @@
                         <outlet property="label2" destination="Af3-K0-SlO" id="Uiv-Mn-hGs"/>
                         <outlet property="log" destination="lyC-la-zrD" id="0G9-Eg-8NK"/>
                         <outlet property="logFlame" destination="RLm-vF-ehi" id="vhl-Ss-Xka"/>
+                        <outlet property="minutelabel" destination="omM-do-8Fb" id="N6z-iK-1af"/>
                         <outlet property="next" destination="P8I-dE-iOa" id="PFv-t0-nT0"/>
                         <outlet property="no" destination="JLs-Ne-eoE" id="ha0-t1-q27"/>
                         <outlet property="pageNum" destination="PPQ-6B-omb" id="NQf-uE-yb5"/>
+                        <outlet property="secondlabel" destination="sSN-lc-X84" id="ToN-QQ-BbY"/>
                         <outlet property="skill" destination="obk-W9-2Za" id="WFr-4Z-Qn6"/>
                         <outlet property="skillBackGround" destination="zoh-Kx-n1n" id="h9f-vc-Hf7"/>
                         <outlet property="skillCaption" destination="UZh-8c-4tI" id="0vW-LF-Gka"/>
