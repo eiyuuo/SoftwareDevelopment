@@ -33,16 +33,13 @@ class Enemy : Character {
     
     func skill(player : Player ) -> String {
         var damage : Int
-        var num : Double = selectSkill()
-        print("hoge")
-        print(choseSkillName)
-        print(nowHitPoint)
+        let num : Double = selectSkill()
         
         if (choseSkillName == "ヒール" || choseSkillName == "ハイヒール" || choseSkillName == "グレイヒール" ) {//回復系のスキル　3つしか想定してないのでいいよね...
             damage = damageCalculate(skillDamage: num , enemyDefence: 0)
             hitPointOpelate(changePoint: damage)
             
-            return "\n" +  name + "は" +  choseSkillName + "で" + String(damage) + "回復した\n"
+            return "\n" +  name + "は" +  choseSkillName + "で" + String(damage) + "回復した"
 
             
         } else {
