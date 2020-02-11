@@ -12,6 +12,7 @@ import AVFoundation
 
 class FieldViewController: UIViewController {
 
+    
     @IBOutlet weak var minutelabel: UILabel!
     @IBOutlet weak var secondlabel: UILabel!
     let timer = TimerController()
@@ -34,9 +35,33 @@ class FieldViewController: UIViewController {
     @IBAction func VS(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-        next.enemyName = "gostship"
+
+        next.enemyName = "magickFish"
+
         self.present(next, animated: true, completion: nil)
     }
+    
+    @IBAction func slime(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "slime"
+        self.present(next, animated: true, completion: nil)
+    }
+    
+    @IBAction func kaihe(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "kaihe"
+        self.present(next, animated: true, completion: nil)
+    }
+    
+    @IBAction func magickFish(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "magickFish"
+        self.present(next, animated: true, completion: nil)
+    }
+    
     
     
 

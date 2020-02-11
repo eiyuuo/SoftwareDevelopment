@@ -97,18 +97,22 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func farstFlagButton(_ sender: Any) {
+        var string : String = ""
         if farstFrag {
             farstFrag = false
+            string = "無し"
         }else {
             farstFrag = true
+            string = "有り"
         }
-        
-        farstFlagButton.setTitle("確認処理：" + String(farstFrag), for: .normal)
+        farstFlagButton.setTitle("確認処理：" + string, for: .normal)
     }
     
     @IBAction func backHome(_ sender: Any) {
-        let exp = battle.status.getEXP() + battle.enemy.getExp()
-        UserDefaults.standard.set(exp, forKey:"EXPs")
+        if battle.player.getIsDead() == false {
+            let exp = battle.status.getEXP() + battle.enemy.getExp()
+            UserDefaults.standard.set(exp, forKey:"EXPs")
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -211,15 +215,13 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "game_explosion7", audioName: audioMagick)
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
-        //audioBGM.play()
+        audioBGM.play()
 
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
         makeLabelLine(label: log)
         makeLabelLine(label: label2)
-        makeButtonLine(button: skill)
-        makeButtonLine(button: item)
         button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
         button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
         button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
@@ -260,8 +262,7 @@ class BattleViewController: UIViewController {
         if !battle.player.getIsDead() { //プレイヤーが生存時?
             //ここでnowChoseSkillでswith文？でアニメーション変化？流石にやりたくないです...
             if (self.nowChoseSkillName != "ヒール" && self.nowChoseSkillName != "ハイヒール" && self.nowChoseSkillName != "グレイヒール" && self.nowChose != "item"){
-                print(self.nowChoseSkillName)
-                UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
+                    UIView.animate(withDuration: 0.1, delay: 0.0, animations: {
                     self.teki.alpha = 0.0
                 }) { _ in
                     self.teki.alpha = 1.0
@@ -341,6 +342,7 @@ class BattleViewController: UIViewController {
                         UIView.animate(withDuration: 0.5, delay: 1.5, animations: {
                             self.gameOver.isHidden = false
                             self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : false)//取り敢えず戦闘不能時にボタンを押せないように
+                            self.makeSkillButton(skillName: "game over" , boolType: false)
                         })
                     }
                 }
@@ -353,7 +355,7 @@ class BattleViewController: UIViewController {
                     
                     //効果音位置
                     self.makeLog()
-                    self.soundEffect(skillName: self.nowChoseSkillName)
+                    self.soundEffect(skillName: self.battle.enemy.choseSkillName)
                     self.buttonIsHide(skillName : self.nowChoseSkillName , boolType : true)
                 }
             }
@@ -373,15 +375,6 @@ class BattleViewController: UIViewController {
         
         // ラベル丸枠の半径
         label.layer.cornerRadius = 10
-    }
-    
-    func makeButtonLine(button : UIButton!) {
-        //　ボタン枠の枠線太さと色
-        button.layer.borderColor = UIColor.white.cgColor
-        button.layer.borderWidth = 2
-        
-        // ボタン丸枠の半径
-        button.layer.cornerRadius = 10
     }
     
     //ボタンを消すなど
@@ -412,7 +405,10 @@ class BattleViewController: UIViewController {
             skillCaption.text="獲得expは" + String(battle.enemy.getExp()) + "です。"
             skillCaption.isHidden = boolType
         }else if (skillName == "game over"){
-            //いる？
+            backHome.isHidden = boolType
+            skillBackGround.isHidden = boolType
+            skillCaption.text = battle.enemy.getName() + "に負けました。ステータスを強化したり，装備を買ってきましょう！"
+            skillCaption.isHidden = boolType
         }else if (nowChose == "skill") //スキル選択時の処理
         {
             if (skillName != "" ){
@@ -436,7 +432,6 @@ class BattleViewController: UIViewController {
         }else if (nowChose == "item" ) //アイテム選択時の処理
         {
             yes.isHidden = boolType
-            print(nowChoseSkillName)
             
             //所持数確認の場所
             let itemNun : Int = itemNameList[nowChoseSkillName] ?? 0
@@ -467,7 +462,7 @@ class BattleViewController: UIViewController {
     
     //音の再生について
     func playAudio(audioName : AVAudioPlayer!) {
-       /* if(audioName.isPlaying) {
+        if(audioName.isPlaying) {
             //音が再生中の場合は停止する。
             audioName.stop()
             audioName.currentTime = 0
@@ -476,12 +471,12 @@ class BattleViewController: UIViewController {
             //音が停止中の場合は再生する。
             audioName.play()
         }
-         */
     }
     
     //物理攻撃とかのフラグあった方がよさそう...
     func soundEffect(skillName : String) {
-        if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" || nowChose == "item"){
+        if (skillName == "ヒール" || skillName == "ハイヒール" || skillName == "グレイヒール" || skillName == "薬草" || skillName == "ポーション" || skillName == "ハイポーション" || skillName == "グレイトポーション" || skillName ==
+            "魔力草" || skillName == "魔力ポーション" || skillName == "魔力ハイポーション" || skillName == "魔力グレイトポーション"){
         playAudio(audioName: audioKaihuku)
         } else if (skillName == "通常攻撃" || skillName == "渾身の一撃" || skillName == "スラント" || skillName == "クロー"
         || skillName == "テールアタック" || skillName == "噛みつく" || skillName == "体当たり" || skillName == "エアスラッシュ" || skillName == "クロスブレイブ" || skillName == "アッパーブレイド" || skillName == "ドライブフェンサー" || skillName == "アークバイト" || skillName == "アストラルクロス" || skillName == "ツヴァイセイバー" || skillName == "シャインセイバー" || skillName == "ドラグテイル" || skillName == "リヴァイクロー" ) {

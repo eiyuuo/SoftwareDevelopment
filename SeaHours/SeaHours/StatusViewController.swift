@@ -61,10 +61,6 @@ class StatusViewController: UIViewController {
     @IBOutlet weak var bar: UILabel!
     
     
-    //アイテム欄，魔法欄
-    @IBOutlet weak var Itembutton: UIButton!
-    @IBOutlet weak var Magic: UIButton!
-    
     
     //各ステータスプラス
     @IBOutlet weak var HPButton: UIButton!
@@ -623,8 +619,6 @@ class StatusViewController: UIViewController {
 
 
         //labelに各ステータスの数字が連携
-        print("画面表示")
-        print(String(status.getHP()))
         HPpoint.text = status.getHPs()
         SPpoint.text = status.getSPs()
         ATKpoint.text = status.getATKs()
@@ -716,14 +710,6 @@ class StatusViewController: UIViewController {
         bar.layer.borderColor = UIColor.white.cgColor
         bar.layer.cornerRadius = 10.0
         
-        
-        Itembutton.layer.borderWidth = 1
-        Itembutton.layer.borderColor = UIColor.white.cgColor
-        Itembutton.layer.cornerRadius = 10.0
-        
-        Magic.layer.borderWidth = 1
-        Magic.layer.borderColor = UIColor.white.cgColor
-        Magic.layer.cornerRadius = 10.0
         
         
     }
