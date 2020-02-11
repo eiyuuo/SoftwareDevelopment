@@ -13,6 +13,8 @@ import AVFoundation
 
 class TitleViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+    
     @IBOutlet weak var waku: UILabel!
     
     @IBAction func Easy(_ sender: Any) {
@@ -20,6 +22,8 @@ class TitleViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
         next.count = 180
         self.present(next, animated: true, completion: nil)
+        
+        UserDefaults.standard.set(1, forKey:"difficulty")
     }
     
     @IBAction func Nomal(_ sender: Any) {
@@ -27,6 +31,8 @@ class TitleViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
         next.count = 180
         self.present(next, animated: true, completion: nil)
+        
+        UserDefaults.standard.set(10, forKey:"difficulty")
     }
     
     @IBAction func Hard(_ sender: Any) {
@@ -34,6 +40,8 @@ class TitleViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
         next.count = 180
         self.present(next, animated: true, completion: nil)
+        
+        UserDefaults.standard.set(30, forKey:"difficulty")
     }
     
     override func viewDidLoad() {

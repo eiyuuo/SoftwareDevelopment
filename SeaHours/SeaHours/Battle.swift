@@ -33,7 +33,7 @@ class Battle { //戦闘を管理するクラス
  
         //データベースからの修正済み
 
-        self.player = Player(maxHitPoint:status.getHP()+100000000, defense:status.getDEF(), attack: status.getATK()+100000000, magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
+        self.player = Player(maxHitPoint:status.getHP()+20000, defense:status.getDEF()+300, attack: status.getATK()+300, magickAttack:status.getINT()+300, maxSkillPoint:status.getSP()+300, exp: status.getEXP())
 
 
         

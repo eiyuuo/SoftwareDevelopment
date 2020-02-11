@@ -10,7 +10,7 @@
         <!--Shop View Controller-->
         <scene sceneID="aCe-PP-taD">
             <objects>
-                <viewController storyboardIdentifier="shop" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="245-sr-fUF" customClass="ShopViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shop" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="245-sr-fUF" customClass="ShopViewController" customModule="SeaHours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BZc-bh-1qC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
