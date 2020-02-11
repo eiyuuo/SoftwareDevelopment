@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class item {
+class Item {
     let userDefaults = UserDefaults.standard
     init() {
         //UserDefaults.standard初期値
