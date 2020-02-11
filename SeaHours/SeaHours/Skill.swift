@@ -120,24 +120,26 @@ class Skill {
             return upperBlade(attack: attack, randomNumber: randomNumber)
             
         case "ドライブフェンサー":
-            return upperBlade(attack: attack, randomNumber: randomNumber)
+            return driveFencer(attack: attack, randomNumber: randomNumber)
         
         case "アークバイト":
-            return upperBlade(attack: attack, randomNumber: randomNumber)
+            return arkBite(attack: attack, randomNumber: randomNumber)
             
         case "アストラルクロス":
-            return upperBlade(attack: attack, randomNumber: randomNumber)
+            return astralCross(attack: attack, randomNumber: randomNumber)
             
         case "ツヴァイセイバー":
-            return upperBlade(attack: attack, randomNumber: randomNumber)
+            return zweiSaber(attack: attack, randomNumber: randomNumber)
             
         case "シャインセイバー":
-            return upperBlade(attack: attack, randomNumber: randomNumber)
+            return shineSaber(attack: attack, randomNumber: randomNumber)
         
         case "ドラグテイル":
             return dragTail(attack: attack, randomNumber: randomNumber)
         
         case "リヴァイクロー":
+            print(attack)
+            print(magickAttack)
             return leviClaw(attack: attack, randomNumber: randomNumber)
             
 //ここから魔法系スキル
@@ -280,7 +282,7 @@ class Skill {
         }
     }
     
-    func Drivefencer(attack : Int,randomNumber : Int) -> Double {
+    func driveFencer(attack : Int,randomNumber : Int) -> Double {
         if (80 - randomNumber > 0){
             return Double(attack) * 3.4
         }else {
@@ -306,7 +308,7 @@ class Skill {
     
     func zweiSaber(attack : Int,randomNumber : Int) -> Double {
         if (65 - randomNumber > 0){
-    return Double(attack) * 5.5
+            return Double(attack) * 5.5
         }else {
             return 0
         }
@@ -314,7 +316,7 @@ class Skill {
     
     func shineSaber(attack : Int,randomNumber : Int) -> Double {
         if (70 - randomNumber > 0){
-    return Double(attack) * 5.2
+            return Double(attack) * 5.2
         }else {
             return 0
         }
@@ -322,7 +324,7 @@ class Skill {
     
     func dragTail(attack : Int,randomNumber : Int) -> Double {
         if (70 - randomNumber > 0){
-    return Double(attack) * 5
+            return Double(attack) * 5
         }else {
             return 0
         }
@@ -330,7 +332,7 @@ class Skill {
     
     func leviClaw(attack : Int,randomNumber : Int) -> Double {
         if (60 - randomNumber > 0){
-    return Double(attack) * 6
+            return Double(attack) * 6
         }else {
             return 0
         }

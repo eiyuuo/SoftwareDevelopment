@@ -46,6 +46,7 @@ class BattleViewController: UIViewController {
     private var audioMagick: AVAudioPlayer!
     private var audioBGM : AVAudioPlayer!
     private var audioKaihuku : AVAudioPlayer!
+    private var audioCrear : AVAudioPlayer!
     
     //背景系
     @IBOutlet weak var skillBackGround: UIImageView!
@@ -132,10 +133,14 @@ class BattleViewController: UIViewController {
     }
     
     @IBAction func backHome(_ sender: Any) {
-        if battle.player.getIsDead() == false {
+        if (battle.player.getIsDead() == false) {
             let exp = battle.status.getEXP() + battle.enemy.getExp()
             UserDefaults.standard.set(exp, forKey:"EXPs")
-            dismiss(animated: true, completion: nil)
+            if (enemyName == "doragon"){//ボスに勝ったら判定
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            } else {
+                dismiss(animated: true, completion: nil)
+            }
         } else {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             //dismiss(animated: true, completion: nil)
@@ -252,6 +257,7 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "game_explosion7", audioName: audioMagick)
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
+        setSound(MP3Name: "retropark", audioName: audioCrear)
         audioBGM.play()
 
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
@@ -441,6 +447,13 @@ class BattleViewController: UIViewController {
             skillBackGround.isHidden = boolType
             skillCaption.text="獲得expは" + String(battle.enemy.getExp()) + "です。"
             skillCaption.isHidden = boolType
+            if (enemyName == "doragon") {
+                audioBGM.stop()
+                audioCrear.play()
+                gameOver.textColor = UIColor.yellow
+                gameOver.text = "GAME\nCREAR"
+                gameOver.isHidden = false;
+            }
         }else if (skillName == "game over"){
             backHome.isHidden = boolType
             skillBackGround.isHidden = boolType
@@ -472,7 +485,7 @@ class BattleViewController: UIViewController {
             
             //所持数確認の場所
             let itemNun : Int = itemNameList[nowChoseSkillName] ?? 0
-            let haveItemNum : Int = battle.player.getHaveItemList()[itemNun] ?? 0
+            let haveItemNum : Int = battle.player.getHaveItemList()[itemNun]
 
             if ( haveItemNum != 0){
                 yes.isEnabled = true
@@ -553,6 +566,10 @@ extension BattleViewController: AVAudioPlayerDelegate {
                 audioBGM = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioBGM.delegate = self
                 break
+                
+            case audioCrear:
+                audioCrear = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                audioCrear.delegate = self
                 
             default:
                 break
