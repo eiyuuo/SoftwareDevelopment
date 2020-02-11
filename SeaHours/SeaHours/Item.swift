@@ -216,7 +216,8 @@ class Item {
     }
         
     func saveItem() {
-//        UserDefaults.standard.set(have)
+        let list = MakeIntArray(dicname: "itemhave")
+        UserDefaults.standard.set(list, forKey: "itemhave")
     }
 }
 

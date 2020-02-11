@@ -16,7 +16,7 @@ class MagicFish : Enemy {
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
     
     init() {
-        super.init(name : "マジックフィッシュ" ,maxHitPoint: 150*difficulty*2, defense: 25*difficulty, attack: 15*difficulty, magickAttack: 40*difficulty,exp: 20*difficulty)
+        super.init(name : "マジックフィッシュ" ,maxHitPoint: 150*2*difficulty, defense: 25*difficulty, attack: 15*difficulty, magickAttack: 40*difficulty,exp: 20*difficulty)
     }
     
     override func selectSkill() -> Double {
