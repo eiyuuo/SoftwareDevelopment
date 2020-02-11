@@ -634,6 +634,7 @@ class StatusViewController: UIViewController {
     @IBAction func ReturnMain(_ sender: Any) {
         timer.time.invalidate()
         labelTimer.invalidate()
+        UserDefaults.standard.set(1, forKey:"tag")
         self.dismiss(animated: true, completion: nil)
     }
     

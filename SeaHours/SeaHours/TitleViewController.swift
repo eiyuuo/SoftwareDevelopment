@@ -20,28 +20,28 @@ class TitleViewController: UIViewController {
     @IBAction func Easy(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Field", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
-        next.count = 20
-        self.present(next, animated: true, completion: nil)
-        
+        next.count = 10
+        UserDefaults.standard.set(1, forKey:"tag")
         UserDefaults.standard.set(1, forKey:"difficulty")
+        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func Nomal(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Field", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
         next.count = 180
-        self.present(next, animated: true, completion: nil)
-        
+        UserDefaults.standard.set(1, forKey:"tag")
         UserDefaults.standard.set(10, forKey:"difficulty")
+        self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func Hard(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Field", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
         next.count = 180
-        self.present(next, animated: true, completion: nil)
-        
+        UserDefaults.standard.set(1, forKey:"tag")
         UserDefaults.standard.set(30, forKey:"difficulty")
+        self.present(next, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

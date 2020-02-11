@@ -126,8 +126,14 @@
                         <viewLayoutGuide key="safeArea" id="Prj-MH-vo7"/>
                     </view>
                     <connections>
+                        <outlet property="golem" destination="7yr-8f-ipl" id="bB1-Nj-XBo"/>
+                        <outlet property="gostship" destination="Ymd-8V-Wn6" id="MSR-uE-wKr"/>
+                        <outlet property="kaihei" destination="9Jp-Vh-yuQ" id="tTx-7O-IBn"/>
+                        <outlet property="magicFish" destination="GVr-c8-puK" id="qgT-eb-H32"/>
                         <outlet property="minutelabel" destination="ijV-Dk-XJ6" id="Nzj-Zr-QnA"/>
                         <outlet property="secondlabel" destination="rHF-Ka-SeE" id="ym1-iI-Orb"/>
+                        <outlet property="slime" destination="caW-SS-WZY" id="2ht-g8-Myw"/>
+                        <outlet property="umiusagi" destination="RQB-aH-Ttc" id="OVv-it-nsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgv-VF-Rso" sceneMemberID="firstResponder"/>
