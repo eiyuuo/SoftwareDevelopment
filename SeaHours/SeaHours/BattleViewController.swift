@@ -173,6 +173,7 @@ class BattleViewController: UIViewController {
         setSound(MP3Name: "kaihuku", audioName: audioKaihuku)
         setSound(MP3Name: "fruitsparfait", audioName: audioBGM)
         //audioBGM.play()
+
         pageNum.text = String(pageFlag+1) + "/" + String(skillList[choseFlag[nowChose]!].count)
         label1.text =  "HP：" + String(battle.player.getHitPoint()) + "\n" + "SP：" + String(battle.player.getSkillPoint())
         makeLabelLine(label: label1)
