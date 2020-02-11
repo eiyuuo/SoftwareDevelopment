@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
-class item {
+class Item {
     let userDefaults = UserDefaults.standard
     init() {
         //UserDefaults.standard初期値
         userDefaults.register(defaults: ["itemname": ["non","non","non","non","non","non","non","non"],"itemhave": [0,0,0,0,0,0,0,0],"itemprice": [0,0,0,0,0,0,0,0],"bukiname":
-            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],
-                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0]])
+            ["non","non","non","non","non","non","non","non"],"bukihave": [0,0,0,0,0,0,0,0],"bukiprice": [0,0,0,0,0,0,0,0],"bukinumber1": 0,"bukinumber2": 0,
+                                                              "bouguname": ["non","non","non","non","non","non","non","non"],"bouguhave": [0,0,0,0,0,0,0,0],"bouguprice": [0,0,0,0,0,0,0,0],"bougunumber1": 0,"bougunumber2": 0])
     }
     
     var itemname:[Int:String] = [0:"薬草", 1:"ポーション",2:"ハイポーション",3:"グレイトポーション",4:"魔力草",5:"魔力ポーション",6:"魔力ハイポーション",7:"魔力グレイトポーション"]
