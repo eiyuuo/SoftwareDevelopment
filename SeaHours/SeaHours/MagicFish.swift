@@ -12,7 +12,6 @@ import Foundation
 
 class MagicFish : Enemy {
     
-    let userDefaults = UserDefaults.standard
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
     
     init() {

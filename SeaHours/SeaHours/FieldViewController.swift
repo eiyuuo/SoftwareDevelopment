@@ -34,7 +34,7 @@ class FieldViewController: UIViewController {
         }
     }
     
-    @IBAction func VS(_ sender: Any) {
+    @IBAction func doragon(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
 
@@ -69,7 +69,13 @@ class FieldViewController: UIViewController {
     
     
     
-
+    @IBAction func golem(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "Golem"
+        self.present(next, animated: true, completion: nil)
+    }
+    
     
     @IBAction func Status(_ sender: Any) {
 //        let scene = SceneManagement()

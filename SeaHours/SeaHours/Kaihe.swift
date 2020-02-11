@@ -9,9 +9,8 @@
 import Foundation
 
 class Kaihe : Enemy {
-    let userDefaults = UserDefaults.standard
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
-    
+
     init() {
         super.init(name : "カイヘイ" ,maxHitPoint: 17*difficulty, defense: 7*difficulty, attack: 15*difficulty, magickAttack: 10*difficulty,exp: 10*difficulty)
 
@@ -19,17 +18,25 @@ class Kaihe : Enemy {
 
     override func selectSkill() -> Double {
         var damege :Double
-        var choseSkileName:String = ""
-        //let randomBool = Bool.random()
+        var Skill_dif:[String] = []
+        
+        if (difficulty == 1){
+            Skill_dif = ["通常攻撃","テールアタック"]
+        }else if(difficulty == 10){
+            Skill_dif = ["アイスランス","アイス","ストーンエッジ","ハイヒール","アークバイト"]
+        }else if(difficulty == 30){
+            Skill_dif = ["ブリザード","アイスランス","アースクエイク","グレイヒール","アイス"]
+        }
+        
         let randomNumber = Int.random(in: 1 ... 100)
         
         if (30 <= randomNumber){
-            choseSkileName = "通常攻撃"
-            damege = skill.choseSkill(skillName : choseSkileName, attack : attack, magickAttack : magickAttack)
+            choseSkillName = Skill_dif[0]
+            damege = skill.choseSkill(skillName : choseSkillName, attack : attack, magickAttack : magickAttack)
             return damege
         }else{
-            choseSkileName = "テールアタック"
-            damege = skill.choseSkill(skillName : choseSkileName, attack : attack, magickAttack : magickAttack)
+            choseSkillName = Skill_dif[1]
+            damege = skill.choseSkill(skillName : choseSkillName, attack : attack, magickAttack : magickAttack)
             return damege
         }
     }

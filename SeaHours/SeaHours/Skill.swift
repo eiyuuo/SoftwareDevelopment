@@ -177,6 +177,9 @@ class Skill {
         case "ブリザード":
             return blizzard(magickAttack: magickAttack,randomNumber : randomNumber)
             
+        case "アースクエイク" :
+            return earthquake(magickAttack: magickAttack, randomNumber: randomNumber)
+            
         case "ナイトメア":
             return nightmare(magickAttack: magickAttack,randomNumber : randomNumber)
             

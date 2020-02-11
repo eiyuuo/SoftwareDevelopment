@@ -12,13 +12,13 @@ class Player : Character {
     private var maxSkillPoint: Int
     private var nowSkillPoint: Int
     private var item: Item = Item()
-    private var itemHaveList : [Int : Int]
+    private var itemHaveList : [Int]
     
     
     init( maxHitPoint: Int, defense: Int, attack: Int, magickAttack: Int, maxSkillPoint: Int ,exp : Int) {
         self.maxSkillPoint = maxSkillPoint
         self.nowSkillPoint = self.maxSkillPoint
-        self.itemHaveList = item.itemhave
+        self.itemHaveList = userDefaults.array(forKey: "itemhave") as! [Int]
         
         super.init(name: "プレイヤー", maxHitPoint: maxHitPoint, defense: defense, attack: attack, magickAttack: magickAttack, exp: exp)
     }
@@ -49,7 +49,8 @@ class Player : Character {
         let itemEffect : Int = item.itemnumber[number] ?? 0
         
         hitPointOpelate(changePoint: itemEffect)
-        itemHaveList[number]! -= 1
+        itemHaveList[number] -= 1
+        userDefaults.set(itemHaveList,forKey: "itemhave")
         
         return "\nプレイヤーは" +  itemName + "で" + String(itemEffect) + "回復した\n"
         
@@ -59,7 +60,7 @@ class Player : Character {
         return nowSkillPoint
     }
     
-    func getHaveItemList() -> [Int : Int] {
+    func getHaveItemList() -> [Int] {
         return itemHaveList
     }
     
