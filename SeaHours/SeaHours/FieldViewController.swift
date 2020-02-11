@@ -17,8 +17,8 @@ class FieldViewController: UIViewController {
     @IBOutlet weak var golem: UIButton!
     @IBOutlet weak var umiusagi: UIButton!
     @IBOutlet weak var gostship: UIButton!
-
-
+    
+    let userDefaults = UserDefaults.standard
     @IBOutlet weak var minutelabel: UILabel!
     @IBOutlet weak var secondlabel: UILabel!
     let timer = TimerController()
@@ -35,9 +35,11 @@ class FieldViewController: UIViewController {
     @objc func labelset(){
         minutelabel.text = timer.getStrMinute()
         secondlabel.text = timer.getStrSecond()
-        if (timer.getCount() == 0) {
-             self.dismiss(animated: true, completion: nil)
+        if (timer.getCount() == 0 && UserDefaults.standard.integer(forKey: "tag") == 1) {
+            print("ok")
+            self.dismiss(animated: true, completion: nil)
         }
+
     }
     var EnemyCount :[Int]=[0,0,0,0,0,0,0]
 
@@ -45,17 +47,16 @@ class FieldViewController: UIViewController {
         var x = 0
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
-
         next.enemyName = "doragon"
-
         for i in EnemyCount{
             x = x+i
         }
         if (x==6) {
+            next.count = timer.getCount()
             self.present(next, animated: true, completion: nil)
         }
-
         next.count = timer.getCount()
+        self.present(next, animated: true, completion: nil)
 
 
     }
@@ -66,6 +67,7 @@ class FieldViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "slime"
         next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
         slime.isEnabled = false
     }
@@ -76,6 +78,7 @@ class FieldViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "kaihe"
         next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
         kaihei.isEnabled = false
     }
@@ -86,16 +89,20 @@ class FieldViewController: UIViewController {
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "magickFish"
         next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
         magicFish.isEnabled = false
 
     }
+
 
     @IBAction func Golem(_ sender:Any){
         EnemyCount[3]=1
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "Golem"
+        next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
         golem.isEnabled = false
     }
@@ -103,6 +110,8 @@ class FieldViewController: UIViewController {
     @IBAction func umiUsagi(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         next.enemyName = "UmiUsagi"
         self.present(next, animated: true, completion: nil)
     }
@@ -111,24 +120,25 @@ class FieldViewController: UIViewController {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "GostShip"
+        next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
     }
-    
-    
     @IBAction func golem(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
         next.enemyName = "Golem"
+        next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
     }
 
 
     @IBAction func Status(_ sender: Any) {
-//        let scene = SceneManagement()
-//        scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
         let storyboard = UIStoryboard(name: "PlayerStatus", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"Status") as! StatusViewController
         next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
     }
 
@@ -136,6 +146,7 @@ class FieldViewController: UIViewController {
         let storyboard = UIStoryboard(name: "shop", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"shop") as! ShopViewController
         next.count = timer.getCount()
+        UserDefaults.standard.set(0, forKey:"tag")
         self.present(next, animated: true, completion: nil)
     }
 

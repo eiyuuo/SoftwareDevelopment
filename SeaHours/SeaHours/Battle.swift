@@ -45,12 +45,11 @@ class Battle { //戦闘を管理するクラス
             self.enemy = Gostship()
             break
 
-        
         case "UmiUsagi" :
             self.enemy = SeaRabbit()
             break
 
-        case "kaihei" :
+        case "kaihe" :
              self.enemy = Kaihe()
              break
 

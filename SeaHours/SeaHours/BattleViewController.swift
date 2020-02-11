@@ -94,7 +94,9 @@ class BattleViewController: UIViewController {
         minutelabel.text = timer.getStrMinute()
         secondlabel.text = timer.getStrSecond()
         if (timer.getCount() == 0) {
-             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            print("hoge")
+            audioBGM.stop()
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -136,11 +138,14 @@ class BattleViewController: UIViewController {
         if (battle.player.getIsDead() == false) {
             let exp = battle.status.getEXP() + battle.enemy.getExp()
             UserDefaults.standard.set(exp, forKey:"EXPs")
+
+            UserDefaults.standard.set(1, forKey:"tag")
             if (enemyName == "doragon"){//ボスに勝ったら判定
                 self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             } else {
                 dismiss(animated: true, completion: nil)
             }
+
         } else {
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             //dismiss(animated: true, completion: nil)
@@ -148,7 +153,7 @@ class BattleViewController: UIViewController {
 
         timer.time.invalidate()
         labelTimer.invalidate()
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
 
     }
     

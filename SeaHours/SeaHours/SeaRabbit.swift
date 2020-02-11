@@ -13,7 +13,7 @@ class SeaRabbit : Enemy {
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
 
     init() {
-        super.init(name : "ウミウサギ" ,maxHitPoint: 10*difficulty, defense: 5*difficulty, attack: 10*difficulty, magickAttack: 10*difficulty, exp: 10*difficulty/2)
+        super.init(name : "ウミウサギ" ,maxHitPoint: 10*difficulty, defense: 3*difficulty, attack: 10*difficulty, magickAttack: 10*difficulty, exp: 10*difficulty/2)
     }
 
     override func selectSkill() -> Double {

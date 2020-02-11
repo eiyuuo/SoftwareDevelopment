@@ -257,6 +257,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func fild(_ sender: Any) {
         timer.time.invalidate()
         labelTimer.invalidate()
+        UserDefaults.standard.set(1, forKey:"tag")
         self.dismiss(animated: true, completion: nil)
     }
     
