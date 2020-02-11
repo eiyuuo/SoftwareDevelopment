@@ -218,9 +218,6 @@
 
 
 				A26FF11B23F25490001C2FD1 /* Gostship.swift */,
-
-
-
 			);
 			path = SeaHours;
 			sourceTree = "<group>";
