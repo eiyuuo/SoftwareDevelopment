@@ -112,8 +112,11 @@ class BattleViewController: UIViewController {
         if battle.player.getIsDead() == false {
             let exp = battle.status.getEXP() + battle.enemy.getExp()
             UserDefaults.standard.set(exp, forKey:"EXPs")
+            dismiss(animated: true, completion: nil)
+        } else {
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func next(_ sender: Any) {
@@ -191,7 +194,7 @@ class BattleViewController: UIViewController {
             } else if (nowChose == "item" ) //アイテム選択時
             {
                 let itemNun : Int = itemNameList[nowChoseSkillName] ?? 0
-                let haveItemNum : Int = battle.player.getHaveItemList()[itemNun] ?? 0
+                let haveItemNum : Int = battle.player.getHaveItemList()[itemNun]
                 if ( haveItemNum != 0){
                     battle.battlePlayerTurn(nowChose: nowChose, tuchButtonName: nowChoseSkillName)
                     playerAnimation()
@@ -226,7 +229,7 @@ class BattleViewController: UIViewController {
         button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
         button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
         button4.setTitle(skillList[choseFlag[nowChose]!][pageFlag][3], for: .normal)
-        farstFlagButton.setTitle("確認処理：" + String(farstFrag) , for: .normal)
+        farstFlagButton.setTitle("確認処理：無し" , for: .normal)
         backHome.isHidden = true
         let image = UIImage(named: enemyName)
         teki.image = image
