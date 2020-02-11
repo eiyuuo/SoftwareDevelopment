@@ -219,7 +219,6 @@ class BattleViewController: UIViewController {
         makeLabelLine(label: label2)
         makeButtonLine(button: skill)
         makeButtonLine(button: item)
-        makeButtonLine(button: farstFlagButton)
         button1.setTitle(skillList[choseFlag[nowChose]!][pageFlag][0], for: .normal)
         button2.setTitle(skillList[choseFlag[nowChose]!][pageFlag][1], for: .normal)
         button3.setTitle(skillList[choseFlag[nowChose]!][pageFlag][2], for: .normal)
@@ -356,8 +355,6 @@ class BattleViewController: UIViewController {
         label.layer.borderColor = UIColor.white.cgColor
         label.layer.borderWidth = 2
         
-        // ラベル枠を丸くする
-        label.layer.masksToBounds = true
         // ラベル丸枠の半径
         label.layer.cornerRadius = 10
     }
@@ -365,10 +362,8 @@ class BattleViewController: UIViewController {
     func makeButtonLine(button : UIButton!) {
         //　ボタン枠の枠線太さと色
         button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 2
         
-        
-        // ボタン枠を丸くする
-        button.layer.masksToBounds = true
         // ボタン丸枠の半径
         button.layer.cornerRadius = 10
     }

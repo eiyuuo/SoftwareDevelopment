@@ -83,10 +83,9 @@ class Skill {
         
     
     func choseSkill(skillName : String, attack : Int, magickAttack : Int) -> Double {
-        let randomNumber = Int.random(in: 0 ... 100)
+        let randomNumber = Int.random(in: 1 ... 100)
         
         switch skillName {
-            
 //ここからアタック系スキル
         case "通常攻撃":
             return nomalAttack(attack: attack ,randomNumber: randomNumber)
@@ -197,6 +196,9 @@ class Skill {
 //攻撃依存スキル
     func nomalAttack(attack : Int,randomNumber : Int) -> Double {
         //命中率のパーセントをif文で書き，当たったらアタックの何倍？など適当に計算。外したら0を返す。
+        print("hoge")
+        print(randomNumber)
+        print(100 - randomNumber)
         if (100 - randomNumber > 0){
             return Double(attack) * 1
         }else {

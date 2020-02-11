@@ -23,7 +23,7 @@ class Battle { //戦闘を管理するクラス
         
         switch enemyName { //どの敵なのか？
             
-        case "dragon" :
+        case "doragon" :
             self.enemy = Doragon()
             break
             
@@ -34,6 +34,15 @@ class Battle { //戦闘を管理するクラス
         case "magickFish" :
             self.enemy = MagicFish()
             break
+        /*
+        case "seaUsagi" :
+            self.enemy = SeaUsagi()
+            break
+             
+        case "kaihei" :
+             self.enemy = Kaihei()
+             break
+        */
             
         default:
             self.enemy = Slime()
