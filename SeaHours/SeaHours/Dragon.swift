@@ -13,7 +13,7 @@ class Doragon : Enemy {
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
     
     init() {
-        super.init(name : "ドラゴン", maxHitPoint: 200*difficulty, defense: 30*difficulty, attack: 50, magickAttack: 60*difficulty, exp: 50*difficulty/2)
+        super.init(name : "ドラゴン", maxHitPoint: 2000*difficulty, defense: 30*difficulty, attack: 50*difficulty, magickAttack: 60*difficulty, exp: 50*difficulty/2)
     }
     
     override func selectSkill() -> Double {
@@ -24,11 +24,10 @@ class Doragon : Enemy {
         if (difficulty == 1){
             Skill_dif = ["ドラグテイル","噛みつく","ウィンドカッター","テールアタック","ウィンド"]
         }else if(difficulty == 10){
-            Skill_dif = ["アイスランス","アイス","ストーンエッジ","ハイヒール","アークバイト"]
+            Skill_dif = ["ナイトメア","ドラグテイル","テンペスト","アストラルクロス","アークバイト"]
         }else if(difficulty == 30){
-            Skill_dif = ["ブリザード","アイスランス","アースクエイク","グレイヒール","アイス"]
+            Skill_dif = ["ナイトメア","グレイヒール","アースクエイク","テンペスト","リヴァイクロー"]
         }
-
         
                if (nowHitPoint < maxHitPoint/10 ){
                 choseSkillName = Skill_dif[0]
