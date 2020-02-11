@@ -9,34 +9,48 @@
 import Foundation
 
 class Doragon : Enemy {
+    
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     init() {
-        super.init(name : "ドラゴン", maxHitPoint: 200, defense: 30, attack: 50, magickAttack: 60, exp: 50)
+        super.init(name : "ドラゴン", maxHitPoint: 200*difficulty, defense: 30*difficulty, attack: 50, magickAttack: 60*difficulty, exp: 50*difficulty/2)
     }
     
     override func selectSkill() -> Double {
+        
         var damege :Double
+        var Skill_dif:[String] = []
+        
+        if (difficulty == 1){
+            Skill_dif = ["ドラグテイル","噛みつく","ウィンドカッター","テールアタック","ウィンド"]
+        }else if(difficulty == 10){
+            Skill_dif = ["アイスランス","アイス","ストーンエッジ","ハイヒール","アークバイト"]
+        }else if(difficulty == 30){
+            Skill_dif = ["ブリザード","アイスランス","アースクエイク","グレイヒール","アイス"]
+        }
+
         
                if (nowHitPoint < maxHitPoint/10 ){
-                choseSkillName = "ドラグテイル"
+                choseSkillName = Skill_dif[0]
                 damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                    return damege
                }else if(nowHitPoint < maxHitPoint/2){
                     if Bool.random() {
-                        choseSkillName = "噛みつく"
+                        choseSkillName = Skill_dif[1]
                         damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                         return damege
                     } else {
-                        choseSkillName = "ウィンドカッター"
+                        choseSkillName = Skill_dif[2]
                         damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                         return damege
                     }
                }else {
                    if Bool.random() {
-                       choseSkillName = "ナイトメア"
+                       choseSkillName = Skill_dif[3]
                        damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                        return damege
                    } else {
-                       choseSkillName = "ウィンド"
+                       choseSkillName = Skill_dif[4]
                        damege = self.skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                        return damege
                    }

@@ -32,11 +32,11 @@ class FieldViewController: UIViewController {
         secondlabel.text = timer.getStrSecond()
     }
     
-    @IBAction func VS(_ sender: Any) {
+    @IBAction func doragon(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
 
-        next.enemyName = "magickFish"
+        next.enemyName = "doragon"
 
         self.present(next, animated: true, completion: nil)
     }
@@ -61,6 +61,8 @@ class FieldViewController: UIViewController {
         next.enemyName = "magickFish"
         self.present(next, animated: true, completion: nil)
     }
+    
+    
     
     @IBAction func golem(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)

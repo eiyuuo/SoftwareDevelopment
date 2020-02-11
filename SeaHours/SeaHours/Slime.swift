@@ -10,12 +10,11 @@ import Foundation
 
 class Slime : Enemy {
     
-    let userDefaults = UserDefaults.standard
     var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
     
     //ステータス記述
     init() {
-        super.init(name : "スライム" ,maxHitPoint: 12, defense: 7, attack: 12, magickAttack: 2, exp: 3)
+        super.init(name : "スライム" ,maxHitPoint: 12*difficulty, defense: 7*difficulty, attack: 12*difficulty, magickAttack: 2*difficulty, exp: 3*difficulty/2)
     }
     
     override func selectSkill() -> Double {

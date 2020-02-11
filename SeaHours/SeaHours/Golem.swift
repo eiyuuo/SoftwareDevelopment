@@ -9,23 +9,35 @@
 import Foundation
 class Golem : Enemy {
     
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     //ステータス記述
     init() {
-        super.init(name : "ゴ-レム" ,maxHitPoint: 50, defense: 150, attack: 5, magickAttack: 15,exp:10)
+        super.init(name : "ゴ-レム" ,maxHitPoint: 50*difficulty, defense: 150*difficulty, attack: 5*difficulty, magickAttack: 15*difficulty,exp:10*difficulty/2)
     }
     var choseSkill : String = ""
     var SkillName: String = ""
     override func selectSkill() -> Double {
         
         var damege :Double
+        var Skill_dif:[String] = []
+        
+        if (difficulty == 1){
+            Skill_dif = ["通常攻撃","ストーン"]
+        }else if(difficulty == 10){
+            Skill_dif = ["アイスランス","アイス"]
+        }else if(difficulty == 30){
+            Skill_dif = ["ブリザード","アイスランス"]
+        }
+        
         let randomNumber = Int.random(in: 1 ... 100)
         if (60<=randomNumber){
-            SkillName = "通常攻撃"
+            SkillName = Skill_dif[0]
             damege = skill.choseSkill(skillName: SkillName, attack: attack, magickAttack: magickAttack)
             return damege
             
         }else{
-            SkillName = "ストーン"
+            SkillName = Skill_dif[1]
             damege = skill.choseSkill(skillName: SkillName, attack: attack, magickAttack: magickAttack)
             return damege
         }

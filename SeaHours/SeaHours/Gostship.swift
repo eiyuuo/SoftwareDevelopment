@@ -10,28 +10,39 @@ import Foundation
 
 class Gostship : Enemy {
     
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     init() {
-        super.init(name : "幽霊船" ,maxHitPoint: 100, defense: 20, attack: 15, magickAttack: 15,exp: 100)
+        super.init(name : "幽霊船" ,maxHitPoint: 100*difficulty, defense: 20*difficulty, attack: 15*difficulty, magickAttack: 15*difficulty,exp: 100*difficulty/2)
     }
     
     override func selectSkill() -> Double {
         var damege :Double
-               
-               let randomNumber = Int.random(in: 1 ... 100)
+        var Skill_dif:[String] = []
         
-                print(randomNumber)
+        if (difficulty == 1){
+            Skill_dif = ["体当たり","ショット","テールアタック"]
+        }else if(difficulty == 10){
+            Skill_dif = ["アイスランス","アイス","ストーンエッジ","ハイヒール","アークバイト"]
+        }else if(difficulty == 30){
+            Skill_dif = ["ブリザード","アイスランス","アースクエイク","グレイヒール","アイス"]
+        }
+               
+        let randomNumber = Int.random(in: 1 ... 100)
+        
+        print(randomNumber)
         
                if (40 <= randomNumber){
-                choseSkillName = "体当たり"
+                choseSkillName = Skill_dif[0]
                 damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                 return damege
                }else if(10 <= randomNumber){
-                   choseSkillName = "ショット"
+                   choseSkillName = Skill_dif[1]
                    damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
                    return damege
                }else{
                 damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
-                choseSkillName = "テールアタック"
+                choseSkillName = Skill_dif[2]
                 return damege
                }
     }
