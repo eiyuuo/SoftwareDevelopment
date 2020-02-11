@@ -20,15 +20,16 @@ class SeaRabbit : Enemy {
         var damege :Double
         //let randomBool = Bool.random()
         let randomNumber = Int.random(in: 1 ... 100)
+        var choseSkileName:String = ""
         
         if (30 <= randomNumber){
-            damege = self.skill.nomalAttack(attack: attack, randomNumber: randomNumber)
-            choseSkillName = "通常攻撃"
-            return Double(damege)
+            choseSkileName = "通常攻撃"
+            damege = skill.choseSkill(skillName : choseSkileName, attack : attack, magickAttack : magickAttack)
+            return damege
         }else{
-            damege = self.skill.tailAttack(attack: attack, randomNumber: randomNumber)
-            choseSkillName = "体当たり"
-            return Double(damege)
+            choseSkileName = "体当たり"
+            damege = skill.choseSkill(skillName : choseSkileName, attack : attack, magickAttack : magickAttack)
+            return damege
         }
     }
 }

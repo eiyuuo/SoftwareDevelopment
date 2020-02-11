@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class item {
+class Item {
     let userDefaults = UserDefaults.standard
     init() {
         //UserDefaults.standard初期値
@@ -216,7 +216,8 @@ class item {
     }
         
     func saveItem() {
-//        UserDefaults.standard.set(have)
+        let list = MakeIntArray(dicname: "itemhave")
+        UserDefaults.standard.set(list, forKey: "itemhave")
     }
 }
 

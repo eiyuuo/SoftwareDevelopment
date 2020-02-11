@@ -14,27 +14,12 @@ class Battle { //戦闘を管理するクラス
     var enemy : Enemy
     let status = Status()
     
-    var hp:Int!
-    var sp:Int!
-    var atk:Int!
-    var def:Int!
-    var int:Int!
-    var exp:Int!
-    
     private var logList : String = ""  //ログのリスト
     
     init(enemyName : String ) {
-        self.hp = status.getHP()
-        self.sp = status.getSP()
-        self.atk = status.getATK()
-        self.def = status.getDEF()
-        self.int = status.getINT()
-        self.exp = status.getEXP()
  
         //データベースからの修正済み
-
-        self.player = Player(maxHitPoint:status.getHP()+20000, defense:status.getDEF()+300, attack: status.getATK()+300, magickAttack:status.getINT()+300, maxSkillPoint:status.getSP()+300, exp: status.getEXP())
-
+        self.player = Player(maxHitPoint:status.getHP(), defense:status.getDEF(), attack: status.getATK(), magickAttack:status.getINT(), maxSkillPoint:status.getSP(), exp: status.getEXP())
 
         
         switch enemyName { //どの敵なのか？
@@ -50,7 +35,6 @@ class Battle { //戦闘を管理するクラス
         case "magickFish" :
             self.enemy = MagicFish()
             break
-        
         case "gostship" :
             self.enemy = Gostship()
             break
@@ -64,6 +48,7 @@ class Battle { //戦闘を管理するクラス
              self.enemy = Kaihei()
              break
         */           
+
         default:
             self.enemy = Slime()
             break
@@ -73,7 +58,6 @@ class Battle { //戦闘を管理するクラス
     
     func battlePlayerTurn(nowChose : String, tuchButtonName : String) {
         var log : String = ""
-        print(nowChose)
         if (!player.getIsDead()) {
             if (nowChose == "skill") //スキル処理
             {

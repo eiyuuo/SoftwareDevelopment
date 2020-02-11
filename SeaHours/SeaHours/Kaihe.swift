@@ -9,9 +9,11 @@
 import Foundation
 
 class Kaihe : Enemy {
-
+    let userDefaults = UserDefaults.standard
+    var difficulty:Int = UserDefaults.standard.integer(forKey: "difficulty")
+    
     init() {
-        super.init(name : "カイヘイ" ,maxHitPoint: 17, defense: 7, attack: 15, magickAttack: 10,exp: 10)
+        super.init(name : "カイヘイ" ,maxHitPoint: 17*difficulty, defense: 7*difficulty, attack: 15*difficulty, magickAttack: 10*difficulty,exp: 10*difficulty)
 
     }
 

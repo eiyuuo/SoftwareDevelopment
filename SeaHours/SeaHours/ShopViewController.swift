@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-let iteminf = item()
+let iteminf = Item()
 let userDefaults = UserDefaults.standard
 //var namearray = iteminf.MakeStringArray(dicname: "itemname")
 //var havearray = iteminf.MakeIntArray(dicname: "itemhave")
@@ -20,6 +20,7 @@ var havearray: [Int] = userDefaults.array(forKey: "itemhave") as! [Int]
 var pricearray: [Int] = userDefaults.array(forKey: "itemprice") as! [Int]
 
 class ShopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var number = 0
     var exp = 0
     var shopkey = "item"
@@ -33,9 +34,39 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var exps: UILabel!
     
+    @IBOutlet weak var minutelabel: UILabel!
+    
+    @IBOutlet weak var secondlabel: UILabel!
+    let timer = TimerController()
+    var labelTimer:Timer!
+    var count:Int = 0
+    
+    //labelset関数を1秒ごとに行う処理を行っている
+    func labeltimer(){
+        labelTimer = Timer.scheduledTimer(timeInterval:1,target:self,selector:#selector(self.labelset),userInfo: nil,repeats:true)
+
+    }
+    
+    //labelを更新するための処理
+    @objc func labelset(){
+        minutelabel.text = timer.getStrMinute()
+        secondlabel.text = timer.getStrSecond()
+        if (timer.getCount() == 0) {
+             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+       
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //時間のラベルと関数
+        minutelabel.text = String("\(count/60) 分")
+        secondlabel.text = String("\(count%60) 秒")
         
+        timer.setCount(count: count)
+        timer.createTimer()
+        labeltimer()
         //ボタン装飾
         fild.layer.borderWidth = 1
         fild.layer.borderColor = UIColor.white.cgColor
@@ -201,6 +232,8 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func fild(_ sender: Any) {
+        timer.time.invalidate()
+        labelTimer.invalidate()
         self.dismiss(animated: true, completion: nil)
     }
     

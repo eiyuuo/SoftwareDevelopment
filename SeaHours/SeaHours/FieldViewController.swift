@@ -12,11 +12,11 @@ import AVFoundation
 
 class FieldViewController: UIViewController {
 
+    
     @IBOutlet weak var minutelabel: UILabel!
     @IBOutlet weak var secondlabel: UILabel!
     let timer = TimerController()
     var labelTimer:Timer!
-    let userDefaults = UserDefaults.standard
     var count:Int = 0
     
     //labelset関数を1秒ごとに行う処理を行っている
@@ -29,16 +29,44 @@ class FieldViewController: UIViewController {
     @objc func labelset(){
         minutelabel.text = timer.getStrMinute()
         secondlabel.text = timer.getStrSecond()
+        if (timer.getCount() == 0) {
+             self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func VS(_ sender: Any) {
         let storyboard = UIStoryboard(name: "battle", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
 
-        next.enemyName = "magickFish"
-
+        next.enemyName = "doragon"
+        next.count = timer.getCount()
         self.present(next, animated: true, completion: nil)
     }
+    
+    @IBAction func slime(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "slime"
+        next.count = timer.getCount()
+        self.present(next, animated: true, completion: nil)
+    }
+    
+    @IBAction func kaihe(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "kaihe"
+        next.count = timer.getCount()
+        self.present(next, animated: true, completion: nil)
+    }
+    
+    @IBAction func magickFish(_ sender:Any){
+        let storyboard = UIStoryboard(name: "battle", bundle: nil)
+        let next  = storyboard.instantiateViewController(withIdentifier:"VS") as! BattleViewController
+        next.enemyName = "magickFish"
+        next.count = timer.getCount()
+        self.present(next, animated: true, completion: nil)
+    }
+    
     
     
 
@@ -48,12 +76,14 @@ class FieldViewController: UIViewController {
 //        scene.sceneTransition(corrent: self,sb: "PlayerStatus",wi: "Status")
         let storyboard = UIStoryboard(name: "PlayerStatus", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"Status") as! StatusViewController
+        next.count = timer.getCount()
         self.present(next, animated: true, completion: nil)
     }
     
     @IBAction func Shop(_ sender: Any) {
         let storyboard = UIStoryboard(name: "shop", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"shop") as! ShopViewController
+        next.count = timer.getCount()
         self.present(next, animated: true, completion: nil)
     }
     
