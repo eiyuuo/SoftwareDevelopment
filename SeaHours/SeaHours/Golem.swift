@@ -13,10 +13,10 @@ class Golem : Enemy {
 
     //ステータス記述
     init() {
-        super.init(name : "ゴ-レム" ,maxHitPoint: 50*difficulty, defense: 150*difficulty, attack: 5*difficulty, magickAttack: 15*difficulty,exp:10*difficulty/2)
+        super.init(name : "ゴ-レム" ,maxHitPoint: 50*difficulty, defense: 150*difficulty, attack: 20*difficulty, magickAttack: 20*difficulty,exp:10*difficulty/2)
     }
     var choseSkill : String = ""
-    var SkillName: String = ""
+    
     override func selectSkill() -> Double {
         var damege :Double
         var Skill_dif:[String] = []
@@ -31,18 +31,18 @@ class Golem : Enemy {
 
         let randomNumber = Int.random(in: 1 ... 100)
         if (60<=randomNumber){
-            SkillName = Skill_dif[0]
-            damege = skill.choseSkill(skillName: SkillName, attack: attack, magickAttack: magickAttack)
+            choseSkillName = Skill_dif[0]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return damege
 
         }else if(30<=randomNumber){
-            SkillName = Skill_dif[1]
-            damege = skill.choseSkill(skillName: SkillName, attack: attack, magickAttack: magickAttack)
+            choseSkillName = Skill_dif[1]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return damege
         }
         else{
-            SkillName = Skill_dif[2]
-            damege = skill.choseSkill(skillName: SkillName, attack: attack, magickAttack: magickAttack)
+            choseSkillName = Skill_dif[2]
+            damege = skill.choseSkill(skillName: choseSkillName, attack: attack, magickAttack: magickAttack)
             return damege
         }
 

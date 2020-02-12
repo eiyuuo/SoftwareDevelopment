@@ -101,7 +101,7 @@ class Skill {
         case "クロー":
             return claw(attack: attack, randomNumber: randomNumber)
             
-        case "テールアッタク":
+        case "テールアタック":
             return tailAttack(attack: attack, randomNumber: randomNumber)
             
         case "噛みつく":
@@ -235,6 +235,7 @@ class Skill {
     }
     
     func tailAttack(attack : Int,randomNumber : Int) -> Double {
+        print("hoge")
         if (95 - randomNumber > 0){
             return Double(attack) * 2
         }else {

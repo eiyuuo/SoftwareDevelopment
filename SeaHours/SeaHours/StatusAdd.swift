@@ -17,6 +17,7 @@ class StatusAdd {
     let userDefaults = UserDefaults.standard
     let status = Status()
     
+    
     var hp:Int = UserDefaults.standard.integer(forKey: "HPs")
     var sp:Int = UserDefaults.standard.integer(forKey: "SPs")
     var atk:Int = UserDefaults.standard.integer(forKey: "ATKs")
@@ -168,8 +169,20 @@ class StatusAdd {
     
     
     //装備によるステータスの増加処理
-    func Equipment(){
-        //実装予定
+    func EquipmentWeapon(){
+      atk = atk - UserDefaults.standard.integer(forKey: "bukinumber2")
+      atk = atk + UserDefaults.standard.integer(forKey: "bukinumber1")
+      UserDefaults.standard.set(atk, forKey:"ATKs")
+      status.setATK(point :self.atk)
+      print(String(atk))
+    }
+     
+    func EquipmentArmor(){
+      def = def - UserDefaults.standard.integer(forKey: "bougunumber1")
+      def = def + UserDefaults.standard.integer(forKey: "bougunumber2")
+      UserDefaults.standard.set(def, forKey:"DEFs")
+      status.setDEF(point :self.def)
+      print(String(def))
     }
     
 }

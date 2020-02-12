@@ -25,6 +25,8 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
     var bukinum2 = userDefaults.integer(forKey: "bukinumber2")
     var bougunum1 = userDefaults.integer(forKey: "bougunumber1")
     var bougunum2 = userDefaults.integer(forKey: "bougunumber2")
+    
+    let statusadd = StatusAdd()
 
     var number = 0
     var exp = 0
@@ -215,6 +217,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let strexp = String(ex)
                     exps.text = "所持EXP：\(strexp)"
                     print("武器")
+                    statusadd.EquipmentWeapon()
                 }
                 else{
                     Description.text = "あなたはすでにこの武器を持っています"
@@ -240,6 +243,7 @@ class ShopViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let strexp = String(ex)
                     exps.text = "所持EXP：\(strexp)"
                     print("防具")
+                    statusadd.EquipmentArmor()
                 }
                 else {
                     Description.text = "あなたはすでにこの防具を持っています"

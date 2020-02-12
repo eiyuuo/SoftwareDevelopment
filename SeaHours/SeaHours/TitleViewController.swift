@@ -20,7 +20,7 @@ class TitleViewController: UIViewController {
     @IBAction func Easy(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Field", bundle: nil)
         let next  = storyboard.instantiateViewController(withIdentifier:"field") as! FieldViewController
-        next.count = 10
+        next.count = 180
         UserDefaults.standard.set(1, forKey:"tag")
         UserDefaults.standard.set(1, forKey:"difficulty")
         self.present(next, animated: true, completion: nil)
